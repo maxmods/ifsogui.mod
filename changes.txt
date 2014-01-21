@@ -1,0 +1,326 @@
+ifsoGUI v1.17
+
+**changes since 1.16**
+
+--Changes/Fixes by Zeke--
+Added tool tip delay
+Label borders now default to off
+Textboxes now can be set as a password field, not showing their value, but a generic string.
+MULTILINE TEXTBOX: Added code to autoscroll up when selecting text
+MULTILINE TEXTBOX: Fixed Text selection drawing when scrolling text.
+
+**changes since 1.15**
+Fixed a combo box bug.
+
+**Changes since 1.14**
+Improved drawing with less texture switching.
+
+**Changes since 1.13**
+Module documentation now builds correctly for all modules.
+
+Now works with BlitzMax 1.36.  The DirectX 9 driver works and the Virtual Resolution features also now work. 
+
+**Changes since 1.12**
+All gadgets now have a Destroy() method that will break references between the gadget and its children/slaves.
+
+The GUI.RemoveGadget() function now has an optional bDestroy integer parameter that tells whether the gadget should have Destroy called on it.  This parameter defaults to True.  If you wish to Remove a gadget from the GUI, but keep it to use later, set this parameter to False.
+
+The RemoveChild() method of all gadgets now has a bDestroy integer parameter that tells whether the gadget being removed should have Destroy called on it.  THis parameter defaults to True.  If you wish to remove a child gadget but keep it to use later, set the is parameter to false.
+
+The Tabber gadget RemoveTabChild() method also now has the optional bDestroy parameter which defaults to True and is used in the same manner.
+
+These changes have been made to solve some circular reference issues which were causing a memory leak.
+
+FileSelect
+ - When dialog is first shown, the file textbox now gets focus.
+
+Bug Fixes
+
+Textbox
+ - Bug in textbox fixed which on some occasions caused an infinite loop.
+
+**Changes since 1.11**
+ComboBox
+ - Data and Tip parameters of AddItem() and InsertItem() are now optional.
+
+Bug Fixes
+
+GUI
+ - The way Tab Order was tracked was causing a memory leak, keeping gadgets in memory.  This should be fixed now.  Gadgets no longer need to call SetTabOrder in their Create() Function.
+
+ComboBox
+ - Add and Insert item wasn't refreshing the gadget.
+
+ImageButton
+ - Had to have an image loaded, or it would crash.
+
+MLTextbox
+ - Very first click could be considered a double click in some instances.
+
+Panel
+ - When scrollbars were on and the user attempted to size the panel smaller than the minimum, scrollbars got messed up.
+
+Scrollbar
+ - Fixed issue with not refreshing sometimes.
+Fixed bug with sending incorrect values.
+
+Textbox
+ - Very first click could be considered a double click in some instances.
+
+Window
+ - When scrollbars were on and the user attempted to size the panel smaller than the minimum, scrollbars got messed up.
+
+**Changes since 1.10**
+Source Now available to registered users.
+Now compiles for Mac and Linux as well as Windows.
+SetAlwaysOnTop()/GetAlwaysOnTop() are now Base gadget functions and can be set to any gadget.
+
+GUI
+ - SetTextColor(R,G,B).  - Sets the default text color on Gadgets created after setting this color.
+
+TextBox
+ - Changed the minimum size.
+
+Bug Fixes
+
+Base
+ - Fixed issue with BringToFront().
+
+Listbox
+ - Sort was treating lower/upper not equal.
+ - Clicking 3 (or more) times quickly, resulted in 2 (or more) double clicks.
+
+Multi-Line Textbox
+ - Wordwrap infinite loop when width is less than 1 character.
+ - Readonly was ignored.
+
+Panel
+ - Panels scrolled with keypresses when they shouldn't.
+
+Tabber
+ - Wasn't returning children of its Slave tabs when GetChild was called.
+
+Textbox
+ - Readonly was ignored.
+
+**Changes since 1.09**
+Tabber
+ - Borders of the panels can now be turned on/off.
+ - SetShowBorder()
+ - GetShowBorder()
+
+ComboBox
+ - Now exposes the listbox SortList() method.
+
+TextBox
+ - Double Clicking selects the current word.
+
+Multi-Line TextBox
+ - Double Clicking selects the current word.
+ - Now emits click, middle click, and right click events.
+
+Bug Fixes
+
+BaseGadget Border drawing bug fixed.
+
+Tabber
+ - Mouse position bug fixed.
+ - Child gadgets positioning bug fixed.
+
+**Changes since 1.08**
+Crash bug found and fixed in the Multi-Column Listbox.
+
+**Changes since 1.07**
+
+Textbox
+ - Now has text highlighting/editing.
+ - New Methods
+ -  - GetSelectBegin()
+ -  - SetSelectBegin()
+ -  - GetSelection()
+ -  - CutSelection()
+ -  - SetSelectColor()
+ -  - InsertText()
+ - Now emits Copy/Cut/Paste events when Ctrl-C, Ctrl-X, and Ctrl-V are pressed.
+
+Multi-Line Textbox
+ - Now has text highlighting/editing.
+ - New Methods
+ -  - GetSelectCursorBegin()
+ -  - SetSelectCursorBegin()
+ -  - GetSelectLineBegin()
+ -  - SetSelectLineBegin()
+ -  - GetSelection()
+ -  - CutSelection()
+ -  - SetSelectColor()
+ -  - InsertText()
+ - Now emits Copy/Cut/Paste events when Ctrl-C, Ctrl-X, and Ctrl-V are pressed.
+
+Events
+ - New Events
+ -  - ifsoGUI_EVENT_COPY
+ -  - ifsoGUI_EVENT_CUT
+ -  - ifsoGUI_EVENT_PASTE
+
+Bug Fixes
+
+TextBox
+ - KeyHit Event was being sent before filter.  Fixed.
+
+Multi-Line Textbox
+ - Fixed some word wrap issues where font size was not being checked correctly.
+ - Cursor wouldn't blink sometimes.
+
+Tabber
+ - Panels not drawn sometimes.  Fixed.
+
+**Changes since 1.06**
+
+New Gadget: ImageButton
+ - Same as a regular button except for:
+ - - Can have 3 images on it.  Normal, mouseover, mousedown.  Mouseover and mousedown are optional.
+ - - Button graphic can be turned on or off.
+ - - Button Label can be on or off.
+
+Button
+ - Buttons now send MouseDown and MouseUp events for all mouse buttons.
+ - MouseClick and the pressed graphic are still only triggered by the left mouse button.
+
+Bug Fixes
+ - Some how managed to not include the TipAlpha stuff.  It is now back in.
+
+**Changes since 1.05**
+
+There is now an ifsoGUI Wiki. It can be found at wiki.ifsogui.com. All registered ifsoGUI owners have edit rights.
+
+GUI
+ - All gadgets can now have separate skins per instance.  Use the LoadSkin method.
+ - There is now an Alpha setting for ToolTips.
+ - - GUI.SetTipAlpha(fAlpha:Float)
+ - - GUI.GetTipAlpha:Float()
+ - Skins can now be tiled or stretched.
+ - - Whether or not a skin is tiled is a setting in the dimensions.txt file.
+ - - The new setting is entirely optional and will not break current skins.
+ - - Instruction on how to use tiling instead of stretching can be found in the wiki at http://wiki.ifsogui.com/index.php/Skins.
+ 
+
+Panels
+ - New AutoSize property: ifsoGUI_IMAGE_TILE - Image tiled to fill the background.
+
+File Select
+ - Can no longer be transparent.
+
+Combobox
+ - Now emits ifsoGUI_EVENT_CLICK when the dropdown is opened.
+
+**Changes since 1.04**
+
+GUI
+ - You can now add sounds to a gadget for any events the gadget emits.
+ - You can now use incbin with a password protected zip file.
+
+Base
+ - All gadgets now can have custom properties.  Use SetProperty/GetProperty to use this feature.
+
+Button
+ - Buttons now emit the MouseDown and MouseUp events as well as MouseClick.
+
+TextBox/MLTextbox
+ - Filter now only filters printable chars, not backspace, enter, arrows, etc.
+
+Panels
+ - Panels now can now have a background image. SetBackgroundImage(TImage)
+ -  - You can use SetAutoSize:
+ -  - ifsoGUI_IMAGE_NONE - No AutoSizing
+ -  - ifsoGUI_IMAGE_SCALETOPANEL - Image scales to fit the panel.
+ -  - ifsoGUI_IMAGE_RESIZETOIMAGE - Panel resizes to the size of the Image.
+ -  - ifsoGUI_IMAGE_SCALETOPANEL_MAINTAINASPECTRATIO - Image sizes to the panel and resizing the panel maintains the aspect ratio of the image.
+ -  - ifsoGUI_IMAGE_CENTER - Image is centered to the panel.
+ -  - This basically becomes an ImageBox type gadget.  To make a large image that you can scroll around and view, all you have to do is put a panel with a background image set to RESIZTOIMAGE, into another panel.  Then the parent panels scrollbars will appear and you can scroll around and look at the entire image.
+ -  - You can grab the Images pixmap and draw on it as well.
+
+**Changes since 1.03**
+
+ifsoGUI
+ - ifsoGUI now can use incbin to store/load the skins.
+ - A sample incbinSkin.bmx file can be found in the ifsogui.mod folder, include this file at the top of your program to incbin all graphics in a skin.  Do not forget to edit the paths with the path of your skin.  Also, remove any lines pertaining to graphics file you are not using.
+ - Use GUI.SetUseIncBin(True) to tell the GUI to load all files using incbin.
+ - Skins can now be zipped.  And they can be zipped and incbin'ed.
+ - If you incbin a zip file, then you do not need to incbin all of the individual files.
+ - Zip files can be password protected.
+ - A password protected zip file cannot be incbin'd.  Still working on this.
+ - Use GUI.SetZipInfo(strFile, strPassword) to tell the GUI to load files from a zip file.
+
+Button
+ - Text on a button can now draw on the entire button.  Previously, text could not draw on the edge graphics of a button, just the center.
+
+Textbox/MLTextbox
+ - Cursor no longer blinks while you type.
+ - User definable filter function for each textbox/mltextbox.
+
+**Changes since 1.02**
+
+GUI
+ - Now supports external bitmap font systems.
+ - Documentation for the font system support can be found on the www.ifsogui.com website.
+
+**Changes since 1.01**
+
+ListBox
+ - Can now be sorted by the Name field or the Data field of the items, ascending or descending.
+
+MCListBox
+ - Can now be sorted by the Name field or the Data field of the items, ascending or descending.
+
+Now includes the doc folders which are documentation and will allow Intellisense to work in IDE's like BLIde. 
+
+**Changes since 1.00**
+
+Textbox
+ - Can now be read only
+ - GetReadOnly
+ - SetReadOnly
+ - Border can now be turned on/off
+ - GetShowBorder
+ - SetShowBorder
+ - Text is now centered vertically in a textbox.
+ - CursorPositon can now be read and set.
+ - Cursor now blinks. Set BlinkRate to 0 to not blink.
+ - Default over cursor is IBar unless the gadget is readonly.
+
+MultiLine textbox
+ - Cursor now blinks. Set BlinkRate to 0 to not blink.
+ - Default over cursor is IBar unless the gadget is readonly.
+
+ComboBox
+ - The change event now returns the Index of the selected item, not the data value of that item.
+ - The selected item can now be set to -1 (nothing).
+
+ListBox
+ - GetTopItem
+ - Bug fix in Mouse Highlight
+
+CheckBox
+ - Was allowing middle and right mouse buttons to change its value.
+
+Slider
+ - Fixed a bug where a Slider with a Master would not respond to key presses.
+
+ifsoGUI_VP
+ - DrawRect bug fixed.
+ - Bug fixed that would allow drawing to escape the ViewPort if the current viewport width or height was 0 or negative.
+
+Panel/Window
+ - Minimum Width and Height now take the scrollbars into consideration.
+
+Scrollbar
+ - Scrollbars now have a GetMinLength() function that returns the minimum length the scrollbar can be and still look ok graphically.
+
+Multi-Column Listbox
+ - First version ready to go.
+
+GUI
+ - Hiding a parent no longer leaves a child gadget with focus.
+ - There is now an IBar cursor.
+ - Now if a mouse cursor graphic does not exist, the normal mouse graphic will be used.
+ - If the normal mouse graphic does not exist, the OS cursor will be used.  This makes it possible to only use some of the cursors, like possibly just the IBar.
