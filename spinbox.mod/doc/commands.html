@@ -1,0 +1,198 @@
+<html><head><title>ifsoGUI Spinner Box reference</title>
+<link rel=stylesheet Type=text/css href='../../../../doc/bmxstyle.css'>
+</head><body>
+<table width=100% cellspacing=0><tr align=center><td class=small>&nbsp;</td>
+<td class=small width=1%><b>ifsogui.spinbox:</b></td>
+<td class=small width=1%><a href=#types class=small>Types</a></td>
+<td class=small width=1%><a href=#modinfo class=small>Modinfo</a></td>
+<td class=small width=1%><a href='../../../../mod/ifsogui.mod/spinbox.mod/spinbox.bmx' class=small>Source</a></td>
+<td class=small>&nbsp;</td></tr></table>
+<h1>ifsoGUI Spinner Box</h1>
+SpinBox Gadget.
+<h2><a name=types></a>Types Summary</h2><table class=doc width=100%>
+<tr><td class=docleft width=1%><a href=#ifsoGUI_SpinBox>ifsoGUI_SpinBox</a></td><td class=docright>
+SpinBox Type.
+</td></tr>
+</table>
+<h2
+ id=typesdet>Types
+</h2>
+<table class=doc width=100% cellspacing=3 id=ifsoGUI_SpinBox>
+<tr><td class=doctop colspan=2>Type ifsoGUI_SpinBox Extends ifsoGUI_Base</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>SpinBox Type.</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_SpinBox_methods></a>Methods Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#CanActive>CanActive</a></td><td class=docright>
+Can this gadget be active.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Draw>Draw</a></td><td class=docright>
+Draws the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetValue>GetValue</a></td><td class=docright>
+Returns the value of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#IsMouseOver>IsMouseOver</a></td><td class=docright>
+Returns whether or not the mouse is over the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LoadSkin>LoadSkin</a></td><td class=docright>
+Loads a skin for one instance of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Refresh>Refresh</a></td><td class=docright>
+Refreshes the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetAutoSize>SetAutoSize</a></td><td class=docright>
+Sets whether or not to the gadget will autosize or be manually controlled by the user.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetBounds>SetBounds</a></td><td class=docright>
+Sets the x, y, width, and height all in one call.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetFocus>SetFocus</a></td><td class=docright>
+Gives the gadget the focus.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetFocusColor>SetFocusColor</a></td><td class=docright>
+Sets the gadgets focus box color.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetFont>SetFont</a></td><td class=docright>
+Sets the font of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetGadgetAlpha>SetGadgetAlpha</a></td><td class=docright>
+Sets the gadgets alpha value.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetGadgetColor>SetGadgetColor</a></td><td class=docright>
+Sets the gadget color of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetMinMax>SetMinMax</a></td><td class=docright>
+Sets the min/max value of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetShowFocus>SetShowFocus</a></td><td class=docright>
+Sets whether or not to show the focus box for this gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTip>SetTip</a></td><td class=docright>
+Sets the gadget tip text.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTransparent>SetTransparent</a></td><td class=docright>
+Sets whether the gadget is transparent.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetValue>SetValue</a></td><td class=docright>
+Sets the value of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetWH>SetWH</a></td><td class=docright>
+Sets the gadgets width and height.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SlaveEvent>SlaveEvent</a></td><td class=docright>
+Called from a slave gadget.
+</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_SpinBox_functions></a>Functions Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#Create>Create</a></td><td class=docright>
+Create and returns a SpinBox gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#FilterNumbers>FilterNumbers</a></td><td class=docright>
+Makes sure only numbers and minus sugn are entered intot he text box.
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CanActive>
+<tr><td class=doctop colspan=2>Method CanActive:Int() 'Spinbox cannot be the Active Gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Can this gadget be active.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Draw>
+<tr><td class=doctop colspan=2>Method Draw(parX:Int, parY:Int, parW:Int, parH:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetValue>
+<tr><td class=doctop colspan=2>Method GetValue:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the value of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=IsMouseOver>
+<tr><td class=doctop colspan=2>Method IsMouseOver:Int(parX:Int, parY:Int, parW:Int, parH:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the mouse is over the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LoadSkin>
+<tr><td class=doctop colspan=2>Method LoadSkin(strSkin:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Loads a skin for one instance of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Refresh>
+<tr><td class=doctop colspan=2>Method Refresh()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Refreshes the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Recalculates any geometry/font changes, etc.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetAutoSize>
+<tr><td class=doctop colspan=2>Method SetAutoSize(intAutoSize:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not to the gadget will autosize or be manually controlled by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetBounds>
+<tr><td class=doctop colspan=2>Method SetBounds(iX:Int, iY:Int, iW:Int, iH:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the x, y, width, and height all in one call.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetFocus>
+<tr><td class=doctop colspan=2>Method SetFocus()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gives the gadget the focus.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>This sets this gadget as the Active Gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetFocusColor>
+<tr><td class=doctop colspan=2>Method SetFocusColor(iRed:Int, iGreen:Int, iBlue:Int) 'Set color of gadgets focus box</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadgets focus box color.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetFont>
+<tr><td class=doctop colspan=2>Method SetFont(Font:TImageFont) 'Set the font of the gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the font of the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Set to Null to use the default GUI font.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetGadgetAlpha>
+<tr><td class=doctop colspan=2>Method SetGadgetAlpha(fltAlpha:Float)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadgets alpha value.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetGadgetColor>
+<tr><td class=doctop colspan=2>Method SetGadgetColor(iRed:Int, iGreen:Int, iBlue:Int) 'Set color of the gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadget color of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetMinMax>
+<tr><td class=doctop colspan=2>Method SetMinMax(intMin:Int, intMax:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the min/max value of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetShowFocus>
+<tr><td class=doctop colspan=2>Method SetShowFocus(intShowFocus:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not to show the focus box for this gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTip>
+<tr><td class=doctop colspan=2>Method SetTip(strTip:String) 'Sets the Tip Text</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadget tip text.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTransparent>
+<tr><td class=doctop colspan=2>Method SetTransparent(bTransparent:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether the gadget is transparent.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetValue>
+<tr><td class=doctop colspan=2>Method SetValue(intValue:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the value of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetWH>
+<tr><td class=doctop colspan=2>Method SetWH(width:Int, height:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadgets width and height.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SlaveEvent>
+<tr><td class=doctop colspan=2>Method SlaveEvent(gadget:ifsoGUI_Base, id:Int, data:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called from a slave gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Slave gadgets do not generate GUI events.  They send events to their Master.
+The Master then uses it or can send a GUI event.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Create>
+<tr><td class=doctop colspan=2>Function Create:ifsoGUI_SpinBox(iX:Int, iY:Int, iW:Int, iH:Int, strName:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Create and returns a SpinBox gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=FilterNumbers>
+<tr><td class=doctop colspan=2>Function FilterNumbers:Int(key:Int, gadget:ifsoGUI_Base)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Makes sure only numbers and minus sugn are entered intot he text box.</td></tr>
+</table>
+<br>
+<h2 id=modinfo>Module Information</h2>
+<table width=100%>
+<tr><th width=1%>Version</th><td>1.00</td></tr>
+<tr><th width=1%>Author</th><td>Marcus Trisdale</td></tr>
+<tr><th width=1%>Copyright</th><td>(c) 2009 Marcus Trisdale</td></tr>
+</body></html>

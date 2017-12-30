@@ -1,0 +1,371 @@
+<html><head><title>ifsoGUI Panel reference</title>
+<link rel=stylesheet Type=text/css href='../../../../doc/bmxstyle.css'>
+</head><body>
+<table width=100% cellspacing=0><tr align=center><td class=small>&nbsp;</td>
+<td class=small width=1%><b>ifsogui.panel:</b></td>
+<td class=small width=1%><a href=#types class=small>Types</a></td>
+<td class=small width=1%><a href=#modinfo class=small>Modinfo</a></td>
+<td class=small width=1%><a href='../../../../mod/ifsogui.mod/panel.mod/panel.bmx' class=small>Source</a></td>
+<td class=small>&nbsp;</td></tr></table>
+<h1>ifsoGUI Panel</h1>
+Panel Gadget.
+<h2><a name=types></a>Types Summary</h2><table class=doc width=100%>
+<tr><td class=docleft width=1%><a href=#ifsoGUI_Panel>ifsoGUI_Panel</a></td><td class=docright>
+Panel Type.
+</td></tr>
+</table>
+<h2
+ id=typesdet>Types
+</h2>
+<table class=doc width=100% cellspacing=3 id=ifsoGUI_Panel>
+<tr><td class=doctop colspan=2>Type ifsoGUI_Panel Extends ifsoGUI_Base</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Panel Type.</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_Panel_methods></a>Methods Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#AddChild>AddChild</a></td><td class=docright>
+Adds a child gadget to the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CanActive>CanActive</a></td><td class=docright>
+Can this gadget be active.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ChildMoved>ChildMoved</a></td><td class=docright>
+Called when a child gadget is moved.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ComputeMinWH>ComputeMinWH</a></td><td class=docright>
+Figures minimum width and height.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Draw>Draw</a></td><td class=docright>
+Draws the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#DrawChildren>DrawChildren</a></td><td class=docright>
+Draws the gadgets children.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GainFocus>GainFocus</a></td><td class=docright>
+Called when the gadget becomes the active gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetAbsoluteXY>GetAbsoluteXY</a></td><td class=docright>
+Returns the absolute X and Y screen position of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetBackgroundImage>GetBackgroundImage</a></td><td class=docright>
+Returns the background image of the panel.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetBorderSize>GetBorderSize</a></td><td class=docright>
+Returns the thickness of the border edge.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetClientHeight>GetClientHeight</a></td><td class=docright>
+Returns client height of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetClientWidth>GetClientWidth</a></td><td class=docright>
+Returns client width of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetDragable>GetDragable</a></td><td class=docright>
+Returns whether or not the gadget can be dragged with the mouse.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetMinWH>GetMinWH</a></td><td class=docright>
+Retrieves the minimum width and height of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetResizable>GetResizable</a></td><td class=docright>
+Returns whether or not the gadget can be resized.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetScrollbars>GetScrollbars</a></td><td class=docright>
+Return whether or not scrollbars will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetScrollBarWidth>GetScrollBarWidth</a></td><td class=docright>
+Returns the width of the scrollbars.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetShowBorder>GetShowBorder</a></td><td class=docright>
+Returns whether or not the border is showing.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseDown>gMouseDown</a></td><td class=docright>
+Called when the mouse button is pressed on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseUp>gMouseUp</a></td><td class=docright>
+Called when the mouse button is released on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#IsMouseOver>IsMouseOver</a></td><td class=docright>
+Returns whether or not the mouse is over the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#KeyPress>KeyPress</a></td><td class=docright>
+Called when a key is pressed on the active gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LoadSkin>LoadSkin</a></td><td class=docright>
+Loads a skin for one instance of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LostFocus>LostFocus</a></td><td class=docright>
+Called when the gadget is no longer the Active Gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MouseOut>MouseOut</a></td><td class=docright>
+Called when the mouse leaves the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MouseOver>MouseOver</a></td><td class=docright>
+Called when the mouse is over this gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MouseStatus>MouseStatus</a></td><td class=docright>
+Called to determine the mouse status from the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Refresh>Refresh</a></td><td class=docright>
+Refreshes the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveChild>RemoveChild</a></td><td class=docright>
+Removes a child gadget from the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetAutoSize>SetAutoSize</a></td><td class=docright>
+Sets whether or not to the gadget will autosize or be manually controlled by the user.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetBackgroundImage>SetBackgroundImage</a></td><td class=docright>
+Sets a background image for the panel.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetBounds>SetBounds</a></td><td class=docright>
+Sets the x, y, width, and height all in one call.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetDragable>SetDragable</a></td><td class=docright>
+Sets whether or not the gadget can be dragged with the mouse.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetMinWH>SetMinWH</a></td><td class=docright>
+Sets the minimum width and height of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetResizable>SetResizable</a></td><td class=docright>
+Sets whether the gadget can be resized using the mouse.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetScrollbars>SetScrollbars</a></td><td class=docright>
+Sets whether or not the Scrollbars will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetScrollBarWidth>SetScrollBarWidth</a></td><td class=docright>
+Sets the width of the scrollbars.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetShowBorder>SetShowBorder</a></td><td class=docright>
+Sets whether or not the border will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTabOrder>SetTabOrder</a></td><td class=docright>
+Sets the gadgets TabOrder. 0=Do not tab to this gadget -1=Last in the Tab Order.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetWH>SetWH</a></td><td class=docright>
+Sets the gadgets width and height.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SlaveEvent>SlaveEvent</a></td><td class=docright>
+Called from a slave gadget.
+</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_Panel_functions></a>Functions Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#Create>Create</a></td><td class=docright>
+Create and returns a panel gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LoadTheme>LoadTheme</a></td><td class=docright>
+Called to load the graphics when a new theme is loaded.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SystemEvent>SystemEvent</a></td><td class=docright>
+GUI system event occured.
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=AddChild>
+<tr><td class=doctop colspan=2>Method AddChild(gadget:ifsoGUI_Base)  'Add a child to the gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Adds a child gadget to the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CanActive>
+<tr><td class=doctop colspan=2>Method CanActive:Int() 'Panels cannot be the Active Gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Can this gadget be active.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=ChildMoved>
+<tr><td class=doctop colspan=2>Method ChildMoved(gadget:ifsoGUI_Base)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when a child gadget is moved.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=ComputeMinWH>
+<tr><td class=doctop colspan=2>Method ComputeMinWH()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Figures minimum width and height.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Draw>
+<tr><td class=doctop colspan=2>Method Draw(parX:Int, parY:Int, parW:Int, parH:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=DrawChildren>
+<tr><td class=doctop colspan=2>Method DrawChildren(parX:Int, parY:Int, parW:Int, parH:Int) 'Draw the children</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the gadgets children.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Normally called from the Draw Method.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GainFocus>
+<tr><td class=doctop colspan=2>Method GainFocus(GainedFocus:ifsoGUI_Base)  'Gadget Got focus</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the gadget becomes the active gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetAbsoluteXY>
+<tr><td class=doctop colspan=2>Method GetAbsoluteXY(iX:Int Var, iY:Int Var, caller:ifsoGUI_Base = Null)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the absolute X and Y screen position of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetBackgroundImage>
+<tr><td class=doctop colspan=2>Method GetBackgroundImage:TImage()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the background image of the panel.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetBorderSize>
+<tr><td class=doctop colspan=2>Method GetBorderSize:Int(Edge:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the thickness of the border edge.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Edge can be ifsoGUI_LEFT, ifsoGUI_RIGHT, ifsoGUI_TOP, ifsoGUI_BOTTOM.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetClientHeight>
+<tr><td class=doctop colspan=2>Method GetClientHeight:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns client height of the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Client Height is the usable area inside the gadget.
+Basically, the height of the gadget, minus the size of the borders.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetClientWidth>
+<tr><td class=doctop colspan=2>Method GetClientWidth:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns client width of the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Client Width is the usable area inside the gadget.
+Basically, the width of the gadget, minus the size of the borders.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetDragable>
+<tr><td class=doctop colspan=2>Method GetDragable:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the gadget can be dragged with the mouse.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetMinWH>
+<tr><td class=doctop colspan=2>Method GetMinWH(width:Int Var, height:Int Var)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Retrieves the minimum width and height of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetResizable>
+<tr><td class=doctop colspan=2>Method GetResizable:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the gadget can be resized.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetScrollbars>
+<tr><td class=doctop colspan=2>Method GetScrollbars:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Return whether or not scrollbars will show.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetScrollBarWidth>
+<tr><td class=doctop colspan=2>Method GetScrollBarWidth:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the width of the scrollbars.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetShowBorder>
+<tr><td class=doctop colspan=2>Method GetShowBorder:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the border is showing.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseDown>
+<tr><td class=doctop colspan=2>Method gMouseDown(iButton:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is pressed on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseUp>
+<tr><td class=doctop colspan=2>Method gMouseUp(iButton:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is released on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=IsMouseOver>
+<tr><td class=doctop colspan=2>Method IsMouseOver:Int(parX:Int, parY:Int, parW:Int, parH:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the mouse is over the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=KeyPress>
+<tr><td class=doctop colspan=2>Method KeyPress(key:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when a key is pressed on the active gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LoadSkin>
+<tr><td class=doctop colspan=2>Method LoadSkin(strSkin:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Loads a skin for one instance of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LostFocus>
+<tr><td class=doctop colspan=2>Method LostFocus(LostFocus:ifsoGUI_Base)	 'Gadget Lost fcucs</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the gadget is no longer the Active Gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=MouseOut>
+<tr><td class=doctop colspan=2>Method MouseOut(iMouseX:Int, iMouseY:Int, gOverGadget:ifsoGUI_Base)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse leaves the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=MouseOver>
+<tr><td class=doctop colspan=2>Method MouseOver(iMouseX:Int, iMouseY:Int, gWasOverGadget:ifsoGUI_Base)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse is over this gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=MouseStatus>
+<tr><td class=doctop colspan=2>Method MouseStatus:Int(iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called to determine the mouse status from the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Called to the active gadget only.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Refresh>
+<tr><td class=doctop colspan=2>Method Refresh()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Refreshes the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Recalculates any geometry/font changes, etc.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveChild>
+<tr><td class=doctop colspan=2>Method RemoveChild(gadget:ifsoGUI_Base, bDestroy:Int = True)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes a child gadget from the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetAutoSize>
+<tr><td class=doctop colspan=2>Method SetAutoSize(intAutoSize:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not to the gadget will autosize or be manually controlled by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetBackgroundImage>
+<tr><td class=doctop colspan=2>Method SetBackgroundImage(imgImage:TImage)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets a background image for the panel.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetBounds>
+<tr><td class=doctop colspan=2>Method SetBounds(iX:Int, iY:Int, iW:Int, iH:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the x, y, width, and height all in one call.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetDragable>
+<tr><td class=doctop colspan=2>Method SetDragable(bDragable:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the gadget can be dragged with the mouse.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetMinWH>
+<tr><td class=doctop colspan=2>Method SetMinWH(width:Int, height:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the minimum width and height of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetResizable>
+<tr><td class=doctop colspan=2>Method SetResizable(bResize:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether the gadget can be resized using the mouse.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetScrollbars>
+<tr><td class=doctop colspan=2>Method SetScrollbars(bScrollbars:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the Scrollbars will show.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>ifsoGUI_SCROLLBAR_ON, ifsoGUI_SCROLLBAR_OFF, ifsoGUI_SCROLLBAR_AUTO.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetScrollBarWidth>
+<tr><td class=doctop colspan=2>Method SetScrollBarWidth(iWidth:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the width of the scrollbars.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetShowBorder>
+<tr><td class=doctop colspan=2>Method SetShowBorder(bShowBorder:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the border will show.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTabOrder>
+<tr><td class=doctop colspan=2>Method SetTabOrder(iTabOrder:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadgets TabOrder. 0=Do not tab to this gadget -1=Last in the Tab Order.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetWH>
+<tr><td class=doctop colspan=2>Method SetWH(width:Int, height:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadgets width and height.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SlaveEvent>
+<tr><td class=doctop colspan=2>Method SlaveEvent(gadget:ifsoGUI_Base, id:Int, data:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called from a slave gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Slave gadgets do not generate GUI events.  They send events to their Master.
+The Master then uses it or can send a GUI event.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Create>
+<tr><td class=doctop colspan=2>Function Create:ifsoGUI_Panel(iX:Int, iY:Int, iW:Int, iH:Int, strName:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Create and returns a panel gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LoadTheme>
+<tr><td class=doctop colspan=2>Function LoadTheme()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called to load the graphics when a new theme is loaded.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>A GadgetSystemEvent is then sent out to all gadgets.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SystemEvent>
+<tr><td class=doctop colspan=2>Function SystemEvent(id:Int, data:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>GUI system event occured.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<br>
+<h2 id=modinfo>Module Information</h2>
+<table width=100%>
+<tr><th width=1%>Version</th><td>1.00</td></tr>
+<tr><th width=1%>Author</th><td>Marcus Trisdale</td></tr>
+<tr><th width=1%>Copyright</th><td>(c) 2009 Marcus Trisdale</td></tr>
+</body></html>

@@ -1,0 +1,139 @@
+<html><head><title>ifsoGUI Splitter reference</title>
+<link rel=stylesheet Type=text/css href='../../../../doc/bmxstyle.css'>
+</head><body>
+<table width=100% cellspacing=0><tr align=center><td class=small>&nbsp;</td>
+<td class=small width=1%><b>ifsogui.splitter:</b></td>
+<td class=small width=1%><a href=#types class=small>Types</a></td>
+<td class=small width=1%><a href=#modinfo class=small>Modinfo</a></td>
+<td class=small width=1%><a href='../../../../mod/ifsogui.mod/splitter.mod/splitter.bmx' class=small>Source</a></td>
+<td class=small>&nbsp;</td></tr></table>
+<h1>ifsoGUI Splitter</h1>
+Splitter Gadget.
+<h2><a name=types></a>Types Summary</h2><table class=doc width=100%>
+<tr><td class=docleft width=1%><a href=#ifsoGUI_Splitter>ifsoGUI_Splitter</a></td><td class=docright>
+Button Type.
+</td></tr>
+</table>
+<h2
+ id=typesdet>Types
+</h2>
+<table class=doc width=100% cellspacing=3 id=ifsoGUI_Splitter>
+<tr><td class=doctop colspan=2>Type ifsoGUI_Splitter Extends ifsoGUI_Base</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Button Type.</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_Splitter_methods></a>Methods Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#Draw>Draw</a></td><td class=docright>
+Draws the button gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetMaxPos>GetMaxPos</a></td><td class=docright>
+Gets the maximum positions of the splitter.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetMinPos>GetMinPos</a></td><td class=docright>
+Gets the minimum positions of the splitter.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetStyle>GetStyle</a></td><td class=docright>
+Gets the style of the splitter.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseDown>gMouseDown</a></td><td class=docright>
+Called when the mouse button is pressed on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseUp>gMouseUp</a></td><td class=docright>
+Called when the mouse button is released on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#IsMouseOver>IsMouseOver</a></td><td class=docright>
+Returns whether or not the mouse is over the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MouseOut>MouseOut</a></td><td class=docright>
+Called when the mouse leaves the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MouseOver>MouseOver</a></td><td class=docright>
+Called when the mouse is over this gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MouseStatus>MouseStatus</a></td><td class=docright>
+Called to determine the mouse status from the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetMinMaxPos>SetMinMaxPos</a></td><td class=docright>
+Sets the minimum and maximum positions of the splitter.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetStyle>SetStyle</a></td><td class=docright>
+Sets the style of the splitter.
+</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_Splitter_functions></a>Functions Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#Create>Create</a></td><td class=docright>
+Create and returns a splitter gadget.
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Draw>
+<tr><td class=doctop colspan=2>Method Draw(parX:Int, parY:Int, parW:Int, parH:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the button gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetMaxPos>
+<tr><td class=doctop colspan=2>Method GetMaxPos:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gets the maximum positions of the splitter.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Affects X pos for Vertical Splitter and Y pos for Horizontal Splitter.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetMinPos>
+<tr><td class=doctop colspan=2>Method GetMinPos:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gets the minimum positions of the splitter.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Affects X pos for Vertical Splitter and Y pos for Horizontal Splitter.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetStyle>
+<tr><td class=doctop colspan=2>Method GetStyle:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gets the style of the splitter.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>True for Vertical, False for Horizontal.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseDown>
+<tr><td class=doctop colspan=2>Method gMouseDown(iButton:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is pressed on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseUp>
+<tr><td class=doctop colspan=2>Method gMouseUp(iButton:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is released on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=IsMouseOver>
+<tr><td class=doctop colspan=2>Method IsMouseOver:Int(parX:Int, parY:Int, parW:Int, parH:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the mouse is over the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.
+This gadget lies, if the mousebutton has been pressed, then it responds true.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=MouseOut>
+<tr><td class=doctop colspan=2>Method MouseOut(iMouseX:Int, iMouseY:Int, gOverGadget:ifsoGUI_Base) 'Called when mouse no longer over gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse leaves the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=MouseOver>
+<tr><td class=doctop colspan=2>Method MouseOver(iMouseX:Int, iMouseY:Int, gWasOverGadget:ifsoGUI_Base) 'Called when mouse is over the gadget, only topmost gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse is over this gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=MouseStatus>
+<tr><td class=doctop colspan=2>Method MouseStatus:Int(iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called to determine the mouse status from the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Called to the active gadget if button is pressed, otherwise called to MouseOver gadget.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetMinMaxPos>
+<tr><td class=doctop colspan=2>Method SetMinMaxPos(MinPos:Int, MaxPos:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the minimum and maximum positions of the splitter.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Affects X pos for Vertical Splitter and Y pos for Horizontal Splitter.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetStyle>
+<tr><td class=doctop colspan=2>Method SetStyle(Vertical:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the style of the splitter.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>True for Vertical, False for Horizontal.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Create>
+<tr><td class=doctop colspan=2>Function Create:ifsoGUI_Splitter(iX:Int, iY:Int, iW:Int, iH:Int, strName:String, Vertical:Int = False)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Create and returns a splitter gadget.</td></tr>
+</table>
+<br>
+<h2 id=modinfo>Module Information</h2>
+<table width=100%>
+<tr><th width=1%>Version</th><td>1.00</td></tr>
+<tr><th width=1%>Author</th><td>Marcus Trisdale</td></tr>
+<tr><th width=1%>Copyright</th><td>(c) 2013 Marcus Trisdale</td></tr>
+</body></html>

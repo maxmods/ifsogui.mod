@@ -1,0 +1,120 @@
+<html><head><title>ifsoGUI Button reference</title>
+<link rel=stylesheet Type=text/css href='../../../../doc/bmxstyle.css'>
+</head><body>
+<table width=100% cellspacing=0><tr align=center><td class=small>&nbsp;</td>
+<td class=small width=1%><b>ifsogui.button:</b></td>
+<td class=small width=1%><a href=#types class=small>Types</a></td>
+<td class=small width=1%><a href=#modinfo class=small>Modinfo</a></td>
+<td class=small width=1%><a href='../../../../mod/ifsogui.mod/button.mod/button.bmx' class=small>Source</a></td>
+<td class=small>&nbsp;</td></tr></table>
+<h1>ifsoGUI Button</h1>
+Button Gadget.
+<h2><a name=types></a>Types Summary</h2><table class=doc width=100%>
+<tr><td class=docleft width=1%><a href=#ifsoGUI_Button>ifsoGUI_Button</a></td><td class=docright>
+Button Type.
+</td></tr>
+</table>
+<h2
+ id=typesdet>Types
+</h2>
+<table class=doc width=100% cellspacing=3 id=ifsoGUI_Button>
+<tr><td class=doctop colspan=2>Type ifsoGUI_Button Extends ifsoGUI_Base</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Button Type.</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_Button_methods></a>Methods Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#Draw>Draw</a></td><td class=docright>
+Draws the button gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetLabel>GetLabel</a></td><td class=docright>
+Returns the buttons label.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseDown>gMouseDown</a></td><td class=docright>
+Called when the mouse button is pressed on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseUp>gMouseUp</a></td><td class=docright>
+Called when the mouse button is released on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#KeyPress>KeyPress</a></td><td class=docright>
+Called when a key is pressed on the active gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LoadSkin>LoadSkin</a></td><td class=docright>
+Loads a skin for one instance of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Refresh>Refresh</a></td><td class=docright>
+Refreshes the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetLabel>SetLabel</a></td><td class=docright>
+Sets the buttons label.
+</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_Button_functions></a>Functions Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#Create>Create</a></td><td class=docright>
+Create and returns a button gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LoadTheme>LoadTheme</a></td><td class=docright>
+Called to load the graphics when a new theme is loaded.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SystemEvent>SystemEvent</a></td><td class=docright>
+GUI system event occured.
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Draw>
+<tr><td class=doctop colspan=2>Method Draw(parX:Int, parY:Int, parW:Int, parH:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the button gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetLabel>
+<tr><td class=doctop colspan=2>Method GetLabel:String()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the buttons label.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseDown>
+<tr><td class=doctop colspan=2>Method gMouseDown(iButton:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is pressed on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseUp>
+<tr><td class=doctop colspan=2>Method gMouseUp(iButton:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is released on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=KeyPress>
+<tr><td class=doctop colspan=2>Method KeyPress(key:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when a key is pressed on the active gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LoadSkin>
+<tr><td class=doctop colspan=2>Method LoadSkin(strSkin:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Loads a skin for one instance of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Refresh>
+<tr><td class=doctop colspan=2>Method Refresh()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Refreshes the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Recalculates any geometry/font changes, etc.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetLabel>
+<tr><td class=doctop colspan=2>Method SetLabel(strLabel:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the buttons label.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Create>
+<tr><td class=doctop colspan=2>Function Create:ifsoGUI_Button(iX:Int, iY:Int, iW:Int, iH:Int, strName:String, strLabel:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Create and returns a button gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LoadTheme>
+<tr><td class=doctop colspan=2>Function LoadTheme()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called to load the graphics when a new theme is loaded.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>A GadgetSystemEvent is then sent out to all gadgets.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SystemEvent>
+<tr><td class=doctop colspan=2>Function SystemEvent(id:Int, data:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>GUI system event occured.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<br>
+<h2 id=modinfo>Module Information</h2>
+<table width=100%>
+<tr><th width=1%>Version</th><td>1.00</td></tr>
+<tr><th width=1%>Author</th><td>Marcus Trisdale</td></tr>
+<tr><th width=1%>Copyright</th><td>(c) 2009 Marcus Trisdale</td></tr>
+</body></html>

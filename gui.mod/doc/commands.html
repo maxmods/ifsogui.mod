@@ -1,0 +1,1166 @@
+<html><head><title>ifsoGUI reference</title>
+<link rel=stylesheet Type=text/css href='../../../../doc/bmxstyle.css'>
+</head><body>
+<table width=100% cellspacing=0><tr align=center><td class=small>&nbsp;</td>
+<td class=small width=1%><b>ifsogui.gui:</b></td>
+<td class=small width=1%><a href=#functions class=small>Functions</a></td>
+<td class=small width=1%><a href=#types class=small>Types</a></td>
+<td class=small width=1%><a href=#modinfo class=small>Modinfo</a></td>
+<td class=small width=1%><a href='../../../../mod/ifsogui.mod/gui.mod/gui.bmx' class=small>Source</a></td>
+<td class=small>&nbsp;</td></tr></table>
+<h1>ifsoGUI</h1>
+BlitzMax graphic gui library.
+<h2><a name=functions></a>Functions Summary</h2><table class=doc width=100%>
+<tr><td class=docleft width=1%><a href=#RotateImage>RotateImage</a></td><td class=docright>
+Rotates the input image 90 degrees clockwise and returns the new image.
+</td></tr>
+</table>
+<h2><a name=types></a>Types Summary</h2><table class=doc width=100%>
+<tr><td class=docleft width=1%><a href=#GUI>GUI</a></td><td class=docright>
+GUI Type.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ifsoGUI_Base>ifsoGUI_Base</a></td><td class=docright>
+&nbsp;
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ifsoGUI_Event>ifsoGUI_Event</a></td><td class=docright>
+Event Type.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ifsoGUI_Settings>ifsoGUI_Settings</a></td><td class=docright>
+&nbsp;
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ifsoGUI_VP>ifsoGUI_VP</a></td><td class=docright>
+ViewPort system to create more and more restrictive viewports as gadgets are recursivley accessed.<br>
+</td></tr>
+</table>
+<h2
+ id=functionsdet>Functions
+</h2>
+<table class=doc width=100% cellspacing=3 id=RotateImage>
+<tr><td class=doctop colspan=2>Function RotateImage:TImage(image:TImage)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Rotates the input image 90 degrees clockwise and returns the new image.</td></tr>
+</table>
+<br>
+<h2
+ id=typesdet>Types
+</h2>
+<table class=doc width=100% cellspacing=3 id=GUI>
+<tr><td class=doctop colspan=2>Type GUI Final</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>GUI Type.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>All GUI work is through this interface.</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=GUI_functions></a>Functions Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#AddEvent>AddEvent</a></td><td class=docright>
+Adds an event to the GUI event queue.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#AddGadget>AddGadget</a></td><td class=docright>
+Adds a gadgets to the base GUI system.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#BringToFront>BringToFront</a></td><td class=docright>
+Brings the gadget on the base GUI system to the front.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ChangeTabOrder>ChangeTabOrder</a></td><td class=docright>
+Changes a gadgets TabOrder.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CheckMouseOver>CheckMouseOver</a></td><td class=docright>
+Find which gadget the mouse is over.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ClearEvents>ClearEvents</a></td><td class=docright>
+Clears the event queue.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CompareTabOrder>CompareTabOrder</a></td><td class=docright>
+Compares two gadgets by TabOrder.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CreateFileHeader>CreateFileHeader</a></td><td class=docright>
+Creates the header for file reading.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Draw>Draw</a></td><td class=docright>
+Draws the gadgets.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#DrawMouse>DrawMouse</a></td><td class=docright>
+Draws the mouse pointer.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#FileExists>FileExists</a></td><td class=docright>
+Check if the file exists.  Works of the file is incbin or not.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetActiveGadget>GetActiveGadget</a></td><td class=docright>
+Returns the ActiveGadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetCanDrawPartialChars>GetCanDrawPartialChars</a></td><td class=docright>
+Returns whether or not the custom font system can draw partial characters.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetDefaultFont>GetDefaultFont</a></td><td class=docright>
+Returns the Default Font of the GUI.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetDrawMouse>GetDrawMouse</a></td><td class=docright>
+Returns whether the GUI system is drawing the mouse or not.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetEvent>GetEvent</a></td><td class=docright>
+Returns the next event from the queue and rmeoves it.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetGadget>GetGadget</a></td><td class=docright>
+Gets a gadget by name.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTabActive>GetTabActive</a></td><td class=docright>
+Returns whether the Tab key can move focus to the GUI when no gadgets have the focus.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTabbing>GetTabbing</a></td><td class=docright>
+Returns whether Tabbing between gadgets is on or off.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTipAlpha>GetTipAlpha</a></td><td class=docright>
+Returns the alpha value for drawing the tip.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetUseCustomFontSystem>GetUseCustomFontSystem</a></td><td class=docright>
+Returns whether or not the user is using a custom font system.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetUseEvents>GetUseEvents</a></td><td class=docright>
+Returns whether the event system is in use or not.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetUseIncBin>GetUseIncBin</a></td><td class=docright>
+Returns whether or not files are loaded with incbin.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LoadTheme>LoadTheme</a></td><td class=docright>
+Loads a theme.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Logic>Logic</a></td><td class=docright>
+Updates the logic of all of the gadgets. Returns True if any of the graphics have changed.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MoveActive>MoveActive</a></td><td class=docright>
+Moves the focus to the next gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#NextGadget>NextGadget</a></td><td class=docright>
+Returns the Next Top Level Gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#PositionMouse>PositionMouse</a></td><td class=docright>
+Repositions the mouse cursor and emits a mouse move system event.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ProcessKeyboard>ProcessKeyboard</a></td><td class=docright>
+Processes keys and sends them to the active gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ProcessMouse>ProcessMouse</a></td><td class=docright>
+Gets the mouse position and processes mouse clicks.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Refresh>Refresh</a></td><td class=docright>
+Refreshes the GUI.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Register>Register</a></td><td class=docright>
+Registers an event handler for GUI wide events.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveGadget>RemoveGadget</a></td><td class=docright>
+Removes a gadget from the base GUI system.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveTabOrder>RemoveTabOrder</a></td><td class=docright>
+Removes a gadget from the TabOrder list.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Render>Render</a></td><td class=docright>
+Renders the GUI.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetActiveGadget>SetActiveGadget</a></td><td class=docright>
+Sets the Active gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetAllGadgetsColor>SetAllGadgetsColor</a></td><td class=docright>
+Sets the color for all gadgets.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetAllGadgetsTextColor>SetAllGadgetsTextColor</a></td><td class=docright>
+Sets the text color for all gadgets.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetCanDrawPartialChars>SetCanDrawPartialChars</a></td><td class=docright>
+Sets whether or not the custom font system can draw partial characters.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetCustomDrawText>SetCustomDrawText</a></td><td class=docright>
+Sets the Custom DrawText Function.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetCustomTextHeight>SetCustomTextHeight</a></td><td class=docright>
+Sets the Custom TextHeight Function.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetCustomTextWidth>SetCustomTextWidth</a></td><td class=docright>
+Sets the Custom TextWidth Function.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetDefaultFont>SetDefaultFont</a></td><td class=docright>
+Sets the default font.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetDrawMouse>SetDrawMouse</a></td><td class=docright>
+Sets whther or not the GUI system is reponsible for drawing the mouse.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetModal>SetModal</a></td><td class=docright>
+Sets a gadget Modal.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetResolution>SetResolution</a></td><td class=docright>
+Informs the GUI system of the resolution of the graphics window.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTabActive>SetTabActive</a></td><td class=docright>
+Sets whether or not the Tab key can move focus to the GUI if not gadgets have the focus.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTabbing>SetTabbing</a></td><td class=docright>
+Sets whether or not the Tab key can move focus from gadget to gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTextColor>SetTextColor</a></td><td class=docright>
+Sets the default Text Color for all gadgets created after set.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTipAlpha>SetTipAlpha</a></td><td class=docright>
+Sets the alpha value for drawing the tip.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTipBorderColor>SetTipBorderColor</a></td><td class=docright>
+Sets the color used for the border of the tip box.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTipColor>SetTipColor</a></td><td class=docright>
+Sets the Color used for the tip box.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTipFont>SetTipFont</a></td><td class=docright>
+Sets the Font used for the Tips.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTipTextColor>SetTipTextColor</a></td><td class=docright>
+Sets the color of the tip text.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetUseCustomFontSystem>SetUseCustomFontSystem</a></td><td class=docright>
+Sets whether or not the user is using a custom font system.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetUseEvents>SetUseEvents</a></td><td class=docright>
+Sets whether the gadgets are generating events or not.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetUseIncBin>SetUseIncBin</a></td><td class=docright>
+Sets whether or not we are loading files with incbin.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetZipInfo>SetZipInfo</a></td><td class=docright>
+Sets whether or not we are loading files from a zip file.  If you use a password and incbin, you must call SetUseIncBin before calling SetZipInfo.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#UnSetModal>UnSetModal</a></td><td class=docright>
+Unsets Modal gadget.
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=AddEvent>
+<tr><td class=doctop colspan=2>Function AddEvent(e:ifsoGUI_Event)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Adds an event to the GUI event queue.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=AddGadget>
+<tr><td class=doctop colspan=2>Function AddGadget(p:ifsoGUI_Base)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Adds a gadgets to the base GUI system.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Normally this would be a panel, window, or other panel type gadget like a file selecter.
+But it can be any gadget, like a label, button, etc.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=BringToFront>
+<tr><td class=doctop colspan=2>Function BringToFront(gadget:ifsoGUI_Base)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Brings the gadget on the base GUI system to the front.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=ChangeTabOrder>
+<tr><td class=doctop colspan=2>Function ChangeTabOrder(g:ifsoGUI_Base)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Changes a gadgets TabOrder.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CheckMouseOver>
+<tr><td class=doctop colspan=2>Function CheckMouseOver()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Find which gadget the mouse is over.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Starts at the topmost window and has each gadget check if the mouse is over any of its children.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=ClearEvents>
+<tr><td class=doctop colspan=2>Function ClearEvents()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Clears the event queue.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CompareTabOrder>
+<tr><td class=doctop colspan=2>Function CompareTabOrder:Int(meObject:Object, withObject:Object)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Compares two gadgets by TabOrder.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CreateFileHeader>
+<tr><td class=doctop colspan=2>Function CreateFileHeader()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Creates the header for file reading.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Draw>
+<tr><td class=doctop colspan=2>Function Draw()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the gadgets.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=DrawMouse>
+<tr><td class=doctop colspan=2>Function DrawMouse()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the mouse pointer.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=FileExists>
+<tr><td class=doctop colspan=2>Function FileExists:Int(strFile:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Check if the file exists.  Works of the file is incbin or not.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetActiveGadget>
+<tr><td class=doctop colspan=2>Function GetActiveGadget:ifsoGUI_Base()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the ActiveGadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetCanDrawPartialChars>
+<tr><td class=doctop colspan=2>Function GetCanDrawPartialChars:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the custom font system can draw partial characters.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetDefaultFont>
+<tr><td class=doctop colspan=2>Function GetDefaultFont:TImageFont()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the Default Font of the GUI.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetDrawMouse>
+<tr><td class=doctop colspan=2>Function GetDrawMouse:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether the GUI system is drawing the mouse or not.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetEvent>
+<tr><td class=doctop colspan=2>Function GetEvent:ifsoGUI_Event()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the next event from the queue and rmeoves it.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetGadget>
+<tr><td class=doctop colspan=2>Function GetGadget:ifsoGUI_Base(name:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gets a gadget by name.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTabActive>
+<tr><td class=doctop colspan=2>Function GetTabActive:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether the Tab key can move focus to the GUI when no gadgets have the focus.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTabbing>
+<tr><td class=doctop colspan=2>Function GetTabbing:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether Tabbing between gadgets is on or off.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTipAlpha>
+<tr><td class=doctop colspan=2>Function GetTipAlpha:Float()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the alpha value for drawing the tip.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetUseCustomFontSystem>
+<tr><td class=doctop colspan=2>Function GetUseCustomFontSystem:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the user is using a custom font system.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetUseEvents>
+<tr><td class=doctop colspan=2>Function GetUseEvents:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether the event system is in use or not.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetUseIncBin>
+<tr><td class=doctop colspan=2>Function GetUseIncBin:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not files are loaded with incbin.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LoadTheme>
+<tr><td class=doctop colspan=2>Function LoadTheme(path:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Loads a theme.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Logic>
+<tr><td class=doctop colspan=2>Function Logic:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Updates the logic of all of the gadgets. Returns True if any of the graphics have changed.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Either Refresh should be called, or "Logic" and "Render" should be called separately.
+This is so the user can have the Logic and Render separate in their program if desired.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=MoveActive>
+<tr><td class=doctop colspan=2>Function MoveActive(bForward:Int = True)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Moves the focus to the next gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=NextGadget>
+<tr><td class=doctop colspan=2>Function NextGadget:ifsoGUI_Base(StartGadget:ifsoGUI_Base, bCheckChildren:Int = True, bForward:Int = True)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the Next Top Level Gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=PositionMouse>
+<tr><td class=doctop colspan=2>Function PositionMouse(X:Int, Y:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Repositions the mouse cursor and emits a mouse move system event.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>This function exists because the MoveVirtualMouse function does not cause a MouseMove event to be emitted.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=ProcessKeyboard>
+<tr><td class=doctop colspan=2>Function ProcessKeyboard:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Processes keys and sends them to the active gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>This function also handles the tab key moving from gadget to gadget, and the mouse wheel.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=ProcessMouse>
+<tr><td class=doctop colspan=2>Function ProcessMouse:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gets the mouse position and processes mouse clicks.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Refresh>
+<tr><td class=doctop colspan=2>Function Refresh() 'Call "Refresh" or "Logic and Render"</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Refreshes the GUI.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Either Refresh should be called, or "Logic" and "Render" should be called separately.
+This is so the user can have the Logic and Render separate in their program if desired.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Register>
+<tr><td class=doctop colspan=2>Function Register(SystemEvent(id:Int, data:Int))</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Registers an event handler for GUI wide events.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveGadget>
+<tr><td class=doctop colspan=2>Function RemoveGadget(p:ifsoGUI_Base, bDestroy:Int = True)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes a gadget from the base GUI system.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveTabOrder>
+<tr><td class=doctop colspan=2>Function RemoveTabOrder(g:ifsoGUI_Base)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes a gadget from the TabOrder list.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Render>
+<tr><td class=doctop colspan=2>Function Render()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Renders the GUI.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Either Refresh should be called, or "Logic" and "Render" should be called separately.
+This is so the user can have the Logic and Render separate in their program if desired.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetActiveGadget>
+<tr><td class=doctop colspan=2>Function SetActiveGadget(gadget:ifsoGUI_Base)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Active gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Sends appropriate focus events.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetAllGadgetsColor>
+<tr><td class=doctop colspan=2>Function SetAllGadgetsColor(iRed:Int, iGreen:Int, iBlue:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the color for all gadgets.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetAllGadgetsTextColor>
+<tr><td class=doctop colspan=2>Function SetAllGadgetsTextColor(iRed:Int, iGreen:Int, iBlue:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the text color for all gadgets.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetCanDrawPartialChars>
+<tr><td class=doctop colspan=2>Function SetCanDrawPartialChars(bPartialChars:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the custom font system can draw partial characters.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetCustomDrawText>
+<tr><td class=doctop colspan=2>Function SetCustomDrawText(funcDrawText(strText:String, x:Float, y:Float, gadget:ifsoGUI_Base))</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Custom DrawText Function.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetCustomTextHeight>
+<tr><td class=doctop colspan=2>Function SetCustomTextHeight(funcTextHeight:Int(gadget:ifsoGUI_Base))</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Custom TextHeight Function.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetCustomTextWidth>
+<tr><td class=doctop colspan=2>Function SetCustomTextWidth(funcTextWidth:Int(strText:String, gadget:ifsoGUI_Base))</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Custom TextWidth Function.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetDefaultFont>
+<tr><td class=doctop colspan=2>Function SetDefaultFont(fntFont:TImageFont)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the default font.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetDrawMouse>
+<tr><td class=doctop colspan=2>Function SetDrawMouse(bValue:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whther or not the GUI system is reponsible for drawing the mouse.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetModal>
+<tr><td class=doctop colspan=2>Function SetModal(gadget:ifsoGUI_Base)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets a gadget Modal.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetResolution>
+<tr><td class=doctop colspan=2>Function SetResolution(Width:Int, Height:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Informs the GUI system of the resolution of the graphics window.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTabActive>
+<tr><td class=doctop colspan=2>Function SetTabActive(bActive:Int = True)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the Tab key can move focus to the GUI if not gadgets have the focus.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTabbing>
+<tr><td class=doctop colspan=2>Function SetTabbing(bTabbing:Int = True)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the Tab key can move focus from gadget to gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTextColor>
+<tr><td class=doctop colspan=2>Function SetTextColor(R:Int, G:Int, B:Int) 'Sets the color of the Tip Box</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the default Text Color for all gadgets created after set.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTipAlpha>
+<tr><td class=doctop colspan=2>Function SetTipAlpha(fAlpha:Float)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the alpha value for drawing the tip.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTipBorderColor>
+<tr><td class=doctop colspan=2>Function SetTipBorderColor(R:Int, G:Int, B:Int) 'Sets the color of the Tip Box Border</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the color used for the border of the tip box.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTipColor>
+<tr><td class=doctop colspan=2>Function SetTipColor(R:Int, G:Int, B:Int) 'Sets the color of the Tip Box</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Color used for the tip box.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTipFont>
+<tr><td class=doctop colspan=2>Function SetTipFont(Font:TImageFont)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Font used for the Tips.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTipTextColor>
+<tr><td class=doctop colspan=2>Function SetTipTextColor(R:Int, G:Int, B:Int) 'Sets the color of the Tip Box</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the color of the tip text.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetUseCustomFontSystem>
+<tr><td class=doctop colspan=2>Function SetUseCustomFontSystem(bCustomFont:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the user is using a custom font system.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetUseEvents>
+<tr><td class=doctop colspan=2>Function SetUseEvents(bEvents:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether the gadgets are generating events or not.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>One reason to turn this off is if you are using the gadget callbacks.
+But you may use both callbacks and the event system.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetUseIncBin>
+<tr><td class=doctop colspan=2>Function SetUseIncBin(bIncBin:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not we are loading files with incbin.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetZipInfo>
+<tr><td class=doctop colspan=2>Function SetZipInfo(strFileName:String, strPassword:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not we are loading files from a zip file.  If you use a password and incbin, you must call SetUseIncBin before calling SetZipInfo.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=UnSetModal>
+<tr><td class=doctop colspan=2>Function UnSetModal()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Unsets Modal gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=ifsoGUI_Base>
+<tr><td class=doctop colspan=2>Type ifsoGUI_Base Abstract</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_Base_methods></a>Methods Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#AddChild>AddChild</a></td><td class=docright>
+Adds a child gadget to the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#AddTabOrder>AddTabOrder</a></td><td class=docright>
+Adds itself and its children to the GUI TabOrder List.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#BringToFront>BringToFront</a></td><td class=docright>
+Brings the gadget to the front of its parents child list.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CanActive>CanActive</a></td><td class=docright>
+Can this gadget be active.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ChildMoved>ChildMoved</a></td><td class=docright>
+Called when a child gadget is moved.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ClearProperties>ClearProperties</a></td><td class=docright>
+Clears the custom properties.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Destroy>Destroy</a></td><td class=docright>
+Removes all references to children and slaves so that the gadget and its children/slaves are collected by the garbage collector.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Draw>Draw</a></td><td class=docright>
+Draws the gadget and its children.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#DrawChildren>DrawChildren</a></td><td class=docright>
+Draws the gadgets children.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#DrawFocus>DrawFocus</a></td><td class=docright>
+Draws the focus box around the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#DrawTip>DrawTip</a></td><td class=docright>
+Draws the gadgets tip.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GadgetSystemEvent>GadgetSystemEvent</a></td><td class=docright>
+Gadget Level GUI system event occured.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GainFocus>GainFocus</a></td><td class=docright>
+Called when the gadget becomes the active gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetAbsoluteXY>GetAbsoluteXY</a></td><td class=docright>
+Retrieves the gadgets Aobsolute x and y position.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetAlwaysOnTop>GetAlwaysOnTop</a></td><td class=docright>
+Returns whether or not the gadget is always on top.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetAutoSize>GetAutoSize</a></td><td class=docright>
+Returns whether or not to the gadget will autosize or be manually controlled by the user.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetChild>GetChild</a></td><td class=docright>
+Returns the gadget with the name from the child list.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetEnabled>GetEnabled</a></td><td class=docright>
+Returns whether the gadget is enabled.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetFont>GetFont</a></td><td class=docright>
+Returns the font the gadget is using.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetGadgetAlpha>GetGadgetAlpha</a></td><td class=docright>
+Returns the gadgets alpha value.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetH>GetH</a></td><td class=docright>
+Returns the gadgets height.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetProperty>GetProperty</a></td><td class=docright>
+Returns a custom property.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetShowFocus>GetShowFocus</a></td><td class=docright>
+Returns whether or not the gadget will show the focus box.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTabOrder>GetTabOrder</a></td><td class=docright>
+Returns the gadgets TabOrder.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTip>GetTip</a></td><td class=docright>
+Returns the gadgets tip text.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTipDelay>GetTipDelay</a></td><td class=docright>
+Get the gadget tip delay.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTransparent>GetTransparent</a></td><td class=docright>
+Returns whether the gadget is transparent.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetVisible>GetVisible</a></td><td class=docright>
+Returns whether the gadget is visible.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetW>GetW</a></td><td class=docright>
+Returns the gadgets width.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetWH>GetWH</a></td><td class=docright>
+Retrieves the gadgets width and height.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetXY>GetXY</a></td><td class=docright>
+Retreives the gadgets x and y positions.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseDown>gMouseDown</a></td><td class=docright>
+Called when the mouse button is pressed on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseUp>gMouseUp</a></td><td class=docright>
+Called when the mouse button is released on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#IsMouseOver>IsMouseOver</a></td><td class=docright>
+Returns whether or not the mouse is over the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#IsMyChild>IsMyChild</a></td><td class=docright>
+Is the gadget a child or slave of this gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#IsMySlave>IsMySlave</a></td><td class=docright>
+Is the gadget a slave of this gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#KeyPress>KeyPress</a></td><td class=docright>
+Called when a key is pressed on the active gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LoadSkin>LoadSkin</a></td><td class=docright>
+Loads a skin for one instance of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LostFocus>LostFocus</a></td><td class=docright>
+Called when the gadget is no longer the Active Gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MouseOut>MouseOut</a></td><td class=docright>
+Called when the mouse leaves the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MouseOver>MouseOver</a></td><td class=docright>
+Called when the mouse is over this gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MouseStatus>MouseStatus</a></td><td class=docright>
+Called to determine the mouse status from the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#NextGadget>NextGadget</a></td><td class=docright>
+Returns the next gadget after start in the child list.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Refresh>Refresh</a></td><td class=docright>
+Refreshes the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveChild>RemoveChild</a></td><td class=docright>
+Removes a child gadget from the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveTabOrder>RemoveTabOrder</a></td><td class=docright>
+Removes itself and its children from the GUI TabOrder List.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SendEvent>SendEvent</a></td><td class=docright>
+Sends and event from the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SendToBack>SendToBack</a></td><td class=docright>
+Send sthe gadget to the back of its parent child list.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetAlwaysOnTop>SetAlwaysOnTop</a></td><td class=docright>
+Sets the gadget to always be on top of other gadgets.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetAutoSize>SetAutoSize</a></td><td class=docright>
+Sets whether or not to the gadget will autosize or be manually controlled by the user.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetBounds>SetBounds</a></td><td class=docright>
+Sets the x, y, width, and height all in one call.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetCallBack>SetCallBack</a></td><td class=docright>
+Sets the event callback function for the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetEnabled>SetEnabled</a></td><td class=docright>
+Sets the gadget enabled/disabled.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetFocus>SetFocus</a></td><td class=docright>
+Gives the gadget the focus.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetFocusColor>SetFocusColor</a></td><td class=docright>
+Sets the gadgets focus box color.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetFont>SetFont</a></td><td class=docright>
+Sets the font of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetGadgetAlpha>SetGadgetAlpha</a></td><td class=docright>
+Sets the gadgets alpha value.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetGadgetColor>SetGadgetColor</a></td><td class=docright>
+Sets the gadget color of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetProperty>SetProperty</a></td><td class=docright>
+Set a custom property.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetShowFocus>SetShowFocus</a></td><td class=docright>
+Sets whether or not to show the focus box for this gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTabOrder>SetTabOrder</a></td><td class=docright>
+Sets the gadgets TabOrder. 0=Do not tab to this gadget -1=Last in the Tab Order.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTextColor>SetTextColor</a></td><td class=docright>
+Sets the tesxt color of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTip>SetTip</a></td><td class=docright>
+Sets the gadget tip text.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTipDelay>SetTipDelay</a></td><td class=docright>
+Set the gadget tip delay.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTransparent>SetTransparent</a></td><td class=docright>
+Sets whether the gadget is transparent.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetVisible>SetVisible</a></td><td class=docright>
+Sets whether the gadget is visible.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetWH>SetWH</a></td><td class=docright>
+Sets the gadgets width and height.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetXY>SetXY</a></td><td class=docright>
+Sets the gadgets x and y position.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SlaveEvent>SlaveEvent</a></td><td class=docright>
+Called from a slave gadget.
+</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_Base_functions></a>Functions Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#DrawBox>DrawBox</a></td><td class=docright>
+Draws the graphics of a standard gadget box.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetDimensions>GetDimensions</a></td><td class=docright>
+Gets the dimensions from the dimension file for the gadgets graphics.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Load9Image>Load9Image</a></td><td class=docright>
+Loads the graphics for an image in 9 standard parts.
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=AddChild>
+<tr><td class=doctop colspan=2>Method AddChild(gadget:ifsoGUI_Base) ;End Method  'Add a child to the gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Adds a child gadget to the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=AddTabOrder>
+<tr><td class=doctop colspan=2>Method AddTabOrder()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Adds itself and its children to the GUI TabOrder List.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=BringToFront>
+<tr><td class=doctop colspan=2>Method BringToFront()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Brings the gadget to the front of its parents child list.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CanActive>
+<tr><td class=doctop colspan=2>Method CanActive:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Can this gadget be active.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=ChildMoved>
+<tr><td class=doctop colspan=2>Method ChildMoved(gadget:ifsoGUI_Base) ; End Method 'Let the parent know a child moved or changed size</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when a child gadget is moved.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=ClearProperties>
+<tr><td class=doctop colspan=2>Method ClearProperties()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Clears the custom properties.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Destroy>
+<tr><td class=doctop colspan=2>Method Destroy()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes all references to children and slaves so that the gadget and its children/slaves are collected by the garbage collector.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Draw>
+<tr><td class=doctop colspan=2>Method Draw(parX:Int, parY:Int, parW:Int, parH:Int) ; End Method 'Draws the gadget; pass the parents x and y.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the gadget and its children.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=DrawChildren>
+<tr><td class=doctop colspan=2>Method DrawChildren(parX:Int, parY:Int, parW:Int, parH:Int) 'Draw the children</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the gadgets children.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Normally called from the Draw Method.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=DrawFocus>
+<tr><td class=doctop colspan=2>Method DrawFocus(iX:Int, iY:Int, iW:Int, iH:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the focus box around the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=DrawTip>
+<tr><td class=doctop colspan=2>Method DrawTip(iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the gadgets tip.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GadgetSystemEvent>
+<tr><td class=doctop colspan=2>Method GadgetSystemEvent(id:Int, data:Int) 'Systemwide event all gadgets must know about</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gadget Level GUI system event occured.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Informs all slaves and children, then refreshes self.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GainFocus>
+<tr><td class=doctop colspan=2>Method GainFocus(LostFocus:ifsoGUI_Base)  'Gadget Got focus</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the gadget becomes the active gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetAbsoluteXY>
+<tr><td class=doctop colspan=2>Method GetAbsoluteXY(iX:Int Var, iY:Int Var, caller:ifsoGUI_Base = Null)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Retrieves the gadgets Aobsolute x and y position.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>This returns true x and y values from the top left corner of the screen.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetAlwaysOnTop>
+<tr><td class=doctop colspan=2>Method GetAlwaysOnTop:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the gadget is always on top.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetAutoSize>
+<tr><td class=doctop colspan=2>Method GetAutoSize:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not to the gadget will autosize or be manually controlled by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetChild>
+<tr><td class=doctop colspan=2>Method GetChild:ifsoGUI_Base(name:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the gadget with the name from the child list.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetEnabled>
+<tr><td class=doctop colspan=2>Method GetEnabled:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether the gadget is enabled.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetFont>
+<tr><td class=doctop colspan=2>Method GetFont:TImageFont()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the font the gadget is using.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetGadgetAlpha>
+<tr><td class=doctop colspan=2>Method GetGadgetAlpha:Float()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the gadgets alpha value.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetH>
+<tr><td class=doctop colspan=2>Method GetH:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the gadgets height.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetProperty>
+<tr><td class=doctop colspan=2>Method GetProperty:Object(key:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns a custom property.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetShowFocus>
+<tr><td class=doctop colspan=2>Method GetShowFocus:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the gadget will show the focus box.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTabOrder>
+<tr><td class=doctop colspan=2>Method GetTabOrder:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the gadgets TabOrder.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTip>
+<tr><td class=doctop colspan=2>Method GetTip:String()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the gadgets tip text.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTipDelay>
+<tr><td class=doctop colspan=2>Method GetTipDelay:Int() 'Get the Tip Delay</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Get the gadget tip delay.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTransparent>
+<tr><td class=doctop colspan=2>Method GetTransparent:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether the gadget is transparent.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetVisible>
+<tr><td class=doctop colspan=2>Method GetVisible:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether the gadget is visible.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetW>
+<tr><td class=doctop colspan=2>Method GetW:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the gadgets width.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetWH>
+<tr><td class=doctop colspan=2>Method GetWH(width:Int Var, height:Int Var)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Retrieves the gadgets width and height.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetXY>
+<tr><td class=doctop colspan=2>Method GetXY(iX:Int Var, iY:Int Var)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Retreives the gadgets x and y positions.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseDown>
+<tr><td class=doctop colspan=2>Method gMouseDown(iButton:Int, iMouseX:Int, iMouseY:Int) ; End Method 'Called when the mouse is pressed over the gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is pressed on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseUp>
+<tr><td class=doctop colspan=2>Method gMouseUp(iButton:Int, iMouseX:Int, iMouseY:Int) ;End Method 'Called when the mouse is released over the gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is released on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=IsMouseOver>
+<tr><td class=doctop colspan=2>Method IsMouseOver:Int(parX:Int, parY:Int, parW:Int, parH:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the mouse is over the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=IsMyChild>
+<tr><td class=doctop colspan=2>Method IsMyChild:Int(gadget:ifsoGUI_Base)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Is the gadget a child or slave of this gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=IsMySlave>
+<tr><td class=doctop colspan=2>Method IsMySlave:Int(gadget:ifsoGUI_Base)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Is the gadget a slave of this gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=KeyPress>
+<tr><td class=doctop colspan=2>Method KeyPress(key:Int) ;End Method</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when a key is pressed on the active gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LoadSkin>
+<tr><td class=doctop colspan=2>Method LoadSkin(strSkin:String) ; End Method</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Loads a skin for one instance of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LostFocus>
+<tr><td class=doctop colspan=2>Method LostFocus(GainedFocus:ifsoGUI_Base) 'Gadget Lost focus</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the gadget is no longer the Active Gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=MouseOut>
+<tr><td class=doctop colspan=2>Method MouseOut(iMouseX:Int, iMouseY:Int, gOverGadget:ifsoGUI_Base) 'Called when mouse no longer over gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse leaves the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=MouseOver>
+<tr><td class=doctop colspan=2>Method MouseOver(iMouseX:Int, iMouseY:Int, gWasOverGadget:ifsoGUI_Base) 'Called when mouse is over the gadget, only topmost gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse is over this gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=MouseStatus>
+<tr><td class=doctop colspan=2>Method MouseStatus:Int(iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called to determine the mouse status from the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Called to the active gadget if button is pressed, otherwise called to MouseOver gadget.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=NextGadget>
+<tr><td class=doctop colspan=2>Method NextGadget:ifsoGUI_Base(start:ifsoGUI_Base, bForward:Int = True)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the next gadget after start in the child list.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Refresh>
+<tr><td class=doctop colspan=2>Method Refresh() ; End Method</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Refreshes the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Recalculates any geometry/font changes, etc.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveChild>
+<tr><td class=doctop colspan=2>Method RemoveChild(gadget:ifsoGUI_Base, bDestroy:Int = True) ; End Method 'Removes a child from the gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes a child gadget from the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveTabOrder>
+<tr><td class=doctop colspan=2>Method RemoveTabOrder()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes itself and its children from the GUI TabOrder List.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SendEvent>
+<tr><td class=doctop colspan=2>Method SendEvent(id:Int, data:Int, iMouseX:Int, iMouseY:Int) 'Sends Gadget events. callback if defined or creates an event.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sends and event from the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SendToBack>
+<tr><td class=doctop colspan=2>Method SendToBack()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Send sthe gadget to the back of its parent child list.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetAlwaysOnTop>
+<tr><td class=doctop colspan=2>Method SetAlwaysOnTop(iOnTop:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadget to always be on top of other gadgets.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetAutoSize>
+<tr><td class=doctop colspan=2>Method SetAutoSize(intAutoSize:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not to the gadget will autosize or be manually controlled by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetBounds>
+<tr><td class=doctop colspan=2>Method SetBounds(iX:Int, iY:Int, iW:Int, iH:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the x, y, width, and height all in one call.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetCallBack>
+<tr><td class=doctop colspan=2>Method SetCallBack(func(gadget:ifsoGUI_Base, id:Int, data:Int, iMouseX:Int, iMouseY:Int))</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the event callback function for the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetEnabled>
+<tr><td class=doctop colspan=2>Method SetEnabled(bEnabled:Int = True) 'Sets the gadget enabled or not.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadget enabled/disabled.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetFocus>
+<tr><td class=doctop colspan=2>Method SetFocus()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gives the gadget the focus.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>This sets this gadget as the Active Gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetFocusColor>
+<tr><td class=doctop colspan=2>Method SetFocusColor(iRed:Int, iGreen:Int, iBlue:Int) 'Set color of gadgets focus box</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadgets focus box color.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetFont>
+<tr><td class=doctop colspan=2>Method SetFont(Font:TImageFont) 'Set the font of the gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the font of the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Set to Null to use the default GUI font.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetGadgetAlpha>
+<tr><td class=doctop colspan=2>Method SetGadgetAlpha(fltAlpha:Float)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadgets alpha value.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetGadgetColor>
+<tr><td class=doctop colspan=2>Method SetGadgetColor(iRed:Int, iGreen:Int, iBlue:Int) 'Set color of the gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadget color of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetProperty>
+<tr><td class=doctop colspan=2>Method SetProperty(key:String, value:Object)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Set a custom property.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetShowFocus>
+<tr><td class=doctop colspan=2>Method SetShowFocus(intShowFocus:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not to show the focus box for this gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTabOrder>
+<tr><td class=doctop colspan=2>Method SetTabOrder(iTabOrder:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadgets TabOrder. 0=Do not tab to this gadget -1=Last in the Tab Order.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTextColor>
+<tr><td class=doctop colspan=2>Method SetTextColor(iRed:Int, iGreen:Int, iBlue:Int) 'Set color of gadgets text</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the tesxt color of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTip>
+<tr><td class=doctop colspan=2>Method SetTip(strTip:String) 'Sets the Tip Text</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadget tip text.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTipDelay>
+<tr><td class=doctop colspan=2>Method SetTipDelay(iTime:Int) 'Set the Tip Delay</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Set the gadget tip delay.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTransparent>
+<tr><td class=doctop colspan=2>Method SetTransparent(bTransparent:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether the gadget is transparent.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetVisible>
+<tr><td class=doctop colspan=2>Method SetVisible(bVisible:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether the gadget is visible.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetWH>
+<tr><td class=doctop colspan=2>Method SetWH(width:Int, height:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadgets width and height.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetXY>
+<tr><td class=doctop colspan=2>Method SetXY(iX:Int, iY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadgets x and y position.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SlaveEvent>
+<tr><td class=doctop colspan=2>Method SlaveEvent(gadget:ifsoGUI_Base, id:Int, data:Int, iMouseX:Int, iMouseY:Int) ; End Method 'Event generated by a slave gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called from a slave gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Slave gadgets do not generate GUI events.  They send events to their Master.
+The Master then uses it or can send a GUI event.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=DrawBox>
+<tr><td class=doctop colspan=2>Function DrawBox(images:TImage[], rX:Int, rY:Int, rW:Int, rH:Int, bDrawBorder:Int = True, bTileSides:Int = False, bTileCenter:Int = False)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the graphics of a standard gadget box.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetDimensions>
+<tr><td class=doctop colspan=2>Function GetDimensions:String(strName:String, strSkin:String = "")</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gets the dimensions from the dimension file for the gadgets graphics.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Load9Image>
+<tr><td class=doctop colspan=2>Function Load9Image(srcpath:String, dimensions:String[], gImage:TImage[] Var, strSkin:String = "")</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Loads the graphics for an image in 9 standard parts.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=ifsoGUI_Event>
+<tr><td class=doctop colspan=2>Type ifsoGUI_Event</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Event Type.</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_Event_functions></a>Functions Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#EventString>EventString</a></td><td class=docright>
+Returns the string associated with an event id.
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=EventString>
+<tr><td class=doctop colspan=2>Function EventString:String(id:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the string associated with an event id.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=ifsoGUI_Settings>
+<tr><td class=doctop colspan=2>Type ifsoGUI_Settings</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_Settings_functions></a>Functions Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#InitSettings>InitSettings</a></td><td class=docright>
+Inits the settings to what ifsoGUI needs.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#PopSettings>PopSettings</a></td><td class=docright>
+Recalls the graphics settings.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#PushSettings>PushSettings</a></td><td class=docright>
+Saves all of the graphics settings so they can be recalled.
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=InitSettings>
+<tr><td class=doctop colspan=2>Function InitSettings()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Inits the settings to what ifsoGUI needs.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=PopSettings>
+<tr><td class=doctop colspan=2>Function PopSettings()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Recalls the graphics settings.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=PushSettings>
+<tr><td class=doctop colspan=2>Function PushSettings()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Saves all of the graphics settings so they can be recalled.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=ifsoGUI_VP>
+<tr><td class=doctop colspan=2>Type ifsoGUI_VP</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>ViewPort system to create more and more restrictive viewports as gadgets are recursivley accessed.<br></td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_VP_functions></a>Functions Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#Add>Add</a></td><td class=docright>
+Pushes a viewport onto the queue in add mode.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#DrawImageArea>DrawImageArea</a></td><td class=docright>
+Draws an image restricted to the area of the viewport.<br>
+</td></tr>
+<tr><td class=docleft width=1%><a href=#DrawImageAreaRect>DrawImageAreaRect</a></td><td class=docright>
+Draws an image stretched and restricted to the area of the viewport.<br>
+</td></tr>
+<tr><td class=docleft width=1%><a href=#DrawLine>DrawLine</a></td><td class=docright>
+Draws a line restricted to the area of the viewport. Line should be horizontal or vertical.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#DrawRect>DrawRect</a></td><td class=docright>
+Draws a rectangle restricted to the area of the view port.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#DrawTextArea>DrawTextArea</a></td><td class=docright>
+Draws text restricted to the area of the viewport.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTextHeight>GetTextHeight</a></td><td class=docright>
+Returns the height of the text.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTextWidth>GetTextWidth</a></td><td class=docright>
+Returns the width of the text.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Pop>Pop</a></td><td class=docright>
+Pops a viewport off of the queue.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Push>Push</a></td><td class=docright>
+Pushes a viewport onto the queue.
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Add>
+<tr><td class=doctop colspan=2>Function Add(iX:Int, iY:Int, iW:Int, iH:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Pushes a viewport onto the queue in add mode.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>The viewport being pushed onto the queue cannot be less restrictive than the current viewport.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=DrawImageArea>
+<tr><td class=doctop colspan=2>Function DrawImageArea(image:TImage, x:Float, y:Float)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws an image restricted to the area of the viewport.<br></td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=DrawImageAreaRect>
+<tr><td class=doctop colspan=2>Function DrawImageAreaRect(image:TImage, x:Float, y:Float, w:Float, h:Float)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws an image stretched and restricted to the area of the viewport.<br></td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=DrawLine>
+<tr><td class=doctop colspan=2>Function DrawLine(x:Float, y:Float, x2:Float, y2:Float, LastPixel:Int = True)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws a line restricted to the area of the viewport. Line should be horizontal or vertical.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=DrawRect>
+<tr><td class=doctop colspan=2>Function DrawRect(x:Float, y:Float, width:Float, height:Float)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws a rectangle restricted to the area of the view port.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=DrawTextArea>
+<tr><td class=doctop colspan=2>Function DrawTextArea(Text:String, x:Float, y:Float, gadget:ifsoGUI_Base = Null)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws text restricted to the area of the viewport.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTextHeight>
+<tr><td class=doctop colspan=2>Function GetTextHeight:Int(gadget:ifsoGUI_Base = Null)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the height of the text.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTextWidth>
+<tr><td class=doctop colspan=2>Function GetTextWidth:Int(strText:String, gadget:ifsoGUI_Base = Null)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the width of the text.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Pop>
+<tr><td class=doctop colspan=2>Function Pop()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Pops a viewport off of the queue.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Push>
+<tr><td class=doctop colspan=2>Function Push()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Pushes a viewport onto the queue.</td></tr>
+</table>
+<br>
+<h2 id=modinfo>Module Information</h2>
+<table width=100%>
+<tr><th width=1%>Version</th><td>1.00</td></tr>
+<tr><th width=1%>Author</th><td>Marcus Trisdale</td></tr>
+<tr><th width=1%>Copyright</th><td>(c) 2009 Marcus Trisdale</td></tr>
+</body></html>
