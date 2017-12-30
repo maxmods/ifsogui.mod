@@ -22,14 +22,14 @@ Import ifsogui.tabber
 Import ifsogui.mltextbox
 Import ifsogui.fileselect
 
-?win32
+?win32 ' not 64-bit compatible?
 Extern "Win32"
-	Function SetClipboardData:Int(uFormat:Int, hMem:Byte Ptr)
-	Function EmptyClipboard:Int()
-	Function OpenClipboard(hWnd:Int)
-	Function CloseClipboard:Int()
-	Function GlobalAlloc:Byte Ptr(Flags:Int, Bytes:Int)
-	Function GlobalFree(Mem:Byte Ptr)
+	'Function SetClipboardData:Int(uFormat:Int, hMem:Byte Ptr)
+	'Function EmptyClipboard:Int()
+	'Function OpenClipboard(hWnd:Int)
+	'Function CloseClipboard:Int()
+	'Function GlobalAlloc:Byte Ptr(Flags:Int, Bytes:Int)
+	'Function GlobalFree(Mem:Byte Ptr)
 End Extern
 ?
 
@@ -51,7 +51,7 @@ Incbin "icons/preview.png"
 Const AppW:Int = 800, AppH:Int = 600
 Global AppProps:TAppProps = New TAppProps
 Global ActiveProps:TProps = AppProps
-Global cbGadgets:ifsogui_Combobox
+Global cbGadgets:ifsoGUI_Combobox
 Global SelectColor:Int[] = [255, 0, 0]
 Global SelectedProps:TList = New TList
 Global bShowPreview:Int
@@ -152,6 +152,7 @@ End Function
 
 Function CopyToClipBoard()
 ?win32
+Rem
 	Const CF_TEXT:Int = 1
 	Local s:String = ClientArea.mtbCode.GetSelection()
  If s <> ""
@@ -167,6 +168,7 @@ Function CopyToClipBoard()
   EndIf
   If CPTR Then GlobalFree (CPTR)
  EndIf
+EndRem
 ?
 End Function
 
