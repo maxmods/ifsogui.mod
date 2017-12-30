@@ -1,4 +1,11 @@
-ifsoGUI v1.17
+ifsoGUI v1.18
+
+**changes since 1.17**
+--by markcwm--
+Forked BaH Maxmods v1.17
+Fixed fileselect ReadDir Int to Byte Ptr
+Fixed gui internal zipstream to import 64-bit external koriolis
+Added working gui editor source, examples and media
 
 **changes since 1.16**
 
