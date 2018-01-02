@@ -237,11 +237,13 @@ Function ReadGadgets(filename:String)
 				TPropGadget(g).AddChild(p.PropGadget)
 				TPropGadget(g).Gadget.AddChild(p.PropGadget.Gadget)
 			ElseIf ifsoGUI_Tabber(TPropGadget(g).Gadget)
-				TPropGadget(g).AddChild(p.PropGadget)
-				ifsoGUI_Tabber(TPropGadget(g).Gadget).AddTabChild(p.PropGadget.Gadget, ifsoGUI_Tabber(TPropGadget(g).Gadget).GetCurrentTab())
+				TPropGadget(g).AddChild(p.PropGadget)				
+				ifsoGUI_Tabber(TPropGadget(g).Gadget).AddTabChild(p.PropGadget.Gadget, p.PropGadget.tab_order) 'v1.18
+				'ifsoGUI_Tabber(TPropGadget(g).Gadget).AddTabChild(p.PropGadget.Gadget, ifsoGUI_Tabber(TPropGadget(g).Gadget).GetCurrentTab())
 			End If
+			
 		End If
-	WEnd
+	Wend
 	file.Close()
 	cbGadgets.SortList()
 	cbGadgets.InsertItem(0, "Application/Game", 0, "Appplication/Game Settings", True)
