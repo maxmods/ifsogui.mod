@@ -103,7 +103,50 @@ Function CheckEvents()
 			fs.Show()
 		ElseIf e.gadget.Name = "fsSaveCode" And e.id = ifsoGUI_EVENT_CLICK And e.data = ifsoGUI_FILESELECT_SELECTED
 			ClientArea.wndCode.SetVisible(False)
-			Local tmp:String = ClientArea.mtbCode.GetValue()
+			Local tmp:String = ""
+			Local nl$="~r~n" 'v1.18
+			tmp:+ "' " + StripDir(ifsoGUI_FileSelect(e.gadget).GetSelection()) + nl + nl
+			tmp:+ "SuperStrict" + nl + nl
+			tmp:+ "' Import" + nl
+			tmp:+ "Framework brl.glmax2d" + nl
+			tmp:+ "Import brl.freetypefont" + nl
+			tmp:+ "Import brl.pngloader" + nl + nl
+			tmp:+ "Import ifsogui.GUI" + nl
+			tmp:+ "Import ifsogui.panel" + nl
+			tmp:+ "Import ifsogui.window" + nl
+			tmp:+ "Import ifsogui.label" + nl
+			tmp:+ "Import ifsogui.listbox" + nl
+			tmp:+ "Import ifsogui.mclistbox" + nl
+			tmp:+ "Import ifsogui.checkbox" + nl
+			tmp:+ "Import ifsogui.button" + nl
+			tmp:+ "Import ifsogui.textbox" + nl
+			tmp:+ "Import ifsogui.progressbar" + nl
+			tmp:+ "Import ifsogui.slider" + nl
+			tmp:+ "Import ifsogui.combobox" + nl
+			tmp:+ "Import ifsogui.spinner" + nl
+			tmp:+ "Import ifsogui.imagebutton" + nl
+			tmp:+ "Import ifsogui.tabber" + nl
+			tmp:+ "Import ifsogui.mltextbox" + nl
+			tmp:+ "Import ifsogui.fileselect" + nl + nl
+			tmp:+ "Include ~q../editor/incbinSkin.bmx~q" + nl + nl
+			tmp:+ "' Init" + nl
+			tmp:+ "SetGraphicsDriver GLMax2DDriver()" + nl
+			tmp:+ "Graphics("+AppProps.tbX.GetText()+", "+AppProps.tbY.GetText()+")" + nl
+			tmp:+ "GUI.SetResolution("+AppProps.tbX.GetText()+", "+AppProps.tbY.GetText()+")" + nl
+			tmp:+ "GUI.SetUseIncBin(True)" + nl
+			tmp:+ "GUI.LoadTheme(~qSkin2~q)" + nl
+			tmp:+ "GUI.SetDefaultFont(LoadImageFont(~qincbin::Skin2/fonts/arial.ttf~q, 12))" + nl
+			tmp:+ "GUI.SetDrawMouse(True)" + nl + nl
+			tmp:+ "'Init GUI"
+			tmp:+ ClientArea.mtbCode.GetValue() + nl
+			tmp:+ "' Main" + nl
+			tmp:+ "SetClsColor(200, 200, 200)" + nl
+			tmp:+ "While Not AppTerminate()" + nl
+			tmp:+ "	Cls" + nl
+			tmp:+ "	GUI.Refresh()" + nl
+			tmp:+ "	Flip 0" + nl
+			tmp:+ "Wend" + nl
+			tmp:+ "End" + nl
 			Local file:TStream = WriteFile(ifsoGUI_FileSelect(e.gadget).GetSelection())
 			WriteString(file, tmp)
 			file.Close()

@@ -1,7 +1,16 @@
+' button, textbox, progressbar, slider, combobox, label, spinner - also panel, label, checkbox, listbox
+
 SuperStrict
 
 Framework brl.glmax2d
-Import brl.FreeTypeFont
+Import brl.freetypefont
+Import brl.audio
+?win32
+Import brl.directsoundaudio
+?Not win32
+Import brl.freeaudioaudio
+?
+Import brl.wavloader
 
 Import ifsogui.GUI
 Import ifsogui.panel
@@ -15,15 +24,8 @@ Import ifsogui.progressbar
 Import ifsogui.slider
 Import ifsogui.combobox
 Import ifsogui.spinner
-Import brl.audio
-?win32
-Import brl.directsoundaudio
-?Not win32
-Import brl.freeaudioaudio
-?
-Import brl.wavloader
 
-'Incbin "Skins.zip" ' Bug: incbin'd zip files crash randomly
+'Incbin "Skins.zip" ' Bug: zip files crashing randomly at init
 Include "../editor/incbinSkin.bmx"
 
 SetGraphicsDriver GLMax2DDriver()

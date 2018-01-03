@@ -1,8 +1,10 @@
+' tabber, button - also panel, label, checkbox, listbox, button
+
 SuperStrict
 
 Framework brl.glmax2d
-Import brl.FreeTypeFont
-Import brl.PNGLoader
+Import brl.freetypefont
+Import brl.pngloader
 
 Import ifsogui.GUI
 Import ifsogui.panel
@@ -13,7 +15,6 @@ Import ifsogui.checkbox
 Import ifsogui.button
 Import ifsogui.tabber
 
-'Incbin "Skins.zip"
 'Include "incbinSkin.bmx"
 
 SetGraphicsDriver GLMax2DDriver()

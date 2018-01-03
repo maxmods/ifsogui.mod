@@ -1,10 +1,11 @@
+' button, textbox, image button - also panel, label
+
 SuperStrict
 
 Framework brl.glmax2d
-Import brl.FreeTypeFont
-Import brl.PNGLoader
+Import brl.freetypefont
+Import brl.pngloader
 
-'Import ifsoguidemo.GUI
 Import ifsogui.GUI
 Import ifsogui.panel
 Import ifsogui.window
@@ -17,6 +18,7 @@ Import ifsogui.progressbar
 Import ifsogui.slider
 Import ifsogui.combobox
 Import ifsogui.spinner
+Import ifsogui.imagebutton
 
 Include "../editor/incbinSkin.bmx"
 
@@ -29,21 +31,26 @@ GUI.SetDefaultFont(LoadImageFont("../editor/Skin2/fonts/arial.ttf", 12))
 GUI.SetDrawMouse(True)
 
 'Status Window
-Local window:ifsoGUI_Window = ifsoGUI_Window.Create(650, 480, 140, 110, "StatusPanel")
-window.SetDragable(True)
-window.SetCaption("Status Window")
-GUI.AddGadget(window)
-window.AddChild(ifsoGUI_Label.Create(5, 5, 100, 20, "FPSLabel"))
+Local panel:ifsoGUI_Panel = ifsoGUI_Panel.Create(650, 480, 140, 110, "StatusPanel")
+panel.SetDragable(True)
+GUI.AddGadget(panel)
+panel.AddChild(ifsoGUI_Label.Create(5, 5, 100, 20, "FPSLabel"))
 
 'Control Window
-window = ifsoGUI_Window.Create(10, 10, 400, 400, "win")
+Local window:ifsoGUI_Window = ifsoGUI_Window.Create(10, 10, 400, 400, "win")
 window.SetDragable(True)
 window.SetDragTop(True)
 window.SetResizable(True)
 window.SetCaption("Sample Controls Window")
-window.AddChild(ifsoGUI_Button.Create(5, 5, 50, 25, "button", "Button"))
-window.AddChild(ifsoGUI_TextBox.Create(5, 35, 200, 25, "textbox", "Sample textbox"))
 GUI.AddGadget(window)
+Local button:ifsoGUI_Button = ifsoGUI_Button.Create(5, 5, 50, 25, "button", "Button")
+window.AddChild(button)
+Local textbox:ifsoGUI_TextBox = ifsoGUI_TextBox.Create(5, 35, 200, 25, "textbox", "Sample textbox")
+window.AddChild(textbox)
+Local imageButton:ifsoGUI_ImageButton = ifsoGUI_ImageButton.Create(24, 64, 32, 32, "imageButton", "Image Button")
+Local imgpath$ = "../editor/icons/"
+imageButton.SetImages(LoadImage(imgpath+"load.png"), LoadImage(imgpath+"moveback.png"), LoadImage(imgpath+"moveforward.png"))
+window.AddChild(imageButton)
 
 Local iFPSCounter:Int, iFPSTime:Int, iFPS:Int 'For the FPS Counter
 

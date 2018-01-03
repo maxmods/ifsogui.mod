@@ -1,8 +1,10 @@
+' progressbar, slider - also panel, label, checkbox, listbox, button
+
 SuperStrict
 
 Framework brl.glmax2d
-Import brl.FreeTypeFont
-Import brl.PNGLoader
+Import brl.freetypefont
+Import brl.pngloader
 
 Import ifsogui.GUI
 Import ifsogui.panel
@@ -14,7 +16,6 @@ Import ifsogui.button
 Import ifsogui.progressbar
 Import ifsogui.slider
 
-'Incbin "Skins.zip"
 Include "../editor/incbinSkin.bmx"
 
 SetGraphicsDriver GLMax2DDriver()

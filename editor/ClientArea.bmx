@@ -12,7 +12,7 @@ Type ClientArea
 	Function Init()
 		Local header$="incbin::"
 		
-		wndCode = ifsoGUI_Window.Create(10, 10, 700, 550, "wndCode")
+		wndCode = ifsoGUI_Window.Create(10, 10, AppW-100, AppH-50, "wndCode")
 		wndCode.SetVisible(False)
 		wndCode.SetDragTop(True)
 		wndCode.SetCaption("Code View")
@@ -27,11 +27,11 @@ Type ClientArea
 		wndCode.AddChild(btn)
 		
 		'Client Screen Area.  Panel in a panel.
-		pnlScreen = ifsoGUI_Panel.Create(0, 25, 600, 575, "pnlScreen")
+		pnlScreen = ifsoGUI_Panel.Create(0, 25, AppW-200, AppH-25, "pnlScreen")
 		pnlScreen.SetTransparent(True)
 		pnlScreen.SetShowBorder(False)
 		'Client Screen
-		Screen = ifsoGUI_Panel.Create(0, 0, 800, 600, "Screen")
+		Screen = ifsoGUI_Panel.Create(0, 0, AppW, AppH, "Screen")
 		Screen.SetShowBorder(False)
 		Screen.SetScrollbars(ifsoGUI_SCROLLBAR_OFF)
 		pnlScreen.AddChild(Screen)

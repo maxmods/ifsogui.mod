@@ -1,8 +1,10 @@
+' checkbox, multicolumn listbox - also panel, label, checkbox, listbox, button
+
 SuperStrict
 
 Framework brl.glmax2d
-Import brl.FreeTypeFont
-Import brl.PNGLoader
+Import brl.freetypefont
+Import brl.pngloader
 
 Import ifsogui.GUI
 Import ifsogui.panel
@@ -13,7 +15,6 @@ Import ifsogui.checkbox
 Import ifsogui.button
 Import ifsogui.mclistbox
 
-'Incbin "Skins.zip"
 Include "../editor/incbinSkin.bmx"
 
 SetGraphicsDriver GLMax2DDriver()

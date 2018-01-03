@@ -48,7 +48,8 @@ Incbin "icons/moveback.png"
 Incbin "icons/showcode.png"
 Incbin "icons/preview.png"
 
-Const AppW:Int = 800, AppH:Int = 600
+Const AppW:Int = 1280-100, AppH:Int = 800-100 'v1.18 - set window size minus estimated taskbar/sidebar
+'Const AppW:Int = 800, AppH:Int = 600 'Note: using variables eg. DesktopWidth blanks all gadgets
 Global AppProps:TAppProps = New TAppProps
 Global ActiveProps:TProps = AppProps
 Global cbGadgets:ifsoGUI_Combobox
@@ -63,7 +64,7 @@ Include "GadgetProps.bmx"
 SetGraphicsDriver GLMax2DDriver()
 Graphics(AppW, AppH)
 GUI.SetResolution(AppW, AppH)
-'GUI.SetUseIncBin(True) ' this doesn't work
+'GUI.SetUseIncBin(True) 'this should work but crashes at init
 'GUI.SetZipInfo("Skins.zip", "")
 GUI.LoadTheme("Skin2")
 Local font:TImageFont = LoadImageFont("incbin::Skin2/fonts/arial.ttf", 14)
@@ -100,7 +101,7 @@ While Not AppTerminate()
 		GUI.DrawMouse()
 		CheckEvents()
 		SetColor(0, 0, 0)
-		DrawText(iFPS, 760, 1)
+		DrawText(iFPS, AppW-40, 1)
 	End If
 	iFPSCounter:+1
 	If MilliSecs() - iFPSTime > 1000
@@ -136,7 +137,7 @@ Function Preview()
 			SetClsColor(200, 200, 200)
 			SetBlend(ALPHABLEND)
 		End If
-		ClientArea.pnlScreen.SetBounds(0, 25, 600, 575)
+		ClientArea.pnlScreen.SetBounds(0, 25, AppW-200, AppH-25)
 		ClientArea.pnlScreen.SetFocus()
 	Else
 		bShowPreview = True
@@ -150,7 +151,7 @@ Function Preview()
 	End If
 End Function
 
-Function CopyToClipBoard()
+Function CopyToClipBoard() 'for multiline textbox
 ?win32
 Rem
 	Const CF_TEXT:Int = 1

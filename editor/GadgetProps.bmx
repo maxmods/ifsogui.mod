@@ -1330,153 +1330,153 @@ Type TPropGadget Extends ifsoGUI_Base
 		Local nl$="~r~n" 'v1.18
 		Local nllocal$ = nl + "Local "
 		If ifsoGUI_ImageButton(Gadget)
-			strOut = nllocal + Name + ":ifsoGUI_ImageButton = ifsoGUI_ImageButton.Create("
-			strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, ~q" + ifsoGUI_ImageButton(Gadget).Label + "~q)" + nl
+			strOut:+ nllocal + Name + ":ifsoGUI_ImageButton = ifsoGUI_ImageButton.Create("
+			strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, ~q" + ifsoGUI_ImageButton(Gadget).Label + "~q)" + nl
 			Local nimg:String, oimg:String, dimg:String
 			nimg = ifsoGUI_TextBox(Props.pnlProps.GetChild("tbNormalImage")).GetText()
 			oimg = ifsoGUI_TextBox(Props.pnlProps.GetChild("tbOverImage")).GetText()
 			dimg = ifsoGUI_TextBox(Props.pnlProps.GetChild("tbDownImage")).GetText()
-			strOut:+Name + ".SetImages(LoadImage(~q" + nimg + "~q), LoadImage(~q" + oimg + "~q), LoadImage(~q" + dimg + "~q))" + nl
+			strOut:+ Name + ".SetImages(LoadImage(~q" + nimg + "~q), LoadImage(~q" + oimg + "~q), LoadImage(~q" + dimg + "~q))" + nl
 		ElseIf ifsoGUI_Button(Gadget)
-			strOut = nllocal + Name + ":ifsoGUI_Button = ifsoGUI_Button.Create("
-			strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, ~q" + ifsoGUI_Button(Gadget).Label + "~q)" + nl
+			strOut:+ nllocal + Name + ":ifsoGUI_Button = ifsoGUI_Button.Create("
+			strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, ~q" + ifsoGUI_Button(Gadget).Label + "~q)" + nl
 		ElseIf ifsoGUI_Label(Gadget)
-			strOut = nllocal + Name + ":ifsoGUI_Label = ifsoGUI_Label.Create("
-			strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, ~q" + ifsoGUI_Label(Gadget).Label + "~q)" + nl
+			strOut:+ nllocal + Name + ":ifsoGUI_Label = ifsoGUI_Label.Create("
+			strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, ~q" + ifsoGUI_Label(Gadget).Label + "~q)" + nl
 		ElseIf ifsoGUI_CheckBox(Gadget)
-			strOut = nllocal + Name + ":ifsoGUI_CheckBox = ifsoGUI_CheckBox.Create("
-			strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, ~q" + ifsoGUI_CheckBox(Gadget).Label + "~q)" + nl
-			If ifsoGUI_CheckBox(Gadget).bChecked strOut:+Name + "SetValue(True)" + nl
+			strOut:+ nllocal + Name + ":ifsoGUI_CheckBox = ifsoGUI_CheckBox.Create("
+			strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, ~q" + ifsoGUI_CheckBox(Gadget).Label + "~q)" + nl
+			If ifsoGUI_CheckBox(Gadget).bChecked strOut:+ Name + "SetValue(True)" + nl
 		ElseIf ifsoGUI_Combobox(Gadget)
-			strOut = nllocal + Name + ":ifsoGUI_ComboBox = ifsoGUI_ComboBox.Create("
-			strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
+			strOut:+ nllocal + Name + ":ifsoGUI_ComboBox = ifsoGUI_ComboBox.Create("
+			strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
 		ElseIf ifsoGUI_Window(Gadget)
-			strOut = nllocal + Name + ":ifsoGUI_Window = ifsoGUI_Window.Create("
-			strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
-			strOut:+Name + ".SetCaption(~q" + ifsoGUI_Window(Gadget).GetCaption() + "~q)" + nl
+			strOut:+ nllocal + Name + ":ifsoGUI_Window = ifsoGUI_Window.Create("
+			strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
+			strOut:+ Name + ".SetCaption(~q" + ifsoGUI_Window(Gadget).GetCaption() + "~q)" + nl
 			If ifsoGUI_Panel(Gadget).GetScrollbars() = 0
-				strOut:+Name + ".SetScrollbars(ifsoGUI_SCROLLBARS_OFF)" + nl
+				strOut:+ Name + ".SetScrollbars(ifsoGUI_SCROLLBARS_OFF)" + nl
 			ElseIf ifsoGUI_Panel(Gadget).GetScrollbars() = 1
-				strOut:+Name + ".SetScrollbars(ifsoGUI_SCROLLBARS_ON)" + nl
+				strOut:+ Name + ".SetScrollbars(ifsoGUI_SCROLLBARS_ON)" + nl
 			End If
-			If ifsoGUI_Window(Gadget).ScrollBarWidth <> 20 strOut:+Name + ".SetScrollBarWidth(" + ifsoGUI_Window(Gadget).ScrollBarWidth + ")" + nl
+			If ifsoGUI_Window(Gadget).ScrollBarWidth <> 20 strOut:+ Name + ".SetScrollBarWidth(" + ifsoGUI_Window(Gadget).ScrollBarWidth + ")" + nl
 		ElseIf ifsoGUI_Panel(Gadget)
-			strOut = nllocal + Name + ":ifsoGUI_Panel = ifsoGUI_Panel.Create("
-			strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
+			strOut:+ nllocal + Name + ":ifsoGUI_Panel = ifsoGUI_Panel.Create("
+			strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
 			If ifsoGUI_Panel(Gadget).GetScrollbars() = 0
-				strOut:+Name + ".SetScrollbars(ifsoGUI_SCROLLBARS_OFF)" + nl
+				strOut:+ Name + ".SetScrollbars(ifsoGUI_SCROLLBARS_OFF)" + nl
 			ElseIf ifsoGUI_Panel(Gadget).GetScrollbars() = 1
-				strOut:+Name + ".SetScrollbars(ifsoGUI_SCROLLBARS_ON)" + nl
+				strOut:+ Name + ".SetScrollbars(ifsoGUI_SCROLLBARS_ON)" + nl
 			End If
-			If ifsoGUI_Panel(Gadget).ScrollBarWidth <> 20 strOut:+Name + ".SetScrollBarWidth(" + ifsoGUI_Panel(Gadget).ScrollBarWidth + ")" + nl
+			If ifsoGUI_Panel(Gadget).ScrollBarWidth <> 20 strOut:+ Name + ".SetScrollBarWidth(" + ifsoGUI_Panel(Gadget).ScrollBarWidth + ")" + nl
 		ElseIf ifsoGUI_ListBox(Gadget)
-			strOut = nllocal + Name + ":ifsoGUI_Listbox = ifsoGUI_Listbox.Create("
-			strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
+			strOut:+ nllocal + Name + ":ifsoGUI_Listbox = ifsoGUI_Listbox.Create("
+			strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
 			If ifsoGUI_ListBox(Gadget).GetVScrollbar() = 0
-				strOut:+Name + ".SetVScrollbar(ifsoGUI_SCROLLBARS_OFF)" + nl
+				strOut:+ Name + ".SetVScrollbar(ifsoGUI_SCROLLBARS_OFF)" + nl
 			ElseIf ifsoGUI_ListBox(Gadget).GetVScrollbar() = 1
-				strOut:+Name + ".SetVScrollbar(ifsoGUI_SCROLLBARS_ON)" + nl
+				strOut:+ Name + ".SetVScrollbar(ifsoGUI_SCROLLBARS_ON)" + nl
 			End If
 			If ifsoGUI_ListBox(Gadget).GetHScrollbar() = 2
-				strOut:+Name + ".SetHScrollbar(ifsoGUI_SCROLLBARS_AUTO)" + nl
+				strOut:+ Name + ".SetHScrollbar(ifsoGUI_SCROLLBARS_AUTO)" + nl
 			ElseIf ifsoGUI_ListBox(Gadget).GetHScrollbar() = 1
-				strOut:+Name + ".SetHScrollbar(ifsoGUI_SCROLLBARS_ON)" + nl
+				strOut:+ Name + ".SetHScrollbar(ifsoGUI_SCROLLBARS_ON)" + nl
 			End If
-			If ifsoGUI_ListBox(Gadget).ScrollBarWidth <> 20 strOut:+Name + ".SetScrollBarWidth(" + ifsoGUI_ListBox(Gadget).ScrollBarWidth + ")" + nl
+			If ifsoGUI_ListBox(Gadget).ScrollBarWidth <> 20 strOut:+ Name + ".SetScrollBarWidth(" + ifsoGUI_ListBox(Gadget).ScrollBarWidth + ")" + nl
 		ElseIf ifsoGUI_MCListBox(Gadget)
-			strOut = nllocal + Name + ":ifsoGUI_MCListbox = ifsoGUI_MCListbox.Create("
-			strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
+			strOut:+ nllocal + Name + ":ifsoGUI_MCListbox = ifsoGUI_MCListbox.Create("
+			strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
 			If ifsoGUI_MCListBox(Gadget).GetVScrollbar() = 0
-				strOut:+Name + ".SetVScrollbar(ifsoGUI_SCROLLBARS_OFF)" + nl
+				strOut:+ Name + ".SetVScrollbar(ifsoGUI_SCROLLBARS_OFF)" + nl
 			ElseIf ifsoGUI_MCListBox(Gadget).GetVScrollbar() = 1
-				strOut:+Name + ".SetVScrollbar(ifsoGUI_SCROLLBARS_ON)" + nl
+				strOut:+ Name + ".SetVScrollbar(ifsoGUI_SCROLLBARS_ON)" + nl
 			End If
 			If ifsoGUI_MCListBox(Gadget).GetHScrollbar() = 0
-				strOut:+Name + ".SetHScrollbar(ifsoGUI_SCROLLBARS_OFF)" + nl
+				strOut:+ Name + ".SetHScrollbar(ifsoGUI_SCROLLBARS_OFF)" + nl
 			ElseIf ifsoGUI_MCListBox(Gadget).GetHScrollbar() = 1
-				strOut:+Name + ".SetHScrollbar(ifsoGUI_SCROLLBARS_ON)" + nl
+				strOut:+ Name + ".SetHScrollbar(ifsoGUI_SCROLLBARS_ON)" + nl
 			End If
-			If ifsoGUI_MCListBox(Gadget).ScrollBarWidth <> 20 strOut:+Name + ".SetScrollBarWidth(" + ifsoGUI_MCListBox(Gadget).ScrollBarWidth + ")" + nl
+			If ifsoGUI_MCListBox(Gadget).ScrollBarWidth <> 20 strOut:+ Name + ".SetScrollBarWidth(" + ifsoGUI_MCListBox(Gadget).ScrollBarWidth + ")" + nl
 		ElseIf ifsoGUI_MLTextBox(Gadget)
-			strOut = nllocal + Name + ":ifsoGUI_MLTextbox = ifsoGUI_MLTextbox.Create("
-			strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
+			strOut:+ nllocal + Name + ":ifsoGUI_MLTextbox = ifsoGUI_MLTextbox.Create("
+			strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
 			If ifsoGUI_MLTextBox(Gadget).GetVScrollbar() = 0
-				strOut:+Name + ".SetVScrollbar(ifsoGUI_SCROLLBARS_OFF)" + nl
+				strOut:+ Name + ".SetVScrollbar(ifsoGUI_SCROLLBARS_OFF)" + nl
 			ElseIf ifsoGUI_MLTextBox(Gadget).GetVScrollbar() = 1
-				strOut:+Name + ".SetVScrollbar(ifsoGUI_SCROLLBARS_ON)" + nl
+				strOut:+ Name + ".SetVScrollbar(ifsoGUI_SCROLLBARS_ON)" + nl
 			End If
 			If ifsoGUI_MLTextBox(Gadget).GetHScrollbar() = 0
-				strOut:+Name + ".SetHScrollbar(ifsoGUI_SCROLLBARS_OFF)" + nl
+				strOut:+ Name + ".SetHScrollbar(ifsoGUI_SCROLLBARS_OFF)" + nl
 			ElseIf ifsoGUI_MLTextBox(Gadget).GetHScrollbar() = 1
-				strOut:+Name + ".SetHScrollbar(ifsoGUI_SCROLLBARS_ON)" + nl
+				strOut:+ Name + ".SetHScrollbar(ifsoGUI_SCROLLBARS_ON)" + nl
 			End If
-			If ifsoGUI_MLTextBox(Gadget).ScrollBarWidth <> 20 strOut:+Name + ".SetScrollBarWidth(" + ifsoGUI_MLTextBox(Gadget).ScrollBarWidth + ")" + nl
-			If Not ifsoGUI_MLTextBox(Gadget).WordWrap strOut:+Name + ".SetWordWrap(False)" + nl
+			If ifsoGUI_MLTextBox(Gadget).ScrollBarWidth <> 20 strOut:+ Name + ".SetScrollBarWidth(" + ifsoGUI_MLTextBox(Gadget).ScrollBarWidth + ")" + nl
+			If Not ifsoGUI_MLTextBox(Gadget).WordWrap strOut:+ Name + ".SetWordWrap(False)" + nl
 		ElseIf ifsoGUI_ProgressBar(Gadget)
 			If ifsoGUI_ProgressBar(Gadget).Horizontal
-				strOut = nllocal + Name + ":ifsoGUI_Progressbar = ifsoGUI_Progressbar.Create("
-				strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
+				strOut:+ nllocal + Name + ":ifsoGUI_Progressbar = ifsoGUI_Progressbar.Create("
+				strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
 			Else
-				strOut = nllocal + Name + ":ifsoGUI_Progressbar = ifsoGUI_Progressbar.Create("
-				strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, False)" + nl
+				strOut:+ nllocal + Name + ":ifsoGUI_Progressbar = ifsoGUI_Progressbar.Create("
+				strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, False)" + nl
 			EndIf
-			If ifsoGUI_ProgressBar(Gadget).iMin <> 0 Or ifsoGUI_ProgressBar(Gadget).iMax <> 100 strOut:+Name + ".SetMinMax(" + ifsoGUI_ProgressBar(Gadget).iMin + ", " + ifsoGUI_ProgressBar(Gadget).iMax + ")" + nl
-			If ifsoGUI_ProgressBar(Gadget).Value <> 0 strOut:+Name + ".SetValue(" + ifsoGUI_ProgressBar(Gadget).Value + ")" + nl
+			If ifsoGUI_ProgressBar(Gadget).iMin <> 0 Or ifsoGUI_ProgressBar(Gadget).iMax <> 100 strOut:+ Name + ".SetMinMax(" + ifsoGUI_ProgressBar(Gadget).iMin + ", " + ifsoGUI_ProgressBar(Gadget).iMax + ")" + nl
+			If ifsoGUI_ProgressBar(Gadget).Value <> 0 strOut:+ Name + ".SetValue(" + ifsoGUI_ProgressBar(Gadget).Value + ")" + nl
 		ElseIf ifsoGUI_ScrollBar(Gadget)
 			If ifsoGUI_ScrollBar(Gadget).Vertical
-				strOut = nllocal + Name + ":ifsoGUI_Scrollbar = ifsoGUI_Scrollbar.Create("
-				strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, False)" + nl
+				strOut:+ nllocal + Name + ":ifsoGUI_Scrollbar = ifsoGUI_Scrollbar.Create("
+				strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, False)" + nl
 			Else
-				strOut = nllocal + Name + ":ifsoGUI_Scrollbar = ifsoGUI_Scrollbar.Create("
-				strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
+				strOut:+ nllocal + Name + ":ifsoGUI_Scrollbar = ifsoGUI_Scrollbar.Create("
+				strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
 			EndIf
-			If ifsoGUI_ScrollBar(Gadget).MinVal <> 0 Or ifsoGUI_ScrollBar(Gadget).MaxVal <> 100 strOut:+Name + ".SetMinMax(" + ifsoGUI_ScrollBar(Gadget).MinVal + ", " + ifsoGUI_ScrollBar(Gadget).MaxVal + ")" + nl
-			If ifsoGUI_ScrollBar(Gadget).Value <> 0 strOut:+Name + ".SetValue(" + ifsoGUI_ScrollBar(Gadget).Value + ")" + nl
-			If ifsoGUI_ScrollBar(Gadget).Interval <> 1 strOut:+Name + ".SetInterval(" + ifsoGUI_ScrollBar(Gadget).Interval + ")" + nl
-			If ifsoGUI_ScrollBar(Gadget).Size <> 10 strOut:+Name + ".SetBarInterval(" + ifsoGUI_ScrollBar(Gadget).Size + ")" + nl
+			If ifsoGUI_ScrollBar(Gadget).MinVal <> 0 Or ifsoGUI_ScrollBar(Gadget).MaxVal <> 100 strOut:+ Name + ".SetMinMax(" + ifsoGUI_ScrollBar(Gadget).MinVal + ", " + ifsoGUI_ScrollBar(Gadget).MaxVal + ")" + nl
+			If ifsoGUI_ScrollBar(Gadget).Value <> 0 strOut:+ Name + ".SetValue(" + ifsoGUI_ScrollBar(Gadget).Value + ")" + nl
+			If ifsoGUI_ScrollBar(Gadget).Interval <> 1 strOut:+ Name + ".SetInterval(" + ifsoGUI_ScrollBar(Gadget).Interval + ")" + nl
+			If ifsoGUI_ScrollBar(Gadget).Size <> 10 strOut:+ Name + ".SetBarInterval(" + ifsoGUI_ScrollBar(Gadget).Size + ")" + nl
 		ElseIf ifsoGUI_Slider(Gadget)
 			If ifsoGUI_Slider(Gadget).Vertical
-				strOut = nllocal + Name + ":ifsoGUI_Slider = ifsoGUI_Slider.Create("
-				strOut:+x + ", " + y + ", " + h + ", ~q" + Name + "~q, True)" + nl
+				strOut:+ nllocal + Name + ":ifsoGUI_Slider = ifsoGUI_Slider.Create("
+				strOut:+ x + ", " + y + ", " + h + ", ~q" + Name + "~q, True)" + nl
 			Else
-				strOut = nllocal + Name + ":ifsoGUI_Slider = ifsoGUI_Slider.Create("
-				strOut:+x + ", " + y + ", " + w + ", ~q" + Name + "~q)" + nl
+				strOut:+ nllocal + Name + ":ifsoGUI_Slider = ifsoGUI_Slider.Create("
+				strOut:+ x + ", " + y + ", " + w + ", ~q" + Name + "~q)" + nl
 			EndIf
-			If ifsoGUI_Slider(Gadget).MinVal <> 0 Or ifsoGUI_Slider(Gadget).MaxVal <> 10 strOut:+Name + ".SetMinMax(" + ifsoGUI_Slider(Gadget).MinVal + ", " + ifsoGUI_Slider(Gadget).MaxVal + ")" + nl
-			If ifsoGUI_Slider(Gadget).Value <> 0 strOut:+Name + ".SetValue(" + ifsoGUI_Slider(Gadget).Value + ")" + nl
-			If ifsoGUI_Slider(Gadget).Interval <> 1 strOut:+Name + ".SetInterval(" + ifsoGUI_Slider(Gadget).Interval + ")" + nl
-			If ifsoGUI_Slider(Gadget).Direction <> 0 strOut:+Name + ".SetDirection(ifsoGUI_SLIDER_DOWN_LEFT)" + nl
-			If Not ifsoGUI_Slider(Gadget).ShowTicks strOut:+Name + ".SetShowTicks(False)" + nl
+			If ifsoGUI_Slider(Gadget).MinVal <> 0 Or ifsoGUI_Slider(Gadget).MaxVal <> 10 strOut:+ Name + ".SetMinMax(" + ifsoGUI_Slider(Gadget).MinVal + ", " + ifsoGUI_Slider(Gadget).MaxVal + ")" + nl
+			If ifsoGUI_Slider(Gadget).Value <> 0 strOut:+ Name + ".SetValue(" + ifsoGUI_Slider(Gadget).Value + ")" + nl
+			If ifsoGUI_Slider(Gadget).Interval <> 1 strOut:+ Name + ".SetInterval(" + ifsoGUI_Slider(Gadget).Interval + ")" + nl
+			If ifsoGUI_Slider(Gadget).Direction <> 0 strOut:+ Name + ".SetDirection(ifsoGUI_SLIDER_DOWN_LEFT)" + nl
+			If Not ifsoGUI_Slider(Gadget).ShowTicks strOut:+ Name + ".SetShowTicks(False)" + nl
 		ElseIf ifsoGUI_Spinner(Gadget)
 			If ifsoGUI_Spinner(Gadget).Vertical
-				strOut = nllocal + Name + ":ifsoGUI_Spinner = ifsoGUI_Spinner.Create("
-				strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
+				strOut:+ nllocal + Name + ":ifsoGUI_Spinner = ifsoGUI_Spinner.Create("
+				strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
 			Else
-				strOut = nllocal + Name + ":ifsoGUI_Spinner = ifsoGUI_Spinner.Create("
-				strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, False)" + nl
+				strOut:+ nllocal + Name + ":ifsoGUI_Spinner = ifsoGUI_Spinner.Create("
+				strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, False)" + nl
 			EndIf
 		ElseIf ifsoGUI_TextBox(Gadget)
-			strOut = nllocal + Name + ":ifsoGUI_Textbox = ifsoGUI_Textbox.Create("
-			strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, ~q" + ifsoGUI_TextBox(Gadget).Value + "~q)" + nl
+			strOut:+ nllocal + Name + ":ifsoGUI_Textbox = ifsoGUI_Textbox.Create("
+			strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, ~q" + ifsoGUI_TextBox(Gadget).Value + "~q)" + nl
 		ElseIf ifsoGUI_Tabber(Gadget) 'v1.18
-			strOut = nllocal + Name + ":ifsoGUI_Tabber = ifsoGUI_Tabber.Create("
-			strOut:+x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, " + ifsoGUI_Tabber(Gadget).GetNumTabs() + ")" + nl
+			strOut:+ nllocal + Name + ":ifsoGUI_Tabber = ifsoGUI_Tabber.Create("
+			strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q, " + ifsoGUI_Tabber(Gadget).GetNumTabs() + ")" + nl
 			For Local tbi%=0 To ifsoGUI_Tabber(Gadget).GetNumTabs()-1
 				strOut:+ Name + ".SetTabText(" + tbi + ", ~q" + ifsoGUI_Tabber(Gadget).GetTabText(tbi) + "~q)" + nl
 			Next
 		End If
-		If Props.tbSkin.GetText() <> "" strOut:+Name + ".LoadSkin(~q" + Props.tbSkin.GetText() + "~q)" + nl
+		If Props.tbSkin.GetText() <> "" strOut:+ Name + ".LoadSkin(~q" + Props.tbSkin.GetText() + "~q)" + nl
 		If Gadget.TextColor[0] <> 0 Or Gadget.TextColor[1] <> 0 Or Gadget.TextColor[2] <> 0 ..
-			strOut:+Name + ".SetTextColor(" + Gadget.TextColor[0] + ", " + Gadget.TextColor[1] + ", " + Gadget.TextColor[2] + ")" + nl
+			strOut:+ Name + ".SetTextColor(" + Gadget.TextColor[0] + ", " + Gadget.TextColor[1] + ", " + Gadget.TextColor[2] + ")" + nl
 		If Gadget.Color[0] <> 255 Or Gadget.Color[1] <> 255 Or Gadget.Color[2] <> 255 ..
-			strOut:+Name + ".SetGadgetColor(" + Gadget.Color[0] + ", " + Gadget.Color[1] + ", " + Gadget.Color[2] + ")" + nl
-		If Props.iAlpha < 100 strOut:+Name + ".SetAlpha(" + Props.tbAlpha.GetText() + ")" + nl
-		If Props.tbTip.GetText() <> "" strOut:+Name + ".SetTip(~q" + Props.tbTip.GetText() + "~q)" + nl
-		If Props.chkOnTop.GetValue() strOut:+Name + ".SetAlwaysOnTop(True)" + nl
-		If Props.chkAutoSize.GetValue() strOut:+Name + ".SetAutoSize(True)" + nl
-		If Not Props.chkShowFocus.GetValue() strOut:+Name + ".SetShowFocus(False)" + nl
+			strOut:+ Name + ".SetGadgetColor(" + Gadget.Color[0] + ", " + Gadget.Color[1] + ", " + Gadget.Color[2] + ")" + nl
+		If Props.iAlpha < 100 strOut:+ Name + ".SetAlpha(" + Props.tbAlpha.GetText() + ")" + nl
+		If Props.tbTip.GetText() <> "" strOut:+ Name + ".SetTip(~q" + Props.tbTip.GetText() + "~q)" + nl
+		If Props.chkOnTop.GetValue() strOut:+ Name + ".SetAlwaysOnTop(True)" + nl
+		If Props.chkAutoSize.GetValue() strOut:+ Name + ".SetAutoSize(True)" + nl
+		If Not Props.chkShowFocus.GetValue() strOut:+ Name + ".SetShowFocus(False)" + nl
 		If Gadget.FocusColor[0] <> 170 Or Gadget.FocusColor[1] <> 170 Or Gadget.FocusColor[2] <> 170 ..
-			strOut:+Name + ".SetFocusColor(" + Gadget.FocusColor[0] + ", " + Gadget.FocusColor[1] + ", " + Gadget.FocusColor[2] + ")" + nl
+			strOut:+ Name + ".SetFocusColor(" + Gadget.FocusColor[0] + ", " + Gadget.FocusColor[1] + ", " + Gadget.FocusColor[2] + ")" + nl
 		ClientArea.mtbCode.AddText(strOut)
 		If Parent = ClientArea.Screen
 			ClientArea.mtbCode.AddText("GUI.AddGadget(" + Name + ")" + nl)
