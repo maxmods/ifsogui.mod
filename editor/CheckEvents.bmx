@@ -9,6 +9,12 @@ Function CheckEvents()
 			If ClientArea.lbGadgets.GetSelected() >= 0
 				TProps.NewGadget(ClientArea.lbGadgets.GetSelectedItem().Data)
 			End If
+		ElseIf e.gadget.Name = "btnRemoveGadget" And e.id = ifsoGUI_EVENT_CLICK 'v1.18
+			If ActiveProps.PropGadget<>Null Then ActiveProps.PropGadget.DeleteSelf()
+			For Local p:TGadgetProps = EachIn SelectedProps
+				p.PropGadget.DeleteSelf()
+			Next
+			TProps.SelectProps(AppProps)
 		ElseIf e.gadget.Name = "cmbGadgets" And e.id = ifsoGUI_EVENT_CHANGE
 			TProps.SelectProps(TProps.GetPropsByData(ifsoGUI_ListItem(cbGadgets.dropList.GetItem(e.data)).Data))
 			If TGadgetProps(ActiveProps) ActiveProps.PropGadget.SetFocus()
@@ -128,14 +134,14 @@ Function CheckEvents()
 			tmp:+ "Import ifsogui.tabber" + nl
 			tmp:+ "Import ifsogui.mltextbox" + nl
 			tmp:+ "Import ifsogui.fileselect" + nl + nl
-			tmp:+ "Include ~q../editor/incbinSkin.bmx~q" + nl + nl
+			tmp:+ "Include ~q../incbinSkin.bmx~q" + nl + nl
 			tmp:+ "' Init" + nl
 			tmp:+ "SetGraphicsDriver GLMax2DDriver()" + nl
 			tmp:+ "Graphics("+AppProps.tbX.GetText()+", "+AppProps.tbY.GetText()+")" + nl
 			tmp:+ "GUI.SetResolution("+AppProps.tbX.GetText()+", "+AppProps.tbY.GetText()+")" + nl
 			tmp:+ "GUI.SetUseIncBin(True)" + nl
 			tmp:+ "GUI.LoadTheme(~qSkin2~q)" + nl
-			tmp:+ "GUI.SetDefaultFont(LoadImageFont(~qincbin::Skin2/fonts/arial.ttf~q, 12))" + nl
+			tmp:+ "GUI.SetDefaultFont(LoadImageFont(~qincbin::Skin2/fonts/arial.ttf~q, 14))" + nl
 			tmp:+ "GUI.SetDrawMouse(True)" + nl + nl
 			tmp:+ "'Init GUI"
 			tmp:+ ClientArea.mtbCode.GetValue() + nl
@@ -256,8 +262,9 @@ Function ReadGadgets(filename:String)
 	AppProps.tbTextColor[1].SetText(str1)
 	str1 = file.ReadLine()
 	AppProps.tbTextColor[2].SetText(str1)
+	Local sName:String, newdata:String = file.ReadLine() 'v1.18
 	While Not(file.Eof())
-		Local sName:String = file.ReadLine()
+		If newdata = "" Then sName = file.ReadLine() Else sName = newdata
 		Local sType:String = file.ReadLine()
 		Local sParent:String = file.ReadLine()
 		Local p:TGadgetProps = TGadgetProps.Create(Int(sType))
@@ -271,7 +278,8 @@ Function ReadGadgets(filename:String)
 		p.PropGadget.Gadget.Name = sName
 		cbGadgets.AddItem(p.PropGadget.Name, TProps.GadgetCounter, "", False)
 		TProps.GadgetCounter:+1
-		p.PropGadget.ReadSelf(file)
+		newdata = ""
+		newdata = p.PropGadget.ReadSelf(file)
 		If sParent = "Screen"
 			ClientArea.Screen.AddChild(p.PropGadget)
 		Else

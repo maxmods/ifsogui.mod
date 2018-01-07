@@ -25,8 +25,8 @@ Import ifsogui.slider
 Import ifsogui.combobox
 Import ifsogui.spinner
 
-'Incbin "Skins.zip" ' Bug: zip files crashing randomly at init
-Include "../editor/incbinSkin.bmx"
+'Incbin "Skins.zip" ' Bug: zip files cause random crash at init
+Include "../incbinSkin.bmx"
 
 SetGraphicsDriver GLMax2DDriver()
 Graphics(800, 600)
@@ -36,10 +36,10 @@ SetAudioDriver("DirectSound")
 SetAudioDriver("FreeAudio")
 ?
 GUI.SetResolution(800, 600)
-GUI.SetUseIncBin(True) ' add incbin:: to path
-'GUI.SetZipInfo("Skins.zip", "") ' add zip:: to path
-GUI.LoadTheme("Skin2") ' add Skin name to path
-GUI.SetDefaultFont(LoadImageFont(GUI.FileHeader + "Skin2/fonts/arial.ttf", 12))
+GUI.SetUseIncBin(True) ' adds incbin:: to filepath
+'GUI.SetZipInfo("Skins.zip", "") ' adds zip:: to filepath - see example3
+GUI.LoadTheme("Skin2") ' adds skin name to filepath
+GUI.SetDefaultFont(LoadImageFont(GUI.FileHeader + "Skin2/fonts/arial.ttf", 12)) ' add header to load incbin or zip
 GUI.SetDrawMouse(True)
 
 'Status Panel

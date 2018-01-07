@@ -1,4 +1,4 @@
-' button, textbox, image button - also panel, label
+' demo - button, textbox, image button - also panel, label
 
 SuperStrict
 
@@ -20,14 +20,14 @@ Import ifsogui.combobox
 Import ifsogui.spinner
 Import ifsogui.imagebutton
 
-Include "../editor/incbinSkin.bmx"
+'Include "../incbinSkin.bmx"
 
 SetGraphicsDriver GLMax2DDriver()
 Graphics(800, 600)
 GUI.SetResolution(800, 600)
-GUI.SetUseIncBin(True)
-GUI.LoadTheme("Skin2")
-GUI.SetDefaultFont(LoadImageFont("../editor/Skin2/fonts/arial.ttf", 12))
+'GUI.SetUseIncBin(True) ' see example1
+GUI.LoadTheme("../Skin2") ' loading skin directly, no stream
+GUI.SetDefaultFont(LoadImageFont("../Skin2/fonts/arial.ttf", 12))
 GUI.SetDrawMouse(True)
 
 'Status Window
@@ -48,8 +48,7 @@ window.AddChild(button)
 Local textbox:ifsoGUI_TextBox = ifsoGUI_TextBox.Create(5, 35, 200, 25, "textbox", "Sample textbox")
 window.AddChild(textbox)
 Local imageButton:ifsoGUI_ImageButton = ifsoGUI_ImageButton.Create(24, 64, 32, 32, "imageButton", "Image Button")
-Local imgpath$ = "../editor/icons/"
-imageButton.SetImages(LoadImage(imgpath+"load.png"), LoadImage(imgpath+"moveback.png"), LoadImage(imgpath+"moveforward.png"))
+imageButton.SetImages(LoadImage("../icons/load.png"), LoadImage("../icons/moveback.png"), LoadImage("../icons/moveforward.png"))
 window.AddChild(imageButton)
 
 Local iFPSCounter:Int, iFPSTime:Int, iFPS:Int 'For the FPS Counter

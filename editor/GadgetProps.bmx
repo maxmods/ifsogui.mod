@@ -40,6 +40,7 @@ Type TProps
 	Field Font:TImageFont
 	Global tab_combo_list:TList=New TList 'v1.18
 	Global selected_gadget:TPropGadget=New TPropGadget
+	Global combo_combo_list:TList=New TList, list_combo_list:TList=New TList, mltext_text_list:TList=New TList
 	
 	Method Selected() Abstract
 	Method UnSelected() Abstract
@@ -379,7 +380,28 @@ Type TGadgetProps Extends TProps
 				chk.SetCallBack(EventCallback)
 				pnlProps.AddChild(chk)
 			ElseIf ifsoGUI_Combobox(PropGadget.Gadget)
-				beginY = 30
+				beginY = 150 'v1.18
+				lbl = ifsoGUI_Label.Create(0, 30, 140, 24, "lblCurrent", "Current Combo Item:")
+				lbl.SetShowBorder(False)
+				pnlProps.AddChild(lbl)
+				Local cb:ifsoGUI_Combobox = ifsoGUI_Combobox.Create(5, 55, 160, 24, "cbCurrentCombo")
+				cb.SetCallBack(EventCallback)
+				ListAddLast ActiveProps.combo_combo_list,cb 'v1.18
+				cb.AddItem("Item 1", 0, "", True)
+				ifsoGUI_Combobox(PropGadget.Gadget).AddItem("Item 1", 0, "", True)
+				pnlProps.AddChild(cb)
+				lbl = ifsoGUI_Label.Create(0, 85, 70, 24, "lblCurrent", "Item Text:")
+				lbl.SetShowBorder(False)
+				pnlProps.AddChild(lbl)
+				Local tb:ifsoGUI_TextBox = ifsoGUI_TextBox.Create(70, 85, 100, 24, "tbComboText", "Item 1")
+				tb.SetCallBack(EventCallback)
+				pnlProps.AddChild(tb)
+				Local btn:ifsoGUI_Button = ifsoGUI_Button.Create(5, 115, 60, 24, "btnAddCombo", "Add Item")
+				btn.SetCallBack(EventCallback)
+				pnlProps.AddChild(btn)
+				btn = ifsoGUI_Button.Create(70, 115, 100, 24, "btnRemoveCombo", "Remove Item")
+				btn.SetCallBack(EventCallback)
+				pnlProps.AddChild(btn)
 			ElseIf ifsoGUI_Window(PropGadget.Gadget)
 				beginY = 150
 				lbl = ifsoGUI_Label.Create(0, 30, 53, 24, "lblValue", "Caption:")
@@ -429,7 +451,7 @@ Type TGadgetProps Extends TProps
 				spnScrollWidth.SetCallBack(EventCallback)
 				pnlProps.AddChild(spnScrollWidth)
 			ElseIf ifsoGUI_ListBox(PropGadget.Gadget)
-				beginY = 180
+				beginY = 180+120
 				lbl = ifsoGUI_Label.Create(0, 30, 160, 24, "lblVScrollbar", "Vertical Scrollbar:")
 				lbl.SetShowBorder(False)
 				pnlProps.AddChild(lbl)
@@ -451,13 +473,35 @@ Type TGadgetProps Extends TProps
 				lbl = ifsoGUI_Label.Create(0, 150, 110, 24, "lblAlpha", "Scrollbar Width:")
 				lbl.SetShowBorder(False)
 				pnlProps.AddChild(lbl)
-				Local tbScrollWidth:ifsoGUI_TextBox = ifsoGUI_TextBox.Create(110, 145, 40, 24, "tbScrollWidth", ifsoGUI_ListBox(PropGadget.Gadget).ScrollBarWidth)
+				Local tbScrollWidth:ifsoGUI_TextBox = ifsoGUI_TextBox.Create(110, 150, 40, 24, "tbScrollWidth", ifsoGUI_ListBox(PropGadget.Gadget).ScrollBarWidth)
 				tbScrollWidth.SetCallBack(EventCallback)
 				tbScrollWidth.SetFilter(FilterNumbers)
 				pnlProps.AddChild(tbScrollWidth)
-				Local spnScrollWidth:ifsoGUI_Spinner = ifsoGUI_Spinner.Create(150, 145, 13, 24, "spnScrollWidth")
+				Local spnScrollWidth:ifsoGUI_Spinner = ifsoGUI_Spinner.Create(150, 150, 13, 24, "spnScrollWidth")
 				spnScrollWidth.SetCallBack(EventCallback)
 				pnlProps.AddChild(spnScrollWidth)
+				lbl = ifsoGUI_Label.Create(0, 180, 130, 24, "lblCurrent", "Current List Item:") 'v1.18
+				lbl.SetShowBorder(False)
+				pnlProps.AddChild(lbl)
+				Local cb:ifsoGUI_Combobox = ifsoGUI_Combobox.Create(5, 205, 160, 24, "cbCurrentList")
+				cb.SetCallBack(EventCallback)
+				ListAddLast ActiveProps.list_combo_list,cb 'v1.18
+				cb.AddItem("Item 1", 0, "", True)
+				ifsoGUI_ListBox(PropGadget.Gadget).AddItem("Item 1", 0, "")
+				ifsoGUI_ListBox(PropGadget.Gadget).SetSelected(0, True)
+				pnlProps.AddChild(cb)
+				lbl = ifsoGUI_Label.Create(0, 235, 70, 24, "lblCurrent", "Item Text:")
+				lbl.SetShowBorder(False)
+				pnlProps.AddChild(lbl)
+				Local tb:ifsoGUI_TextBox = ifsoGUI_TextBox.Create(70, 235, 100, 24, "tbListText", "Item 1")
+				tb.SetCallBack(EventCallback)
+				pnlProps.AddChild(tb)
+				Local btn:ifsoGUI_Button = ifsoGUI_Button.Create(5, 265, 60, 24, "btnAddList", "Add Item")
+				btn.SetCallBack(EventCallback)
+				pnlProps.AddChild(btn)
+				btn = ifsoGUI_Button.Create(70, 265, 100, 24, "btnRemoveList", "Remove Item")
+				btn.SetCallBack(EventCallback)
+				pnlProps.AddChild(btn)
 			ElseIf ifsoGUI_MCListBox(PropGadget.Gadget)
 				beginY = 180
 				lbl = ifsoGUI_Label.Create(0, 30, 160, 24, "lblVScrollbar", "Vertical Scrollbar:")
@@ -489,36 +533,43 @@ Type TGadgetProps Extends TProps
 				spnScrollWidth.SetCallBack(EventCallback)
 				pnlProps.AddChild(spnScrollWidth)
 			ElseIf ifsoGUI_MLTextBox(PropGadget.Gadget)
-				beginY = 210
-				lbl = ifsoGUI_Label.Create(0, 30, 160, 24, "lblVScrollbar", "Vertical Scrollbar:")
+				beginY = 210+30
+				lbl = ifsoGUI_Label.Create(0, 30, 53, 24, "lblValue", "Text:") 'v1.18
 				lbl.SetShowBorder(False)
 				pnlProps.AddChild(lbl)
-				Local cbScrollbars:ifsoGUI_Combobox = ifsoGUI_Combobox.Create(5, 55, 160, 24, "cbVScrollbar")
+				tbValue = ifsoGUI_TextBox.Create(55, 30, 100, 24, "tbMLValue", ifsoGUI_MLTextBox(PropGadget.Gadget).GetValue())
+				tbValue.SetCallBack(EventCallback)
+				ListAddLast ActiveProps.mltext_text_list,tbValue 'v1.18
+				pnlProps.AddChild(tbValue)
+				lbl = ifsoGUI_Label.Create(0, 60, 160, 24, "lblVScrollbar", "Vertical Scrollbar:")
+				lbl.SetShowBorder(False)
+				pnlProps.AddChild(lbl)
+				Local cbScrollbars:ifsoGUI_Combobox = ifsoGUI_Combobox.Create(5, 85, 160, 24, "cbVScrollbar")
 				cbScrollbars.SetCallBack(EventCallback)
 				cbScrollbars.AddItem("Automatic", ifsoGUI_SCROLLBAR_AUTO, "", True)
 				cbScrollbars.AddItem("Always On", ifsoGUI_SCROLLBAR_ON, "", False)
 				cbScrollbars.AddItem("Always Off", ifsoGUI_SCROLLBAR_OFF, "", False)
 				pnlProps.AddChild(cbScrollbars)
-				lbl = ifsoGUI_Label.Create(0, 90, 160, 24, "lblHScrollbar", "Horizontal Scrollbar:")
+				lbl = ifsoGUI_Label.Create(0, 120, 160, 24, "lblHScrollbar", "Horizontal Scrollbar:")
 				lbl.SetShowBorder(False)
 				pnlProps.AddChild(lbl)
-				cbScrollbars = ifsoGUI_Combobox.Create(5, 115, 160, 24, "cbHScrollbar")
+				cbScrollbars = ifsoGUI_Combobox.Create(5, 145, 160, 24, "cbHScrollbar")
 				cbScrollbars.SetCallBack(EventCallback)
 				cbScrollbars.AddItem("Automatic", ifsoGUI_SCROLLBAR_AUTO, "", True)
 				cbScrollbars.AddItem("Always On", ifsoGUI_SCROLLBAR_ON, "", False)
 				cbScrollbars.AddItem("Always Off", ifsoGUI_SCROLLBAR_OFF, "", False)
 				pnlProps.AddChild(cbScrollbars)
-				lbl = ifsoGUI_Label.Create(0, 150, 110, 24, "lblAlpha", "Scrollbar Width:")
+				lbl = ifsoGUI_Label.Create(0, 180, 110, 24, "lblAlpha", "Scrollbar Width:")
 				lbl.SetShowBorder(False)
 				pnlProps.AddChild(lbl)
-				Local tbScrollWidth:ifsoGUI_TextBox = ifsoGUI_TextBox.Create(110, 145, 40, 24, "tbScrollWidth", ifsoGUI_MLTextBox(PropGadget.Gadget).ScrollBarWidth)
+				Local tbScrollWidth:ifsoGUI_TextBox = ifsoGUI_TextBox.Create(110, 180, 40, 24, "tbScrollWidth", ifsoGUI_MLTextBox(PropGadget.Gadget).ScrollBarWidth)
 				tbScrollWidth.SetCallBack(EventCallback)
 				tbScrollWidth.SetFilter(FilterNumbers)
 				pnlProps.AddChild(tbScrollWidth)
-				Local spnScrollWidth:ifsoGUI_Spinner = ifsoGUI_Spinner.Create(150, 145, 13, 24, "spnScrollWidth")
+				Local spnScrollWidth:ifsoGUI_Spinner = ifsoGUI_Spinner.Create(150, 180, 13, 24, "spnScrollWidth")
 				spnScrollWidth.SetCallBack(EventCallback)
 				pnlProps.AddChild(spnScrollWidth)
-				Local chk:ifsoGUI_CheckBox = ifsoGUI_CheckBox.Create(5, 180, 100, 24, "chkWordWrap", "WordWrap")
+				Local chk:ifsoGUI_CheckBox = ifsoGUI_CheckBox.Create(5, 210, 100, 24, "chkWordWrap", "WordWrap")
 				chk.SetValue(True)
 				chk.SetCallBack(EventCallback)
 				pnlProps.AddChild(chk)
@@ -631,7 +682,7 @@ Type TGadgetProps Extends TProps
 				lbl = ifsoGUI_Label.Create(0, 30, 130, 24, "lblCurrent", "Current Tab:")
 				lbl.SetShowBorder(False)
 				pnlProps.AddChild(lbl)
-				Local cb:ifsoGUI_Combobox = ifsoGUI_Combobox.Create(5, 55, 160, 24, "cbCurrent")
+				Local cb:ifsoGUI_Combobox = ifsoGUI_Combobox.Create(5, 55, 160, 24, "cbCurrentTab")
 				cb.SetCallBack(EventCallback)
 				ListAddLast ActiveProps.tab_combo_list,cb 'v1.18
 				cb.AddItem("Tab 1", 0, "", True)
@@ -869,7 +920,7 @@ Type TGadgetProps Extends TProps
 			If tbName.GetText() = ""
 				tbName.SetText(PropGadget.Name)
 			Else
-				For Local i:Int = 0 To cbGadgets.dropList.Items.Length - 1
+				For Local i:Int = 0 To cbGadgets.dropList.GetCount() - 1
 					If ifsoGUI_ListItem(cbGadgets.dropList.Items[i]).Data = Self.Data
 						ifsoGUI_ListItem(cbGadgets.dropList.Items[i]).Name = tbName.GetText()
 						cbGadgets.RemoveItem(0)
@@ -894,6 +945,7 @@ Type TGadgetProps Extends TProps
 				ifsoGUI_Slider(PropGadget.Gadget).SetValue(Int(tbValue.GetText()))
 				ifsoGUI_TextBox(gadget).SetText(ifsoGUI_Slider(PropGadget.Gadget).Value)
 			End If
+			If ifsoGUI_MLTextBox(PropGadget.Gadget) ifsoGUI_MLTextBox(PropGadget.Gadget).SetValue(tbValue.GetText()) 'v1.18
 		ElseIf gadget = tbSkin And id = ifsoGUI_EVENT_CHANGE
 			If Not FileType(tbSkin.GetText()) = FILETYPE_DIR
 				tbSkin.SetText("")
@@ -1147,28 +1199,118 @@ Type TGadgetProps Extends TProps
 			If ifsoGUI_Slider(PropGadget.Gadget) ifsoGUI_Slider(PropGadget.Gadget).SetShowTicks(data)
 		ElseIf Gadget.Name = "chkDirection" And id = ifsoGUI_EVENT_CHANGE
 			If ifsoGUI_Slider(PropGadget.Gadget) ifsoGUI_Slider(PropGadget.Gadget).SetDirection(data)
-		ElseIf Gadget.Name = "cbCurrent" And id = ifsoGUI_EVENT_CHANGE
+		ElseIf Gadget.Name = "cbCurrentTab" And id = ifsoGUI_EVENT_CHANGE
 			If ifsoGUI_Tabber(PropGadget.Gadget)
 				ifsoGUI_Tabber(PropGadget.Gadget).SetCurrentTab(Data)
 				ifsoGUI_TextBox(Gadget.Parent.GetChild("tbTabText")).SetText(ifsoGUI_Combobox(Gadget).GetSelectedName())
 			End If
 		ElseIf Gadget.Name = "tbTabText" And id = ifsoGUI_EVENT_CHANGE
 			If ifsoGUI_Tabber(PropGadget.Gadget)
-				ifsoGUI_Tabber(PropGadget.Gadget).SetTabText(ifsoGUI_Combobox(Gadget.Parent.GetChild("cbCurrent")).GetSelected(), ifsoGUI_TextBox(Gadget).GetText())
-				ifsoGUI_Combobox(Gadget.Parent.GetChild("cbCurrent")).dropList.SetItemName(ifsoGUI_Combobox(Gadget.Parent.GetChild("cbCurrent")).GetSelected(), ifsoGUI_TextBox(Gadget).GetText())
+				Local CurrentTab:ifsoGUI_Base = Gadget.Parent.GetChild("cbCurrentTab")
+				Local iSelected:Int = ifsoGUI_Combobox(CurrentTab).GetSelected()
+				ifsoGUI_Tabber(PropGadget.Gadget).SetTabText(iSelected, ifsoGUI_TextBox(Gadget).GetText())
+				ifsoGUI_Combobox(CurrentTab).dropList.SetItemName(iSelected, ifsoGUI_TextBox(Gadget).GetText())
 			End If
 		ElseIf Gadget.Name = "btnAddTab" And id = ifsoGUI_EVENT_CLICK
 			If ifsoGUI_Tabber(PropGadget.Gadget)
-				ifsoGUI_Tabber(PropGadget.Gadget).AddTab("New Tab")
-				ifsoGUI_Combobox(Gadget.Parent.GetChild("cbCurrent")).AddItem("New Tab")
+				Local CurrentTab:ifsoGUI_Base = Gadget.Parent.GetChild("cbCurrentTab")
+				Local iSelected:Int = ifsoGUI_Combobox(CurrentTab).dropList.GetSelected() + 1
+				ifsoGUI_Tabber(PropGadget.Gadget).AddTab("Tab " + (iSelected + 1), "", 0, iSelected)
+				ifsoGUI_Tabber(PropGadget.Gadget).SetCurrentTab(iSelected)
+				ifsoGUI_Combobox(CurrentTab).InsertItem(iSelected, "Tab " + (iSelected + 1))
+				ifsoGUI_Combobox(CurrentTab).SetSelected(iSelected)
+				ifsoGUI_TextBox(Gadget.Parent.GetChild("tbTabText")).SetText("Tab " + (iSelected + 1))
 			End If
 		ElseIf Gadget.Name = "btnRemoveTab" And id = ifsoGUI_EVENT_CLICK
 			If ifsoGUI_Tabber(PropGadget.Gadget)
-				Local iSelected:Int = ifsoGUI_Combobox(Gadget.Parent.GetChild("cbCurrent")).GetSelected()
-				ifsoGUI_Tabber(PropGadget.Gadget).RemoveTab(iSelected)
-				ifsoGUI_Combobox(Gadget.Parent.GetChild("cbCurrent")).RemoveItem(iSelected)
-				ifsoGUI_Combobox(Gadget.Parent.GetChild("cbCurrent")).SetSelected(ifsoGUI_Tabber(PropGadget.Gadget).GetCurrentTab())
-				ifsoGUI_TextBox(Gadget.Parent.GetChild("tbTabText")).SetText(ifsoGUI_Combobox(Gadget.Parent.GetChild("cbCurrent")).GetSelectedName())
+				Local CurrentTab:ifsoGUI_Base = Gadget.Parent.GetChild("cbCurrentTab")
+				Local iSelected:Int = ifsoGUI_Combobox(CurrentTab).GetSelected()
+				If iSelected > -1 And ifsoGUI_Tabber(PropGadget.Gadget).GetNumTabs() > 1
+					ifsoGUI_Tabber(PropGadget.Gadget).RemoveTab(iSelected)
+					ifsoGUI_Combobox(CurrentTab).RemoveItem(iSelected)
+					ifsoGUI_Combobox(CurrentTab).SetSelected(ifsoGUI_Tabber(PropGadget.Gadget).GetCurrentTab())
+					ifsoGUI_TextBox(Gadget.Parent.GetChild("tbTabText")).SetText(ifsoGUI_Combobox(CurrentTab).GetSelectedName())
+				EndIf
+			End If
+		ElseIf Gadget.Name = "tbComboText" And id = ifsoGUI_EVENT_CHANGE 'v1.18
+			If ifsoGUI_Combobox(PropGadget.Gadget)
+				Local CurrentCombo:ifsoGUI_Base = Gadget.Parent.GetChild("cbCurrentCombo")
+				Local iSelected:Int = ifsoGUI_Combobox(CurrentCombo).GetSelected()
+				ifsoGUI_Combobox(PropGadget.Gadget).dropList.SetItemName(iSelected, ifsoGUI_TextBox(Gadget).GetText())
+				ifsoGUI_Combobox(CurrentCombo).dropList.SetItemName(iSelected, ifsoGUI_TextBox(Gadget).GetText())
+			End If
+		ElseIf Gadget.Name = "cbCurrentCombo" And id = ifsoGUI_EVENT_CHANGE
+			If ifsoGUI_Combobox(PropGadget.Gadget)
+				Local ComboText:ifsoGUI_Base = Gadget.Parent.GetChild("tbComboText")
+				Local iSelected:Int = ifsoGUI_Combobox(Gadget.Parent.GetChild("cbCurrentCombo")).GetSelected()
+				ifsoGUI_Combobox(PropGadget.Gadget).SetSelected(iSelected)
+				ifsoGUI_TextBox(ComboText).SetText(ifsoGUI_Combobox(Gadget).GetSelectedName())
+			End If
+		ElseIf Gadget.Name = "btnAddCombo" And id = ifsoGUI_EVENT_CLICK
+			If ifsoGUI_Combobox(PropGadget.Gadget)
+				Local CurrentCombo:ifsoGUI_Base = Gadget.Parent.GetChild("cbCurrentCombo")
+				Local iSelected:Int = ifsoGUI_Combobox(CurrentCombo).dropList.GetSelected() + 1
+				ifsoGUI_Combobox(PropGadget.Gadget).InsertItem(iSelected, "Item " + (iSelected + 1))
+				ifsoGUI_Combobox(CurrentCombo).InsertItem(iSelected, "Item " + (iSelected + 1))
+				ifsoGUI_TextBox(Gadget.Parent.GetChild("tbComboText")).SetText("Item " + (iSelected + 1))
+				ifsoGUI_Combobox(PropGadget.Gadget).SetSelected(iSelected)
+				ifsoGUI_Combobox(CurrentCombo).SetSelected(iSelected)
+			End If
+		ElseIf Gadget.Name = "btnRemoveCombo" And id = ifsoGUI_EVENT_CLICK
+			If ifsoGUI_Combobox(PropGadget.Gadget)
+				Local CurrentCombo:ifsoGUI_Base = Gadget.Parent.GetChild("cbCurrentCombo")
+				Local iSelected:Int = ifsoGUI_Combobox(CurrentCombo).GetSelected()
+				If iSelected > -1
+					ifsoGUI_Combobox(PropGadget.Gadget).RemoveItem(iSelected)
+					ifsoGUI_Combobox(CurrentCombo).RemoveItem(iSelected)
+					If iSelected = ifsoGUI_Combobox(CurrentCombo).dropList.GetCount() Then iSelected:- 1
+					ifsoGUI_Combobox(PropGadget.Gadget).SetSelected(iSelected)
+					ifsoGUI_Combobox(CurrentCombo).SetSelected(iSelected)
+					ifsoGUI_TextBox(Gadget.Parent.GetChild("tbComboText")).SetText(ifsoGUI_Combobox(CurrentCombo).GetSelectedName())
+				EndIf
+			End If
+		ElseIf Gadget.Name = "cbCurrentList" And id = ifsoGUI_EVENT_CHANGE
+			If ifsoGUI_ListBox(PropGadget.Gadget)
+				Local ListText:ifsoGUI_Base = Gadget.Parent.GetChild("tbListText")
+				Local iSelected:Int = ifsoGUI_Combobox(Gadget.Parent.GetChild("cbCurrentList")).GetSelected()
+				ifsoGUI_ListBox(PropGadget.Gadget).SetSelected(iSelected, True)
+				ifsoGUI_TextBox(ListText).SetText(ifsoGUI_Combobox(Gadget).GetSelectedName())
+				If ifsoGUI_ListBox(PropGadget.Gadget).VBar.Visible
+					ifsoGUI_ListBox(PropGadget.Gadget).VBar.SetValue(iSelected)
+				EndIf
+			End If
+		ElseIf Gadget.Name = "tbListText" And id = ifsoGUI_EVENT_CHANGE
+			If ifsoGUI_ListBox(PropGadget.Gadget)
+				Local CurrentList:ifsoGUI_Base = Gadget.Parent.GetChild("cbCurrentList")
+				Local iSelected:Int = ifsoGUI_Combobox(CurrentList).GetSelected()
+				ifsoGUI_ListBox(PropGadget.Gadget).SetItemName(iSelected, ifsoGUI_TextBox(Gadget).GetText())
+				ifsoGUI_Combobox(CurrentList).dropList.SetItemName(iSelected, ifsoGUI_TextBox(Gadget).GetText())
+			End If
+		ElseIf Gadget.Name = "btnAddList" And id = ifsoGUI_EVENT_CLICK
+			If ifsoGUI_ListBox(PropGadget.Gadget)
+				Local CurrentList:ifsoGUI_Base = Gadget.Parent.GetChild("cbCurrentList")
+				Local iSelected:Int = ifsoGUI_Combobox(CurrentList).GetSelected() + 1
+				ifsoGUI_ListBox(PropGadget.Gadget).InsertItem(iSelected, "Item " + (iSelected + 1), 0, "")
+				ifsoGUI_Combobox(CurrentList).InsertItem(iSelected, "Item " + (iSelected + 1))
+				ifsoGUI_TextBox(Gadget.Parent.GetChild("tbListText")).SetText("Item " + (iSelected + 1))
+				ifsoGUI_ListBox(PropGadget.Gadget).SetSelected(iSelected, True)
+				ifsoGUI_Combobox(CurrentList).SetSelected(iSelected)
+				If ifsoGUI_ListBox(PropGadget.Gadget).VBar.Visible
+					ifsoGUI_ListBox(PropGadget.Gadget).VBar.SetValue(iSelected)
+				EndIf
+			End If
+		ElseIf Gadget.Name = "btnRemoveList" And id = ifsoGUI_EVENT_CLICK
+			If ifsoGUI_ListBox(PropGadget.Gadget)
+				Local CurrentList:ifsoGUI_Base = Gadget.Parent.GetChild("cbCurrentList")
+				Local iSelected:Int = ifsoGUI_Combobox(CurrentList).GetSelected()
+				If iSelected > -1
+					ifsoGUI_ListBox(PropGadget.Gadget).RemoveItem(iSelected)
+					ifsoGUI_Combobox(CurrentList).RemoveItem(iSelected)
+					If iSelected = ifsoGUI_Combobox(CurrentList).dropList.GetCount() Then iSelected:- 1
+					ifsoGUI_ListBox(PropGadget.Gadget).SetSelected(iSelected, True)
+					ifsoGUI_Combobox(CurrentList).SetSelected(iSelected)
+					ifsoGUI_TextBox(Gadget.Parent.GetChild("tbListText")).SetText(ifsoGUI_Combobox(CurrentList).GetSelectedName())
+				EndIf
 			End If
 		End If
 
@@ -1238,16 +1380,16 @@ Type TPropGadget Extends ifsoGUI_Base
 				ifsoGUI_ImageButton(g.Gadget).SetShowButton(True)
 			Case PROP_LISTBOX
 				g.w = 120
-				g.h = 300
+				g.h = 100
 				sName = GetNextName("lstListbox")
 				g.Gadget = ifsoGUI_ListBox.Create(g.x, g.y, g.w, g.h, sName)
 			Case PROP_MCLISTBOX
-				g.w = 120
+				g.w = 360
 				g.h = 300
 				sName = GetNextName("mclMCListbox")
 				g.Gadget = ifsoGUI_MCListBox.Create(g.x, g.y, g.w, g.h, sName)
 			Case PROP_MLTEXTBOX
-				g.w = 200
+				g.w = 240
 				g.h = 200
 				sName = GetNextName("mltMLTextbox")
 				g.Gadget = ifsoGUI_MLTextBox.Create(g.x, g.y, g.w, g.h, sName)
@@ -1350,6 +1492,10 @@ Type TPropGadget Extends ifsoGUI_Base
 		ElseIf ifsoGUI_Combobox(Gadget)
 			strOut:+ nllocal + Name + ":ifsoGUI_ComboBox = ifsoGUI_ComboBox.Create("
 			strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
+			For Local tbi%=0 To ifsoGUI_Combobox(Gadget).dropList.GetCount()-1 'v1.18
+				strOut:+ Name + ".AddItem(~q" + ifsoGUI_Combobox(Gadget).dropList.GetItemName(tbi) + "~q, 0, ~q~q, False)" + nl
+			Next
+			strOut:+ Name + ".SetSelected(0)" + nl
 		ElseIf ifsoGUI_Window(Gadget)
 			strOut:+ nllocal + Name + ":ifsoGUI_Window = ifsoGUI_Window.Create("
 			strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
@@ -1383,6 +1529,10 @@ Type TPropGadget Extends ifsoGUI_Base
 				strOut:+ Name + ".SetHScrollbar(ifsoGUI_SCROLLBARS_ON)" + nl
 			End If
 			If ifsoGUI_ListBox(Gadget).ScrollBarWidth <> 20 strOut:+ Name + ".SetScrollBarWidth(" + ifsoGUI_ListBox(Gadget).ScrollBarWidth + ")" + nl
+			For Local tbi%=0 To ifsoGUI_ListBox(Gadget).GetCount()-1 'v1.18
+				strOut:+ Name + ".AddItem(~q" + ifsoGUI_ListBox(Gadget).GetItemName(tbi) + "~q, 0, ~q~q)" + nl
+			Next
+			strOut:+ Name + ".SetSelected(0, True)" + nl
 		ElseIf ifsoGUI_MCListBox(Gadget)
 			strOut:+ nllocal + Name + ":ifsoGUI_MCListbox = ifsoGUI_MCListbox.Create("
 			strOut:+ x + ", " + y + ", " + w + ", " + h + ", ~q" + Name + "~q)" + nl
@@ -1412,6 +1562,9 @@ Type TPropGadget Extends ifsoGUI_Base
 			End If
 			If ifsoGUI_MLTextBox(Gadget).ScrollBarWidth <> 20 strOut:+ Name + ".SetScrollBarWidth(" + ifsoGUI_MLTextBox(Gadget).ScrollBarWidth + ")" + nl
 			If Not ifsoGUI_MLTextBox(Gadget).WordWrap strOut:+ Name + ".SetWordWrap(False)" + nl
+			If ifsoGUI_MLTextBox(Gadget).GetValue() <> 0 'v1.18
+				strOut:+ Name + ".SetValue(~q" + ifsoGUI_MLTextBox(Gadget).GetValue() + "~q)" + nl
+			EndIf
 		ElseIf ifsoGUI_ProgressBar(Gadget)
 			If ifsoGUI_ProgressBar(Gadget).Horizontal
 				strOut:+ nllocal + Name + ":ifsoGUI_Progressbar = ifsoGUI_Progressbar.Create("
@@ -1464,6 +1617,7 @@ Type TPropGadget Extends ifsoGUI_Base
 			For Local tbi%=0 To ifsoGUI_Tabber(Gadget).GetNumTabs()-1
 				strOut:+ Name + ".SetTabText(" + tbi + ", ~q" + ifsoGUI_Tabber(Gadget).GetTabText(tbi) + "~q)" + nl
 			Next
+			strOut:+ Name + ".SetCurrentTab(0)" + nl
 		End If
 		If Props.tbSkin.GetText() <> "" strOut:+ Name + ".LoadSkin(~q" + Props.tbSkin.GetText() + "~q)" + nl
 		If Gadget.TextColor[0] <> 0 Or Gadget.TextColor[1] <> 0 Or Gadget.TextColor[2] <> 0 ..
@@ -1481,7 +1635,7 @@ Type TPropGadget Extends ifsoGUI_Base
 		If Parent = ClientArea.Screen
 			ClientArea.mtbCode.AddText("GUI.AddGadget(" + Name + ")" + nl)
 		Else
-			If parent_type = 19
+			If parent_type = 19 'v1.18
 				ClientArea.mtbCode.AddText(Parent.Name + ".AddTabChild(" + Name + ", " + tab_order + ")" + nl)
 			ElseIf parent_type > 0
 				ClientArea.mtbCode.AddText(Parent.Name + ".AddChild(" + Name + ")" + nl)
@@ -1493,97 +1647,112 @@ Type TPropGadget Extends ifsoGUI_Base
 	End Method
 	Method WriteSelf(file:TStream)
 		Local strOut:String = "~n" + Name + "~n"
-		strOut:+String(GadgetType) + "~n"
-		strOut:+Parent.Name + "~n"
-		strOut:+String(x) + "~n"
-		strOut:+String(y) + "~n"
-		strOut:+String(w) + "~n"
-		strOut:+String(h) + "~n"
+		strOut:+ String(GadgetType) + "~n"
+		strOut:+ Parent.Name + "~n"
+		strOut:+ String(x) + "~n"
+		strOut:+ String(y) + "~n"
+		strOut:+ String(w) + "~n"
+		strOut:+ String(h) + "~n"
 		If ifsoGUI_ImageButton(Gadget)
-			strOut:+ifsoGUI_ImageButton(Gadget).Label + "~n"
-			strOut:+ifsoGUI_TextBox(Props.pnlProps.GetChild("tbNormalImage")).GetText() + "~n"
-			strOut:+ifsoGUI_TextBox(Props.pnlProps.GetChild("tbOverImage")).GetText() + "~n"
-			strOut:+ifsoGUI_TextBox(Props.pnlProps.GetChild("tbDownImage")).GetText() + "~n"
+			strOut:+ ifsoGUI_ImageButton(Gadget).Label + "~n"
+			strOut:+ ifsoGUI_TextBox(Props.pnlProps.GetChild("tbNormalImage")).GetText() + "~n"
+			strOut:+ ifsoGUI_TextBox(Props.pnlProps.GetChild("tbOverImage")).GetText() + "~n"
+			strOut:+ ifsoGUI_TextBox(Props.pnlProps.GetChild("tbDownImage")).GetText() + "~n"
 		ElseIf ifsoGUI_Button(Gadget)
-			strOut:+ifsoGUI_Button(Gadget).Label + "~n"
+			strOut:+ ifsoGUI_Button(Gadget).Label + "~n"
 		ElseIf ifsoGUI_Label(Gadget)
-			strOut:+ifsoGUI_Label(Gadget).Label + "~n"
+			strOut:+ ifsoGUI_Label(Gadget).Label + "~n"
 		ElseIf ifsoGUI_CheckBox(Gadget)
-			strOut:+ifsoGUI_CheckBox(Gadget).Label + "~n"
-			strOut:+String(ifsoGUI_CheckBox(Gadget).bChecked) + "~n"
+			strOut:+ ifsoGUI_CheckBox(Gadget).Label + "~n"
+			strOut:+ String(ifsoGUI_CheckBox(Gadget).bChecked) + "~n"
 		ElseIf ifsoGUI_Window(Gadget)
-			strOut:+ifsoGUI_Window(Gadget).GetCaption() + "~n"
-			strOut:+String(ifsoGUI_Panel(Gadget).GetScrollbars()) + "~n"
-			strOut:+String(ifsoGUI_Window(Gadget).ScrollBarWidth) + "~n"
+			strOut:+ ifsoGUI_Window(Gadget).GetCaption() + "~n"
+			strOut:+ String(ifsoGUI_Panel(Gadget).GetScrollbars()) + "~n"
+			strOut:+ String(ifsoGUI_Window(Gadget).ScrollBarWidth) + "~n"
 		ElseIf ifsoGUI_Panel(Gadget)
-			strOut:+String(ifsoGUI_Panel(Gadget).GetScrollbars()) + "~n"
-			strOut:+String(ifsoGUI_Panel(Gadget).ScrollBarWidth) + "~n"
+			strOut:+ String(ifsoGUI_Panel(Gadget).GetScrollbars()) + "~n"
+			strOut:+ String(ifsoGUI_Panel(Gadget).ScrollBarWidth) + "~n"
 		ElseIf ifsoGUI_ListBox(Gadget)
-			strOut:+String(ifsoGUI_ListBox(Gadget).GetVScrollbar()) + "~n"
-			strOut:+String(ifsoGUI_ListBox(Gadget).GetHScrollbar()) + "~n"
-			strOut:+String(ifsoGUI_ListBox(Gadget).ScrollBarWidth) + "~n"
+			strOut:+ String(ifsoGUI_ListBox(Gadget).GetVScrollbar()) + "~n"
+			strOut:+ String(ifsoGUI_ListBox(Gadget).GetHScrollbar()) + "~n"
+			strOut:+ String(ifsoGUI_ListBox(Gadget).ScrollBarWidth) + "~n"
 		ElseIf ifsoGUI_MCListBox(Gadget)
-			strOut:+String(ifsoGUI_MCListBox(Gadget).GetVScrollbar()) + "~n"
-			strOut:+String(ifsoGUI_MCListBox(Gadget).GetHScrollbar()) + "~n"
-			strOut:+String(ifsoGUI_MCListBox(Gadget).ScrollBarWidth) + "~n"
+			strOut:+ String(ifsoGUI_MCListBox(Gadget).GetVScrollbar()) + "~n"
+			strOut:+ String(ifsoGUI_MCListBox(Gadget).GetHScrollbar()) + "~n"
+			strOut:+ String(ifsoGUI_MCListBox(Gadget).ScrollBarWidth) + "~n"
 		ElseIf ifsoGUI_MLTextBox(Gadget)
-			strOut:+String(ifsoGUI_MLTextBox(Gadget).GetVScrollbar()) + "~n"
-			strOut:+String(ifsoGUI_MLTextBox(Gadget).GetHScrollbar()) + "~n"
-			strOut:+String(ifsoGUI_MLTextBox(Gadget).ScrollBarWidth) + "~n"
-			strOut:+String(ifsoGUI_MLTextBox(Gadget).WordWrap) + "~n"
+			strOut:+ String(ifsoGUI_MLTextBox(Gadget).GetVScrollbar()) + "~n"
+			strOut:+ String(ifsoGUI_MLTextBox(Gadget).GetHScrollbar()) + "~n"
+			strOut:+ String(ifsoGUI_MLTextBox(Gadget).ScrollBarWidth) + "~n"
+			strOut:+ String(ifsoGUI_MLTextBox(Gadget).WordWrap) + "~n"
 		ElseIf ifsoGUI_ProgressBar(Gadget)
-			strOut:+String(ifsoGUI_ProgressBar(Gadget).iMin) + "~n"
-			strOut:+String(ifsoGUI_ProgressBar(Gadget).iMax) + "~n"
-			strOut:+String(ifsoGUI_ProgressBar(Gadget).Value) + "~n"
+			strOut:+ String(ifsoGUI_ProgressBar(Gadget).iMin) + "~n"
+			strOut:+ String(ifsoGUI_ProgressBar(Gadget).iMax) + "~n"
+			strOut:+ String(ifsoGUI_ProgressBar(Gadget).Value) + "~n"
 		ElseIf ifsoGUI_ScrollBar(Gadget)
-			strOut:+String(ifsoGUI_ScrollBar(Gadget).MinVal) + "~n"
-			strOut:+String(ifsoGUI_ScrollBar(Gadget).MaxVal) + "~n"
-			strOut:+String(ifsoGUI_ScrollBar(Gadget).Value) + "~n"
-			strOut:+String(ifsoGUI_ScrollBar(Gadget).Interval) + "~n"
-			strOut:+String(ifsoGUI_ScrollBar(Gadget).Size) + "~n"
+			strOut:+ String(ifsoGUI_ScrollBar(Gadget).MinVal) + "~n"
+			strOut:+ String(ifsoGUI_ScrollBar(Gadget).MaxVal) + "~n"
+			strOut:+ String(ifsoGUI_ScrollBar(Gadget).Value) + "~n"
+			strOut:+ String(ifsoGUI_ScrollBar(Gadget).Interval) + "~n"
+			strOut:+ String(ifsoGUI_ScrollBar(Gadget).Size) + "~n"
 		ElseIf ifsoGUI_Slider(Gadget)
-			strOut:+String(ifsoGUI_Slider(Gadget).MinVal) + "~n"
-			strOut:+String(ifsoGUI_Slider(Gadget).MaxVal) + "~n"
-			strOut:+String(ifsoGUI_Slider(Gadget).Value) + "~n"
-			strOut:+String(ifsoGUI_Slider(Gadget).Interval) + "~n"
-			strOut:+String(ifsoGUI_Slider(Gadget).Direction) + "~n"
-			strOut:+String(ifsoGUI_Slider(Gadget).ShowTicks) + "~n"
+			strOut:+ String(ifsoGUI_Slider(Gadget).MinVal) + "~n"
+			strOut:+ String(ifsoGUI_Slider(Gadget).MaxVal) + "~n"
+			strOut:+ String(ifsoGUI_Slider(Gadget).Value) + "~n"
+			strOut:+ String(ifsoGUI_Slider(Gadget).Interval) + "~n"
+			strOut:+ String(ifsoGUI_Slider(Gadget).Direction) + "~n"
+			strOut:+ String(ifsoGUI_Slider(Gadget).ShowTicks) + "~n"
 		ElseIf ifsoGUI_TextBox(Gadget)
-			strOut:+ifsoGUI_TextBox(Gadget).Value + "~n"
-		ElseIf ifsoGUI_Tabber(Gadget) 'v1.18
-			strOut:+ifsoGUI_Tabber(Gadget).GetNumTabs() + "~n"
-			For Local tbi%=0 To ifsoGUI_Tabber(Gadget).GetNumTabs()-1
-				strOut:+ifsoGUI_Tabber(Gadget).GetTabText(tbi) + "~n"
-			Next
+			strOut:+ ifsoGUI_TextBox(Gadget).Value + "~n"
 		End If
-		strOut:+String(Gadget.Color[0]) + "~n"
-		strOut:+String(Gadget.Color[1]) + "~n"
-		strOut:+String(Gadget.Color[2]) + "~n"
-		strOut:+Props.tbAlpha.GetText() + "~n"
-		If parent_type > 0 'v1.18
-			strOut:+String(parent_type) + "~n"
-			strOut:+String(tab_order) + "~n"
+		strOut:+ String(Gadget.Color[0]) + "~n"
+		strOut:+ String(Gadget.Color[1]) + "~n"
+		strOut:+ String(Gadget.Color[2]) + "~n"
+		strOut:+ Props.tbAlpha.GetText() + "~n"
+		strOut:+ Props.tbTip.GetText() + "~n"
+		strOut:+ String(Props.chkOnTop.GetValue()) + "~n"
+		strOut:+ String(Props.chkAutoSize.GetValue()) + "~n"
+		strOut:+ String(Props.chkShowFocus.GetValue()) + "~n"
+		strOut:+ String(Gadget.FocusColor[0]) + "~n"
+		strOut:+ String(Gadget.FocusColor[1]) + "~n"
+		strOut:+ String(Gadget.FocusColor[2]) + "~n"
+		strOut:+ Props.tbSkin.GetText() + "~n"
+		strOut:+ Props.tbFont.GetText() + "~n"
+		strOut:+ Props.tbFontSize.GetText() + "~n"
+		strOut:+ String(Gadget.TextColor[0]) + "~n"
+		strOut:+ String(Gadget.TextColor[1]) + "~n"
+		strOut:+ String(Gadget.TextColor[2])
+		strOut:+ ifsoGUI_TextBox(Props.pnlProps.GetChild("tbSkin")).GetText() + "~n"
+		strOut:+ "~q~~new~~~q" + "~n" 'v1.18
+		strOut:+ String(parent_type) + "~n"
+		strOut:+ String(tab_order) ' no nl at end
+		If ifsoGUI_Tabber(Gadget) 'v1.18
+			strOut:+ "~n" + ifsoGUI_Tabber(Gadget).GetNumTabs() + "~n"
+			For Local tbi%=0 To ifsoGUI_Tabber(Gadget).GetNumTabs()-1
+				strOut:+ ifsoGUI_Tabber(Gadget).GetTabText(tbi)
+				If tbi < ifsoGUI_Tabber(Gadget).GetNumTabs()-1 Then strOut:+ "~n"
+			Next
+		ElseIf ifsoGUI_Combobox(Gadget)
+			strOut:+ "~n" + ifsoGUI_Combobox(Gadget).dropList.GetCount() + "~n"
+			For Local tbi%=0 To ifsoGUI_Combobox(Gadget).dropList.GetCount()-1
+				strOut:+ ifsoGUI_Combobox(Gadget).dropList.GetItemName(tbi)
+				If tbi < ifsoGUI_Combobox(Gadget).dropList.GetCount()-1 Then strOut:+ "~n"
+			Next
+		ElseIf ifsoGUI_ListBox(Gadget)
+			strOut:+ "~n" + ifsoGUI_ListBox(Gadget).GetCount() + "~n"
+			For Local tbi%=0 To ifsoGUI_ListBox(Gadget).GetCount()-1
+				strOut:+ ifsoGUI_ListBox(Gadget).GetItemName(tbi)
+				If tbi < ifsoGUI_ListBox(Gadget).GetCount()-1 Then strOut:+ "~n"
+			Next
+		ElseIf ifsoGUI_MLTextBox(Gadget)
+			strOut:+ "~n" + ifsoGUI_MLTextBox(Gadget).GetValue()
 		EndIf
-		strOut:+Props.tbTip.GetText() + "~n"
-		strOut:+String(Props.chkOnTop.GetValue()) + "~n"
-		strOut:+String(Props.chkAutoSize.GetValue()) + "~n"
-		strOut:+String(Props.chkShowFocus.GetValue()) + "~n"
-		strOut:+String(Gadget.FocusColor[0]) + "~n"
-		strOut:+String(Gadget.FocusColor[1]) + "~n"
-		strOut:+String(Gadget.FocusColor[2]) + "~n"
-		strOut:+Props.tbSkin.GetText() + "~n"
-		strOut:+Props.tbFont.GetText() + "~n"
-		strOut:+Props.tbFontSize.GetText() + "~n"
-		strOut:+String(Gadget.TextColor[0]) + "~n"
-		strOut:+String(Gadget.TextColor[1]) + "~n"
-		strOut:+String(Gadget.TextColor[2])
-		strOut:+ifsoGUI_TextBox(Props.pnlProps.GetChild("tbSkin")).GetText()
 		file.WriteString(strOut)
 		For Local g:TPropGadget = EachIn Children
 			g.WriteSelf(file)
 		Next
 	End Method
-	Method ReadSelf(file:TStream)
+	Method ReadSelf:String(file:TStream)
 		Local str1:String, str2:String, str3:String
 		str1 = file.ReadLine() 'x
 		str2 = file.ReadLine() 'y
@@ -1713,21 +1882,6 @@ Type TPropGadget Extends ifsoGUI_Base
 			str1 = file.ReadLine() 'Text
 			ifsoGUI_TextBox(Gadget).SetText(str1)
 			Props.tbValue.SetText(str1)
-		ElseIf ifsoGUI_Tabber(Gadget) 'v1.18
-			str1 = file.ReadLine()
-			Local cb:ifsoGUI_Combobox
-			For cb=EachIn ActiveProps.tab_combo_list 'get last
-			Next
-			cb.RemoveItem(0)
-			For Local tbi%=0 To Int(str1)-1
-				str2 = file.ReadLine()
-				If tbi = 0 Then ifsoGUI_Tabber(Gadget).SetTabText(tbi, str2)
-				If tbi > 0 Then ifsoGUI_Tabber(Gadget).AddTab(str2, "", 0, tbi)
-				If cb
-					If tbi = 0 Then cb.AddItem(ifsoGUI_Tabber(Gadget).GetTabText(tbi), tbi, "", True)
-					If tbi > 0 Then cb.AddItem(ifsoGUI_Tabber(Gadget).GetTabText(tbi), tbi, "", False)
-				EndIf
-			Next
 		End If
 		str1 = file.ReadLine() 'GadgetColor R
 		Gadget.Color[0] = Int(str1)
@@ -1741,13 +1895,7 @@ Type TPropGadget Extends ifsoGUI_Base
 		str1 = file.ReadLine() 'Alpha
 		Gadget.fAlpha = Float(str1)
 		Props.tbAlpha.SetText(str1)
-		str1 = file.ReadLine() 'v1.18
-		If Int(str1) > 0
-			parent_type = Int(str1)
-			str1 = file.ReadLine()
-			tab_order = Int(str1)
-			str1 = file.ReadLine() 'Tip
-		EndIf
+		str1 = file.ReadLine() 'Tip
 		Gadget.Tip = str1
 		Props.tbTip.SetText(str1)
 		str1 = file.ReadLine() 'OnTop
@@ -1793,6 +1941,55 @@ Type TPropGadget Extends ifsoGUI_Base
 		str1 = file.ReadLine() 'Text Color B
 		Gadget.TextColor[2] = Int(str1)
 		Props.tbTextColor[2].SetText(str1)
+		str1 = file.ReadLine() 'v1.18 - begin new data, stop if old one
+		If str1 <> "~q~~new~~~q" Then Return str1
+		str1 = file.ReadLine()
+		parent_type = Int(str1)
+		str1 = file.ReadLine()
+		tab_order = Int(str1)
+		Local cb:ifsoGUI_Combobox, tb:ifsoGUI_TextBox
+		If ifsoGUI_Tabber(Gadget)
+			For cb=EachIn ActiveProps.tab_combo_list ' get last
+			Next
+			cb.RemoveItem(0) ' remove default item when loading
+			str1 = file.ReadLine() ' num tabs
+			For Local tbi%=0 To Int(str1)-1
+				str2 = file.ReadLine() ' tab text
+				If tbi = 0 Then ifsoGUI_Tabber(Gadget).SetTabText(tbi, str2)
+				If tbi > 0 Then ifsoGUI_Tabber(Gadget).AddTab(str2, "", 0, tbi)
+				If cb Then cb.AddItem(ifsoGUI_Tabber(Gadget).GetTabText(tbi), tbi, "", (Not tbi))
+			Next
+		ElseIf ifsoGUI_Combobox(Gadget)
+			For cb=EachIn ActiveProps.combo_combo_list
+			Next
+			cb.RemoveItem(0)
+			ifsoGUI_Combobox(Gadget).RemoveItem(0)
+			str1 = file.ReadLine() ' num items
+			For Local tbi%=0 To Int(str1)-1
+				str2 = file.ReadLine() ' item text
+				ifsoGUI_Combobox(Gadget).AddItem(str2, 0, "", False)
+				If cb Then cb.AddItem(ifsoGUI_Combobox(Gadget).dropList.GetItemName(tbi), tbi, "", (Not tbi))
+			Next
+			ifsoGUI_Combobox(Gadget).SetSelected(0)
+		ElseIf ifsoGUI_ListBox(Gadget)
+			For cb=EachIn ActiveProps.list_combo_list
+			Next
+			cb.RemoveItem(0)
+			ifsoGUI_ListBox(Gadget).RemoveItem(0)
+			str1 = file.ReadLine() ' num items
+			For Local tbi%=0 To Int(str1)-1
+				str2 = file.ReadLine() ' item text
+				ifsoGUI_ListBox(Gadget).AddItem(str2, 0, "")
+				If cb Then cb.AddItem(ifsoGUI_ListBox(Gadget).GetItemName(tbi), tbi, "", (Not tbi))
+			Next
+			ifsoGUI_ListBox(Gadget).SetSelected(0, True)
+		ElseIf ifsoGUI_MLTextBox(Gadget)
+			For tb=EachIn ActiveProps.mltext_text_list
+			Next
+			str1 = file.ReadLine() ' text
+			ifsoGUI_MLTextBox(Gadget).SetValue(str1)
+			If tb Then tb.SetText(str1)
+		EndIf
 	End Method
 	Method AddChild(g:ifsoGUI_Base)  'Add a child to the gadget
 		g.Parent = Self

@@ -21,7 +21,7 @@ SetGraphicsDriver GLMax2DDriver()
 Graphics(800, 600)
 GUI.SetResolution(800, 600)
 'GUI.SetUseIncBin(True)
-GUI.SetZipInfo("Skins.zip", "") ' Note: zip only works with basic example
+GUI.SetZipInfo("../Skins.zip", "") ' loading skin from zip - Bug: zip files causing random crash at init (except basic examples)
 GUI.LoadTheme("Skin2")
 GUI.SetDefaultFont(LoadImageFont(GUI.FileHeader + "Skin2/fonts/arial.ttf", 12))
 GUI.SetDrawMouse(True)

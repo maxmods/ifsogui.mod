@@ -16,13 +16,13 @@ Import ifsogui.button
 Import ifsogui.progressbar
 Import ifsogui.slider
 
-Include "../editor/incbinSkin.bmx"
+Include "../incbinSkin.bmx"
 
 SetGraphicsDriver GLMax2DDriver()
 Graphics(800, 600)
 
 GUI.SetResolution(800, 600)
-GUI.SetUseIncBin(True)
+GUI.SetUseIncBin(True) ' loading skin from incbin
 'GUI.SetZipInfo("Skins.zip", "")
 GUI.LoadTheme("Skin2")
 GUI.SetDefaultFont(LoadImageFont(GUI.FileHeader + "Skin2/fonts/arial.ttf", 12))

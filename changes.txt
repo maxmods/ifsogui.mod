@@ -5,7 +5,7 @@ ifsoGUI v1.18
 Forked BaH Maxmods v1.17
 Fixed fileselect ReadDir Int to Byte Ptr
 Fixed gui internal zipstream to import 64-bit external koriolis
-Added working gui editor source, examples and media
+Added working form editor source, examples and media
 
 **changes since 1.16**
 
