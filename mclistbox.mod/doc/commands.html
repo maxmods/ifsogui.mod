@@ -1,0 +1,1276 @@
+<html><head><title>ifsoGUI Multi-Column Listbox reference</title>
+<link rel=stylesheet Type=text/css href='../../../../doc/bmxstyle.css'>
+</head><body>
+<table width=100% cellspacing=0><tr align=center><td class=small>&nbsp;</td>
+<td class=small width=1%><b>ifsogui.mclistbox:</b></td>
+<td class=small width=1%><a href=#types class=small>Types</a></td>
+<td class=small width=1%><a href=#modinfo class=small>Modinfo</a></td>
+<td class=small width=1%><a href='../../../../mod/ifsogui.mod/mclistbox.mod/mclistbox.bmx' class=small>Source</a></td>
+<td class=small>&nbsp;</td></tr></table>
+<h1>ifsoGUI Multi-Column Listbox</h1>
+Multi-Column Listbox Gadget.
+<h2><a name=types></a>Types Summary</h2><table class=doc width=100%>
+<tr><td class=docleft width=1%><a href=#ifsoGUI_MCLColumn>ifsoGUI_MCLColumn</a></td><td class=docright>
+&nbsp;
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ifsoGUI_MCListBox>ifsoGUI_MCListBox</a></td><td class=docright>
+Listbox Type.
+</td></tr>
+</table>
+<h2
+ id=typesdet>Types
+</h2>
+<table class=doc width=100% cellspacing=3 id=ifsoGUI_MCLColumn>
+<tr><td class=doctop colspan=2>Type ifsoGUI_MCLColumn Extends ifsoGUI_Button</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_MCLColumn_methods></a>Methods Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#ActivateCell>ActivateCell</a></td><td class=docright>
+Prepares the rows gadget for viewing.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#AddItem>AddItem</a></td><td class=docright>
+Adds an item to a combobox column.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Draw>Draw</a></td><td class=docright>
+Draws the head button.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#DrawRowButton>DrawRowButton</a></td><td class=docright>
+Draw a Row Header buttons.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GadgetSystemEvent>GadgetSystemEvent</a></td><td class=docright>
+Gadget Level GUI system event occured.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GadgetValue>GadgetValue</a></td><td class=docright>
+Sets the Correct Value in the Columns gadgets for drawing.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetBarReversed>GetBarReversed</a></td><td class=docright>
+Gets if the bar is drawn reversed.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetCursorWidth>GetCursorWidth</a></td><td class=docright>
+Returns the width of the cursor bar.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetDirection>GetDirection</a></td><td class=docright>
+Returns the direction the graphic is facing.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetDrawStyle>GetDrawStyle</a></td><td class=docright>
+Returns the drawstyle.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetInterval>GetInterval</a></td><td class=docright>
+Returns the amount the value changes per tick.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetMax>GetMax</a></td><td class=docright>
+Returns the maximum value of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetMin>GetMin</a></td><td class=docright>
+Returns the minimum value of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetShowBorder>GetShowBorder</a></td><td class=docright>
+Returns whether or not the border is showing.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetShowComboboxData>GetShowComboboxData</a></td><td class=docright>
+Returns what data from the combobox appears in the column. Only applies to Combobox columns.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetShowItems>GetShowItems</a></td><td class=docright>
+Returns the number of items to show in a combobox column dropdown box.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetShowTicks>GetShowTicks</a></td><td class=docright>
+Returns the direction the graphic is facing.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseDown>gMouseDown</a></td><td class=docright>
+Called when the mouse button is pressed on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseUp>gMouseUp</a></td><td class=docright>
+Called when the mouse button is released on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#InsertItem>InsertItem</a></td><td class=docright>
+Inserts an item into a combobox column.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#IsResizing>IsResizing</a></td><td class=docright>
+Returns whether the Column is being resized or not.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MouseStatus>MouseStatus</a></td><td class=docright>
+Called to determine the mouse status from the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RebuildGadgets>RebuildGadgets</a></td><td class=docright>
+Rebuilds the column gadgets array.  Called whenever a column is created, or the listbox is resized, or.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RefreshGadgets>RefreshGadgets</a></td><td class=docright>
+Refreshes the values shown in the column gadgets.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveAll>RemoveAll</a></td><td class=docright>
+Removes all items from a combobox column.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveItem>RemoveItem</a></td><td class=docright>
+Removes an item from a combobox column.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetBarColor>SetBarColor</a></td><td class=docright>
+Sets the color of the bar.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetBarReversed>SetBarReversed</a></td><td class=docright>
+Sets if the bar is drawn reversed.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetCursorWidth>SetCursorWidth</a></td><td class=docright>
+Sets the width of the cursor bar.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetDirection>SetDirection</a></td><td class=docright>
+Sets the direction the graphic is facing.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetDrawStyle>SetDrawStyle</a></td><td class=docright>
+Sets the draw style of the progressbar.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetInterval>SetInterval</a></td><td class=docright>
+Sets the amount the value changes per tick.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetMax>SetMax</a></td><td class=docright>
+Sets the maximum value of the gadget..
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetMin>SetMin</a></td><td class=docright>
+Sets the minimum value of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetMinMax>SetMinMax</a></td><td class=docright>
+Sets the minimum and maximum values of the gadget in one call.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetShowBorder>SetShowBorder</a></td><td class=docright>
+Sets whether or not the border will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetShowComboboxData>SetShowComboboxData</a></td><td class=docright>
+Sets what data from the combobox appears in the column.  Only applies to Combobox columns.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetShowItems>SetShowItems</a></td><td class=docright>
+Sets the number of items to show in a combobox column dropdown box.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetShowTicks>SetShowTicks</a></td><td class=docright>
+Sets the direction the graphic is facing.
+</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_MCLColumn_functions></a>Functions Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#Create>Create</a></td><td class=docright>
+Create and returns a Multi Column List gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LoadTheme>LoadTheme</a></td><td class=docright>
+Called to load the graphics when a new theme is loaded.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SystemEvent>SystemEvent</a></td><td class=docright>
+GUI system event occured.
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=ActivateCell>
+<tr><td class=doctop colspan=2>Method ActivateCell:Int(iRow:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Prepares the rows gadget for viewing.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=AddItem>
+<tr><td class=doctop colspan=2>Method AddItem(strName:String, intData:Int, strTip:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Adds an item to a combobox column.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Draw>
+<tr><td class=doctop colspan=2>Method Draw(parX:Int, parY:Int, parW:Int, parH:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the head button.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=DrawRowButton>
+<tr><td class=doctop colspan=2>Method DrawRowButton(iX:Int, iY:Int, iW:Int, iH:Int, iTColor:Int[], strLabel:String = "", iStyle:Int = 0, caller:ifsoGUI_Base = Null)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draw a Row Header buttons.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GadgetSystemEvent>
+<tr><td class=doctop colspan=2>Method GadgetSystemEvent(id:Int, data:Int) 'Systemwide event all gadgets must know about</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gadget Level GUI system event occured.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Informs all slaves and children, then refreshes self.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GadgetValue>
+<tr><td class=doctop colspan=2>Method GadgetValue(iRow:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Correct Value in the Columns gadgets for drawing.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetBarReversed>
+<tr><td class=doctop colspan=2>Method GetBarReversed:Int() 'Get if the bar is reversed</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gets if the bar is drawn reversed.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Normal is Left to Right or Bottom to Top
+Reversed is Right to Left or Top to Bottom.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetCursorWidth>
+<tr><td class=doctop colspan=2>Method GetCursorWidth:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the width of the cursor bar.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetDirection>
+<tr><td class=doctop colspan=2>Method GetDirection:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the direction the graphic is facing.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>ifsoGUI_SLIDER_UP_RIGHT or ifsoGUI_SLIDER_DOWN_LEFT.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetDrawStyle>
+<tr><td class=doctop colspan=2>Method GetDrawStyle:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the drawstyle.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetInterval>
+<tr><td class=doctop colspan=2>Method GetInterval:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the amount the value changes per tick.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetMax>
+<tr><td class=doctop colspan=2>Method GetMax:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the maximum value of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetMin>
+<tr><td class=doctop colspan=2>Method GetMin:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the minimum value of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetShowBorder>
+<tr><td class=doctop colspan=2>Method GetShowBorder:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the border is showing.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetShowComboboxData>
+<tr><td class=doctop colspan=2>Method GetShowComboboxData:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns what data from the combobox appears in the column. Only applies to Combobox columns.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetShowItems>
+<tr><td class=doctop colspan=2>Method GetShowItems:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the number of items to show in a combobox column dropdown box.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetShowTicks>
+<tr><td class=doctop colspan=2>Method GetShowTicks:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the direction the graphic is facing.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>ifsoGUI_SLIDER_UP_RIGHT or ifsoGUI_SLIDER_DOWN_LEFT.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseDown>
+<tr><td class=doctop colspan=2>Method gMouseDown(iButton:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is pressed on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseUp>
+<tr><td class=doctop colspan=2>Method gMouseUp(iButton:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is released on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=InsertItem>
+<tr><td class=doctop colspan=2>Method InsertItem(intIndex:Int, strName:String, intData:Int, strTip:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Inserts an item into a combobox column.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=IsResizing>
+<tr><td class=doctop colspan=2>Method IsResizing:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether the Column is being resized or not.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=MouseStatus>
+<tr><td class=doctop colspan=2>Method MouseStatus:Int(iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called to determine the mouse status from the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Called to the active gadget only.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RebuildGadgets>
+<tr><td class=doctop colspan=2>Method RebuildGadgets()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Rebuilds the column gadgets array.  Called whenever a column is created, or the listbox is resized, or.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RefreshGadgets>
+<tr><td class=doctop colspan=2>Method RefreshGadgets(iGeo:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Refreshes the values shown in the column gadgets.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveAll>
+<tr><td class=doctop colspan=2>Method RemoveAll()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes all items from a combobox column.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveItem>
+<tr><td class=doctop colspan=2>Method RemoveItem(intIndex:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes an item from a combobox column.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetBarColor>
+<tr><td class=doctop colspan=2>Method SetBarColor(iRed:Int, iGreen:Int, iBlue:Int) 'Set color of the gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the color of the bar.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetBarReversed>
+<tr><td class=doctop colspan=2>Method SetBarReversed(intReversed:Int) 'Set bar reversed</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets if the bar is drawn reversed.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Normal is Left to Right or Bottom to Top
+Reversed is Right to Left or Top to Bottom.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetCursorWidth>
+<tr><td class=doctop colspan=2>Method SetCursorWidth(iCursorWidth:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the width of the cursor bar.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetDirection>
+<tr><td class=doctop colspan=2>Method SetDirection(intDirection:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the direction the graphic is facing.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>ifsoGUI_SLIDER_UP_RIGHT or ifsoGUI_SLIDER_DOWN_LEFT.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetDrawStyle>
+<tr><td class=doctop colspan=2>Method SetDrawStyle(intStyle:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the draw style of the progressbar.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>ifsoGUI_DRAWSTYLE_STRETCH - The graphic is stretched.
+ifsoGUI_DRAWSTYLE_TILE    - The graphic is tiled.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetInterval>
+<tr><td class=doctop colspan=2>Method SetInterval(intInterval:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the amount the value changes per tick.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetMax>
+<tr><td class=doctop colspan=2>Method SetMax(intMax:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the maximum value of the gadget..</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetMin>
+<tr><td class=doctop colspan=2>Method SetMin(intMin:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the minimum value of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetMinMax>
+<tr><td class=doctop colspan=2>Method SetMinMax(intMin:Int, intMax:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the minimum and maximum values of the gadget in one call.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetShowBorder>
+<tr><td class=doctop colspan=2>Method SetShowBorder(bShowBorder:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the border will show.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetShowComboboxData>
+<tr><td class=doctop colspan=2>Method SetShowComboboxData(iData:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets what data from the combobox appears in the column.  Only applies to Combobox columns.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetShowItems>
+<tr><td class=doctop colspan=2>Method SetShowItems(iNumItems:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the number of items to show in a combobox column dropdown box.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetShowTicks>
+<tr><td class=doctop colspan=2>Method SetShowTicks(intShowTicks:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the direction the graphic is facing.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>ifsoGUI_SLIDER_UP_RIGHT or ifsoGUI_SLIDER_DOWN_LEFT.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Create>
+<tr><td class=doctop colspan=2>Function Create:ifsoGUI_MCLColumn(iX:Int, iY:Int, iW:Int, iH:Int, strName:String, strLabel:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Create and returns a Multi Column List gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LoadTheme>
+<tr><td class=doctop colspan=2>Function LoadTheme()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called to load the graphics when a new theme is loaded.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>A GadgetSystemEvent is then sent out to all gadgets.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SystemEvent>
+<tr><td class=doctop colspan=2>Function SystemEvent(id:Int, data:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>GUI system event occured.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=ifsoGUI_MCListBox>
+<tr><td class=doctop colspan=2>Type ifsoGUI_MCListBox Extends ifsoGUI_Base</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Listbox Type.</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_MCListBox_methods></a>Methods Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#AddColumn>AddColumn</a></td><td class=docright>
+Adds a column to the ListBox.  Set iIndex to -1 to add a column at the end (default=-1).
+</td></tr>
+<tr><td class=docleft width=1%><a href=#AddComboboxItem>AddComboboxItem</a></td><td class=docright>
+Adds a combobox item to a combobox column.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#AddRow>AddRow</a></td><td class=docright>
+Adds a Row to the listbox. Set iIndex=-1 to add a row at the end.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Draw>Draw</a></td><td class=docright>
+Draws the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#FastQuickSort>FastQuickSort</a></td><td class=docright>
+Used to sort the list by the Value field.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#FastQuickSortData>FastQuickSortData</a></td><td class=docright>
+Used to sort the list by the Data field.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#FastQuickSortDataDesc>FastQuickSortDataDesc</a></td><td class=docright>
+Used to sort the list by the Data field descending.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#FastQuickSortDesc>FastQuickSortDesc</a></td><td class=docright>
+Used to sort the list by the Value field descending.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#FastQuickSortInt>FastQuickSortInt</a></td><td class=docright>
+Used to sort the list by the Value field but treated as an integer.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#FastQuickSortIntDesc>FastQuickSortIntDesc</a></td><td class=docright>
+Used to sort the list by the Value field descending but treated as an integer.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GainFocus>GainFocus</a></td><td class=docright>
+Called when the gadget becomes the active gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetAbsoluteXY>GetAbsoluteXY</a></td><td class=docright>
+Returns the absolute X and Y screen position of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetActiveCell>GetActiveCell</a></td><td class=docright>
+Returns the active cell.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetActualRowHeight>GetActualRowHeight</a></td><td class=docright>
+Returns the actual row height.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetCellData>GetCellData</a></td><td class=docright>
+Returns the data of the cell.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetCellReadOnly>GetCellReadOnly</a></td><td class=docright>
+Returns the ReadOnly property of the cell.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetCellTip>GetCellTip</a></td><td class=docright>
+Returns the tip of the cell.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetCellValueInt>GetCellValueInt</a></td><td class=docright>
+Gets the cells value (int).
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetCellValueString>GetCellValueString</a></td><td class=docright>
+Gets the cells value (string).
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnBarReversed>GetColumnBarReversed</a></td><td class=docright>
+Returns a progressbar columns bar direction.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnCellAlign>GetColumnCellAlign</a></td><td class=docright>
+Returns the Alignment of the column cell text.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnCount>GetColumnCount</a></td><td class=docright>
+Returns the number of columns in the list.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnDefaultValue>GetColumnDefaultValue</a></td><td class=docright>
+Gets the columns default value.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnDirection>GetColumnDirection</a></td><td class=docright>
+Returns a slider columns direction value.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnDrawStyle>GetColumnDrawStyle</a></td><td class=docright>
+Returns a progressbar columns drawstyle.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnHeaderAlign>GetColumnHeaderAlign</a></td><td class=docright>
+Returns the Alignment of the column header text.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnInterval>GetColumnInterval</a></td><td class=docright>
+Returns a slider columns interval value.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnMax>GetColumnMax</a></td><td class=docright>
+Returns the columns maximum value.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnMaxWidth>GetColumnMaxWidth</a></td><td class=docright>
+Returns the Columns Max Width.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnMin>GetColumnMin</a></td><td class=docright>
+Returns the columns minimum value.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnMinWidth>GetColumnMinWidth</a></td><td class=docright>
+Returns the Columns Min Width.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnReadOnly>GetColumnReadOnly</a></td><td class=docright>
+Returns the ReadOnly property of the column.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnShowBorder>GetColumnShowBorder</a></td><td class=docright>
+Returns whether or not the border is showing.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnShowComboboxData>GetColumnShowComboboxData</a></td><td class=docright>
+Returns what data from the combobox appears in the column. Only applies to Combobox columns.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnShowGadgets>GetColumnShowGadgets</a></td><td class=docright>
+Returns whether or not the columns gadgets are showing.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnShowTicks>GetColumnShowTicks</a></td><td class=docright>
+Returns a slider columns ShowTicks value.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetColumnsResizable>GetColumnsResizable</a></td><td class=docright>
+Returns if the Columns can be resized.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetComboboxShowItems>GetComboboxShowItems</a></td><td class=docright>
+Returns the number of items that appear in the combobox dropdown of a combobox column.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetHeaderActualColumnHeight>GetHeaderActualColumnHeight</a></td><td class=docright>
+Returns the actual column header height.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetHeaderActualRowWidth>GetHeaderActualRowWidth</a></td><td class=docright>
+Returns the actual row header width.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetHeaderColumnHeight>GetHeaderColumnHeight</a></td><td class=docright>
+Returns the requested column header height.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetHeaderRowWidth>GetHeaderRowWidth</a></td><td class=docright>
+Returns the requested row header width.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetHScrollbar>GetHScrollbar</a></td><td class=docright>
+Gets whether or not the Horizontal Scrollbar will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetMouseHighlight>GetMouseHighlight</a></td><td class=docright>
+Returns whether or not the highlight follows the mouse.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetMultiSelect>GetMultiSelect</a></td><td class=docright>
+Returns whether or not multiple items can be selected..
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetOverCell>GetOverCell</a></td><td class=docright>
+Returns the cell the mouse is over.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetRowCount>GetRowCount</a></td><td class=docright>
+Returns the number of rows in the list.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetRowHeight>GetRowHeight</a></td><td class=docright>
+Returns the requested row height.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetRowSelected>GetRowSelected</a></td><td class=docright>
+Returns whether the row is selected or not.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetScrollBarWidth>GetScrollBarWidth</a></td><td class=docright>
+Returns the width of the scrollbars.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetSelectedRow>GetSelectedRow</a></td><td class=docright>
+Gets the last selected row.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetShowBorder>GetShowBorder</a></td><td class=docright>
+Returns whether or not the border is showing.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetShowColumnHeaders>GetShowColumnHeaders</a></td><td class=docright>
+Returns whether or not the column head buttons are showing.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetShowGrid>GetShowGrid</a></td><td class=docright>
+Returns whether or not the grid is showing.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetShowRowHeaders>GetShowRowHeaders</a></td><td class=docright>
+Returns whether or not the row head buttons are showing.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTopItem>GetTopItem</a></td><td class=docright>
+Returns the top index of the listbox.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetVisibleRows>GetVisibleRows</a></td><td class=docright>
+Returns the number of items visible at a time in the listbox.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetVScrollbar>GetVScrollbar</a></td><td class=docright>
+Gets whether or not the Vertical Scrollbar will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseDown>gMouseDown</a></td><td class=docright>
+Called when the mouse button is pressed on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseUp>gMouseUp</a></td><td class=docright>
+Called when the mouse button is released on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#InsertComboboxItem>InsertComboboxItem</a></td><td class=docright>
+Inserts a combobox item to a combobox column.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#IsMouseOver>IsMouseOver</a></td><td class=docright>
+Returns whether or not the mouse is over the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#KeyPress>KeyPress</a></td><td class=docright>
+Called when a key is pressed on the active gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LoadSkin>LoadSkin</a></td><td class=docright>
+Loads a skin for one instance of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MouseOver>MouseOver</a></td><td class=docright>
+Called when the mouse is over this gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#OverCell>OverCell</a></td><td class=docright>
+Determines which cell the mouse is over.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RebuildGadgets>RebuildGadgets</a></td><td class=docright>
+Rebuilds the column gadgets array.  Called whenever a column is created, or the listbox is resized, or.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Refresh>Refresh</a></td><td class=docright>
+Refreshes the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RefreshGadgets>RefreshGadgets</a></td><td class=docright>
+Refreshes the values shown in the column gadgets.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveAllColumns>RemoveAllColumns</a></td><td class=docright>
+Removes all Columns from the listbox.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveAllComboboxItems>RemoveAllComboboxItems</a></td><td class=docright>
+Removes all items from a combobox column.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveAllRows>RemoveAllRows</a></td><td class=docright>
+Removes all Rows from the listbox.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveColumn>RemoveColumn</a></td><td class=docright>
+Removes a column from the listbox.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveComboboxItem>RemoveComboboxItem</a></td><td class=docright>
+Removes a combobox item from a combobox column.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveRow>RemoveRow</a></td><td class=docright>
+Removes a row from the listbox.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetActiveCell>SetActiveCell</a></td><td class=docright>
+Sets the active cell.  Returns True or False whether the cell was activated.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetCellData>SetCellData</a></td><td class=docright>
+Sets the Data of the cell.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetCellReadOnly>SetCellReadOnly</a></td><td class=docright>
+Sets the Readonly property of the cell.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetCellTip>SetCellTip</a></td><td class=docright>
+Sets the tip of the cell.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetCellValueInt>SetCellValueInt</a></td><td class=docright>
+Sets the cells value (int).
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetCellValueString>SetCellValueString</a></td><td class=docright>
+Sets the cells value (string).
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnBarColor>SetColumnBarColor</a></td><td class=docright>
+Sets a progressbar columns bar color.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnBarReversed>SetColumnBarReversed</a></td><td class=docright>
+Sets a progressbar columns bar direction.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnCellAlign>SetColumnCellAlign</a></td><td class=docright>
+Sets the Columns cell text alignment.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnDefaultValue>SetColumnDefaultValue</a></td><td class=docright>
+Sets the columns default value.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnDirection>SetColumnDirection</a></td><td class=docright>
+Sets a slider columns direction value.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnDrawStyle>SetColumnDrawStyle</a></td><td class=docright>
+Sets a progressbar columns drawstyle.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnHeaderAlign>SetColumnHeaderAlign</a></td><td class=docright>
+Sets the Columns header text alignment.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnInterval>SetColumnInterval</a></td><td class=docright>
+Sets a slider columns interval value.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnMax>SetColumnMax</a></td><td class=docright>
+Sets the columns maximum value.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnMin>SetColumnMin</a></td><td class=docright>
+Sets the columns minimum value.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnMinMax>SetColumnMinMax</a></td><td class=docright>
+Sets the columns minimum and maximum values.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnMinMaxWidth>SetColumnMinMaxWidth</a></td><td class=docright>
+Sets the Columns Min and Max Width.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnReadOnly>SetColumnReadOnly</a></td><td class=docright>
+Sets the Readonly property of all cells in the column.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnShowBorder>SetColumnShowBorder</a></td><td class=docright>
+Sets whether or not the border will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnShowComboboxData>SetColumnShowComboboxData</a></td><td class=docright>
+Sets what data from the combobox appears in the column.  Only applies to Combobox columns.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnShowGadgets>SetColumnShowGadgets</a></td><td class=docright>
+Sets whether or not the columns gadgets will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnShowTicks>SetColumnShowTicks</a></td><td class=docright>
+Sets a slider columns ShowTicks value.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetColumnsResizable>SetColumnsResizable</a></td><td class=docright>
+Sets if the columns can be resized.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetComboboxShowItems>SetComboboxShowItems</a></td><td class=docright>
+Sets the number of items that appear in the combobox dropdown of a combobox column.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetEnabled>SetEnabled</a></td><td class=docright>
+Sets the gadget enabled/disabled.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetFont>SetFont</a></td><td class=docright>
+Sets the font of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetGridColor>SetGridColor</a></td><td class=docright>
+Sets the grid color.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetHeaderColumnHeight>SetHeaderColumnHeight</a></td><td class=docright>
+Sets the Column Header Height.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetHeaderRowWidth>SetHeaderRowWidth</a></td><td class=docright>
+Sets the Row Header Width.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetHighlightColor>SetHighlightColor</a></td><td class=docright>
+Sets the highlight color.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetHighlightTextColor>SetHighlightTextColor</a></td><td class=docright>
+Sets the highlight text color.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetHScrollbar>SetHScrollbar</a></td><td class=docright>
+Sets whether or not the Horizontal Scrollbar will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetMouseHighlight>SetMouseHighlight</a></td><td class=docright>
+Sets whether or not the highlight follows the mouse.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetMultiSelect>SetMultiSelect</a></td><td class=docright>
+Sets whether or not multiple items can be selected.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetRowHeight>SetRowHeight</a></td><td class=docright>
+Sets the row height.  If requested height is less than the minimum, minimum is set.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetRowReadOnly>SetRowReadOnly</a></td><td class=docright>
+Sets the Readonly property of all cells in the row.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetScrollBarWidth>SetScrollBarWidth</a></td><td class=docright>
+Sets the width of the scrollbars.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetSelectColor>SetSelectColor</a></td><td class=docright>
+Sets the selection color.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetSelected>SetSelected</a></td><td class=docright>
+Sets the row selected/unselected.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetSelectTextColor>SetSelectTextColor</a></td><td class=docright>
+Sets the select text color.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetShowBorder>SetShowBorder</a></td><td class=docright>
+Sets whether or not the border will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetShowColumnHeaders>SetShowColumnHeaders</a></td><td class=docright>
+Sets whether or not the column head buttons will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetShowGrid>SetShowGrid</a></td><td class=docright>
+Sets whether or not the column head buttons will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetShowRowHeaders>SetShowRowHeaders</a></td><td class=docright>
+Sets whether or not the row head buttons will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTopItem>SetTopItem</a></td><td class=docright>
+Sets the top index of the listbox.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetVScrollbar>SetVScrollbar</a></td><td class=docright>
+Sets whether or not the Vertical Scrollbar will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SlaveEvent>SlaveEvent</a></td><td class=docright>
+Called from a slave gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SortList>SortList</a></td><td class=docright>
+Sorts the list.  Will be sorted by the Value field by default, set bData=true to sort by the data field.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Swap>Swap</a></td><td class=docright>
+Swap row iFrom with Row iTo.
+</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_MCListBox_functions></a>Functions Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#Create>Create</a></td><td class=docright>
+Create and returns a Listbox gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LoadTheme>LoadTheme</a></td><td class=docright>
+Called to load the graphics when a new theme is loaded.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SystemEvent>SystemEvent</a></td><td class=docright>
+GUI system event occured.
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=AddColumn>
+<tr><td class=doctop colspan=2>Method AddColumn(strTitle:String, iWidth:Int = 80, iType:Int = ifsoGUI_COLUMNTYPE_LABEL, strDefault:String = "", iIndex:Int = -1)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Adds a column to the ListBox.  Set iIndex to -1 to add a column at the end (default=-1).</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=AddComboboxItem>
+<tr><td class=doctop colspan=2>Method AddComboboxItem(iColumn:Int, strName:String, intData:Int, strTip:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Adds a combobox item to a combobox column.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=AddRow>
+<tr><td class=doctop colspan=2>Method AddRow(iIndex:Int = -1)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Adds a Row to the listbox. Set iIndex=-1 to add a row at the end.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Draw>
+<tr><td class=doctop colspan=2>Method Draw(parX:Int, parY:Int, parW:Int, parH:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=FastQuickSort>
+<tr><td class=doctop colspan=2>Method FastQuickSort(iCol:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Used to sort the list by the Value field.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=FastQuickSortData>
+<tr><td class=doctop colspan=2>Method FastQuickSortData(iCol:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Used to sort the list by the Data field.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=FastQuickSortDataDesc>
+<tr><td class=doctop colspan=2>Method FastQuickSortDataDesc(iCol:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Used to sort the list by the Data field descending.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=FastQuickSortDesc>
+<tr><td class=doctop colspan=2>Method FastQuickSortDesc(iCol:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Used to sort the list by the Value field descending.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=FastQuickSortInt>
+<tr><td class=doctop colspan=2>Method FastQuickSortInt(iCol:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Used to sort the list by the Value field but treated as an integer.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=FastQuickSortIntDesc>
+<tr><td class=doctop colspan=2>Method FastQuickSortIntDesc(iCol:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Used to sort the list by the Value field descending but treated as an integer.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GainFocus>
+<tr><td class=doctop colspan=2>Method GainFocus(LostFocus:ifsoGUI_Base)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the gadget becomes the active gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetAbsoluteXY>
+<tr><td class=doctop colspan=2>Method GetAbsoluteXY(iX:Int Var, iY:Int Var, caller:ifsoGUI_Base = Null)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the absolute X and Y screen position of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetActiveCell>
+<tr><td class=doctop colspan=2>Method GetActiveCell(iColumn:Int Var, iRow:Int Var)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the active cell.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetActualRowHeight>
+<tr><td class=doctop colspan=2>Method GetActualRowHeight:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the actual row height.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetCellData>
+<tr><td class=doctop colspan=2>Method GetCellData:Int(iColumn:Int, iRow:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the data of the cell.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetCellReadOnly>
+<tr><td class=doctop colspan=2>Method GetCellReadOnly:Int(iColumn:Int, iRow:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the ReadOnly property of the cell.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetCellTip>
+<tr><td class=doctop colspan=2>Method GetCellTip:String(iColumn:Int, iRow:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the tip of the cell.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetCellValueInt>
+<tr><td class=doctop colspan=2>Method GetCellValueInt:Int(iColumn:Int, iRow:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gets the cells value (int).</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetCellValueString>
+<tr><td class=doctop colspan=2>Method GetCellValueString:String(iColumn:Int, iRow:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gets the cells value (string).</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnBarReversed>
+<tr><td class=doctop colspan=2>Method GetColumnBarReversed:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns a progressbar columns bar direction.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnCellAlign>
+<tr><td class=doctop colspan=2>Method GetColumnCellAlign:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the Alignment of the column cell text.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnCount>
+<tr><td class=doctop colspan=2>Method GetColumnCount:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the number of columns in the list.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnDefaultValue>
+<tr><td class=doctop colspan=2>Method GetColumnDefaultValue:String(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gets the columns default value.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnDirection>
+<tr><td class=doctop colspan=2>Method GetColumnDirection:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns a slider columns direction value.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnDrawStyle>
+<tr><td class=doctop colspan=2>Method GetColumnDrawStyle:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns a progressbar columns drawstyle.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnHeaderAlign>
+<tr><td class=doctop colspan=2>Method GetColumnHeaderAlign:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the Alignment of the column header text.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnInterval>
+<tr><td class=doctop colspan=2>Method GetColumnInterval:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns a slider columns interval value.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnMax>
+<tr><td class=doctop colspan=2>Method GetColumnMax:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the columns maximum value.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnMaxWidth>
+<tr><td class=doctop colspan=2>Method GetColumnMaxWidth:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the Columns Max Width.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnMin>
+<tr><td class=doctop colspan=2>Method GetColumnMin:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the columns minimum value.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnMinWidth>
+<tr><td class=doctop colspan=2>Method GetColumnMinWidth:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the Columns Min Width.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnReadOnly>
+<tr><td class=doctop colspan=2>Method GetColumnReadOnly:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the ReadOnly property of the column.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnShowBorder>
+<tr><td class=doctop colspan=2>Method GetColumnShowBorder:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the border is showing.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnShowComboboxData>
+<tr><td class=doctop colspan=2>Method GetColumnShowComboboxData:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns what data from the combobox appears in the column. Only applies to Combobox columns.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnShowGadgets>
+<tr><td class=doctop colspan=2>Method GetColumnShowGadgets:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the columns gadgets are showing.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnShowTicks>
+<tr><td class=doctop colspan=2>Method GetColumnShowTicks:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns a slider columns ShowTicks value.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetColumnsResizable>
+<tr><td class=doctop colspan=2>Method GetColumnsResizable:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns if the Columns can be resized.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetComboboxShowItems>
+<tr><td class=doctop colspan=2>Method GetComboboxShowItems:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the number of items that appear in the combobox dropdown of a combobox column.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetHeaderActualColumnHeight>
+<tr><td class=doctop colspan=2>Method GetHeaderActualColumnHeight:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the actual column header height.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetHeaderActualRowWidth>
+<tr><td class=doctop colspan=2>Method GetHeaderActualRowWidth:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the actual row header width.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetHeaderColumnHeight>
+<tr><td class=doctop colspan=2>Method GetHeaderColumnHeight:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the requested column header height.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetHeaderRowWidth>
+<tr><td class=doctop colspan=2>Method GetHeaderRowWidth:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the requested row header width.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetHScrollbar>
+<tr><td class=doctop colspan=2>Method GetHScrollbar:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gets whether or not the Horizontal Scrollbar will show.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetMouseHighlight>
+<tr><td class=doctop colspan=2>Method GetMouseHighlight:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the highlight follows the mouse.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetMultiSelect>
+<tr><td class=doctop colspan=2>Method GetMultiSelect:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not multiple items can be selected..</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetOverCell>
+<tr><td class=doctop colspan=2>Method GetOverCell(iColumn:Int Var, iRow:Int Var)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the cell the mouse is over.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetRowCount>
+<tr><td class=doctop colspan=2>Method GetRowCount:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the number of rows in the list.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetRowHeight>
+<tr><td class=doctop colspan=2>Method GetRowHeight:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the requested row height.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetRowSelected>
+<tr><td class=doctop colspan=2>Method GetRowSelected:Int(iRow:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether the row is selected or not.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetScrollBarWidth>
+<tr><td class=doctop colspan=2>Method GetScrollBarWidth:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the width of the scrollbars.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetSelectedRow>
+<tr><td class=doctop colspan=2>Method GetSelectedRow:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gets the last selected row.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetShowBorder>
+<tr><td class=doctop colspan=2>Method GetShowBorder:Int(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the border is showing.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetShowColumnHeaders>
+<tr><td class=doctop colspan=2>Method GetShowColumnHeaders:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the column head buttons are showing.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetShowGrid>
+<tr><td class=doctop colspan=2>Method GetShowGrid:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the grid is showing.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetShowRowHeaders>
+<tr><td class=doctop colspan=2>Method GetShowRowHeaders:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the row head buttons are showing.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTopItem>
+<tr><td class=doctop colspan=2>Method GetTopItem:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the top index of the listbox.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetVisibleRows>
+<tr><td class=doctop colspan=2>Method GetVisibleRows:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the number of items visible at a time in the listbox.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetVScrollbar>
+<tr><td class=doctop colspan=2>Method GetVScrollbar:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gets whether or not the Vertical Scrollbar will show.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseDown>
+<tr><td class=doctop colspan=2>Method gMouseDown(iButton:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is pressed on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseUp>
+<tr><td class=doctop colspan=2>Method gMouseUp(iButton:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is released on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=InsertComboboxItem>
+<tr><td class=doctop colspan=2>Method InsertComboboxItem(iColumn:Int, intIndex:Int, strName:String, intData:Int, strTip:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Inserts a combobox item to a combobox column.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=IsMouseOver>
+<tr><td class=doctop colspan=2>Method IsMouseOver:Int(parX:Int, parY:Int, parW:Int, parH:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the mouse is over the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=KeyPress>
+<tr><td class=doctop colspan=2>Method KeyPress(key:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when a key is pressed on the active gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LoadSkin>
+<tr><td class=doctop colspan=2>Method LoadSkin(strSkin:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Loads a skin for one instance of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=MouseOver>
+<tr><td class=doctop colspan=2>Method MouseOver(iMouseX:Int, iMouseY:Int, gWasOverGadget:ifsoGUI_Base) 'Called when mouse is over the gadget, only topmost gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse is over this gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=OverCell>
+<tr><td class=doctop colspan=2>Method OverCell(iMouseX:Int, iMouseY:Int, iHighlightIt:Int = False)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Determines which cell the mouse is over.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called byt he user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RebuildGadgets>
+<tr><td class=doctop colspan=2>Method RebuildGadgets(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Rebuilds the column gadgets array.  Called whenever a column is created, or the listbox is resized, or.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Refresh>
+<tr><td class=doctop colspan=2>Method Refresh()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Refreshes the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Recalculates any geometry/font changes, etc.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RefreshGadgets>
+<tr><td class=doctop colspan=2>Method RefreshGadgets(iColumn:Int, iGeo:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Refreshes the values shown in the column gadgets.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveAllColumns>
+<tr><td class=doctop colspan=2>Method RemoveAllColumns()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes all Columns from the listbox.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveAllComboboxItems>
+<tr><td class=doctop colspan=2>Method RemoveAllComboboxItems(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes all items from a combobox column.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveAllRows>
+<tr><td class=doctop colspan=2>Method RemoveAllRows()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes all Rows from the listbox.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveColumn>
+<tr><td class=doctop colspan=2>Method RemoveColumn(iColumn:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes a column from the listbox.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveComboboxItem>
+<tr><td class=doctop colspan=2>Method RemoveComboboxItem(iColumn:Int, intIndex:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes a combobox item from a combobox column.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveRow>
+<tr><td class=doctop colspan=2>Method RemoveRow(iRow:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes a row from the listbox.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetActiveCell>
+<tr><td class=doctop colspan=2>Method SetActiveCell:Int(iColumn:Int, iRow:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the active cell.  Returns True or False whether the cell was activated.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetCellData>
+<tr><td class=doctop colspan=2>Method SetCellData(iColumn:Int, iRow:Int, iData:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Data of the cell.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetCellReadOnly>
+<tr><td class=doctop colspan=2>Method SetCellReadOnly(iColumn:Int, iRow:Int, bReadOnly:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Readonly property of the cell.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetCellTip>
+<tr><td class=doctop colspan=2>Method SetCellTip(iColumn:Int, iRow:Int, strTip:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the tip of the cell.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetCellValueInt>
+<tr><td class=doctop colspan=2>Method SetCellValueInt(iColumn:Int, iRow:Int, iValue:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the cells value (int).</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetCellValueString>
+<tr><td class=doctop colspan=2>Method SetCellValueString(iColumn:Int, iRow:Int, strValue:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the cells value (string).</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnBarColor>
+<tr><td class=doctop colspan=2>Method SetColumnBarColor(iColumn:Int, iRed:Int, iGreen:Int, iBlue:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets a progressbar columns bar color.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnBarReversed>
+<tr><td class=doctop colspan=2>Method SetColumnBarReversed(iColumn:Int, iReversed:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets a progressbar columns bar direction.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnCellAlign>
+<tr><td class=doctop colspan=2>Method SetColumnCellAlign(iColumn:Int, iAlign:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Columns cell text alignment.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnDefaultValue>
+<tr><td class=doctop colspan=2>Method SetColumnDefaultValue(iColumn:Int, strValue:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the columns default value.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnDirection>
+<tr><td class=doctop colspan=2>Method SetColumnDirection(iColumn:Int, iDirection:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets a slider columns direction value.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnDrawStyle>
+<tr><td class=doctop colspan=2>Method SetColumnDrawStyle(iColumn:Int, iDrawStyle:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets a progressbar columns drawstyle.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnHeaderAlign>
+<tr><td class=doctop colspan=2>Method SetColumnHeaderAlign(iColumn:Int, iAlign:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Columns header text alignment.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnInterval>
+<tr><td class=doctop colspan=2>Method SetColumnInterval(iColumn:Int, iInterval:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets a slider columns interval value.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnMax>
+<tr><td class=doctop colspan=2>Method SetColumnMax(iColumn:Int, iMax:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the columns maximum value.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnMin>
+<tr><td class=doctop colspan=2>Method SetColumnMin(iColumn:Int, iMin:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the columns minimum value.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnMinMax>
+<tr><td class=doctop colspan=2>Method SetColumnMinMax(iColumn:Int, iMin:Int, iMax:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the columns minimum and maximum values.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnMinMaxWidth>
+<tr><td class=doctop colspan=2>Method SetColumnMinMaxWidth(iColumn:Int, iMin:Int, iMax:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Columns Min and Max Width.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnReadOnly>
+<tr><td class=doctop colspan=2>Method SetColumnReadOnly(iColumn:Int, bReadOnly:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Readonly property of all cells in the column.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnShowBorder>
+<tr><td class=doctop colspan=2>Method SetColumnShowBorder(iColumn:Int, bShowBorder:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the border will show.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnShowComboboxData>
+<tr><td class=doctop colspan=2>Method SetColumnShowComboboxData(iColumn:Int, iData:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets what data from the combobox appears in the column.  Only applies to Combobox columns.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnShowGadgets>
+<tr><td class=doctop colspan=2>Method SetColumnShowGadgets(iColumn:Int, bShowColumnGadgets:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the columns gadgets will show.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnShowTicks>
+<tr><td class=doctop colspan=2>Method SetColumnShowTicks(iColumn:Int, bShowTicks:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets a slider columns ShowTicks value.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetColumnsResizable>
+<tr><td class=doctop colspan=2>Method SetColumnsResizable(bResize:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets if the columns can be resized.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetComboboxShowItems>
+<tr><td class=doctop colspan=2>Method SetComboboxShowItems(iColumn:Int, iNumItems:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the number of items that appear in the combobox dropdown of a combobox column.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetEnabled>
+<tr><td class=doctop colspan=2>Method SetEnabled(bEnabled:Int = True) 'Sets the gadget enabled or not.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadget enabled/disabled.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetFont>
+<tr><td class=doctop colspan=2>Method SetFont(Font:TImageFont) 'Set the font of the gadget</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the font of the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Set to Null to use the default GUI font.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetGridColor>
+<tr><td class=doctop colspan=2>Method SetGridColor(iRed:Int, iGreen:Int, iBlue:Int) 'Set color of highlighted item</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the grid color.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetHeaderColumnHeight>
+<tr><td class=doctop colspan=2>Method SetHeaderColumnHeight(iHeight:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Column Header Height.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetHeaderRowWidth>
+<tr><td class=doctop colspan=2>Method SetHeaderRowWidth(iWidth:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Row Header Width.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetHighlightColor>
+<tr><td class=doctop colspan=2>Method SetHighlightColor(iRed:Int, iGreen:Int, iBlue:Int) 'Set color of highlighted item</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the highlight color.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetHighlightTextColor>
+<tr><td class=doctop colspan=2>Method SetHighlightTextColor(iRed:Int, iGreen:Int, iBlue:Int) 'Set color of highlighted item text</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the highlight text color.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetHScrollbar>
+<tr><td class=doctop colspan=2>Method SetHScrollbar(iHScrollbar:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the Horizontal Scrollbar will show.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>ifsoGUI_SCROLLBAR_ON, ifsoGUI_SCROLLBAR_OFF, ifsoGUI_SCROLLBAR_AUTO.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetMouseHighlight>
+<tr><td class=doctop colspan=2>Method SetMouseHighlight(intMouseHighlight:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the highlight follows the mouse.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetMultiSelect>
+<tr><td class=doctop colspan=2>Method SetMultiSelect(bMultiSelect:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not multiple items can be selected.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetRowHeight>
+<tr><td class=doctop colspan=2>Method SetRowHeight(iRowHeight:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the row height.  If requested height is less than the minimum, minimum is set.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetRowReadOnly>
+<tr><td class=doctop colspan=2>Method SetRowReadOnly(iRow:Int, bReadOnly:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the Readonly property of all cells in the row.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetScrollBarWidth>
+<tr><td class=doctop colspan=2>Method SetScrollBarWidth(iWidth:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the width of the scrollbars.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetSelectColor>
+<tr><td class=doctop colspan=2>Method SetSelectColor(iRed:Int, iGreen:Int, iBlue:Int) 'Set color of selected item</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the selection color.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetSelected>
+<tr><td class=doctop colspan=2>Method SetSelected(iRow:Int, bSelected:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the row selected/unselected.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetSelectTextColor>
+<tr><td class=doctop colspan=2>Method SetSelectTextColor(iRed:Int, iGreen:Int, iBlue:Int) 'Set color of selected item text</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the select text color.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetShowBorder>
+<tr><td class=doctop colspan=2>Method SetShowBorder(bShowBorder:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the border will show.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetShowColumnHeaders>
+<tr><td class=doctop colspan=2>Method SetShowColumnHeaders(bShowColumnHeaders:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the column head buttons will show.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetShowGrid>
+<tr><td class=doctop colspan=2>Method SetShowGrid(bShowGrid:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the column head buttons will show.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetShowRowHeaders>
+<tr><td class=doctop colspan=2>Method SetShowRowHeaders(bShowRowHeaders:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the row head buttons will show.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTopItem>
+<tr><td class=doctop colspan=2>Method SetTopItem(intTopItem:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the top index of the listbox.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetVScrollbar>
+<tr><td class=doctop colspan=2>Method SetVScrollbar(iVScrollbar:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the Vertical Scrollbar will show.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>ifsoGUI_SCROLLBAR_ON, ifsoGUI_SCROLLBAR_OFF, ifsoGUI_SCROLLBAR_AUTO.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SlaveEvent>
+<tr><td class=doctop colspan=2>Method SlaveEvent(gadget:ifsoGUI_Base, id:Int, data:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called from a slave gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Slave gadgets do not generate GUI events.  They send events to their Master.
+The Master then uses it or can send a GUI event.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SortList>
+<tr><td class=doctop colspan=2>Method SortList(iColumn:Int, bDesc:Int = False, bSortAsInt:Int = False, bData:Int = False)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sorts the list.  Will be sorted by the Value field by default, set bData=true to sort by the data field.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Swap>
+<tr><td class=doctop colspan=2>Method Swap(iFrom:Int, iTo:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Swap row iFrom with Row iTo.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Create>
+<tr><td class=doctop colspan=2>Function Create:ifsoGUI_MCListBox(iX:Int, iY:Int, iW:Int, iH:Int, strName:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Create and returns a Listbox gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LoadTheme>
+<tr><td class=doctop colspan=2>Function LoadTheme()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called to load the graphics when a new theme is loaded.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>A GadgetSystemEvent is then sent out to all gadgets.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SystemEvent>
+<tr><td class=doctop colspan=2>Function SystemEvent(id:Int, data:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>GUI system event occured.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<br>
+<h2 id=modinfo>Module Information</h2>
+<table width=100%>
+<tr><th width=1%>Version</th><td>1.00</td></tr>
+<tr><th width=1%>Author</th><td>Marcus Trisdale</td></tr>
+<tr><th width=1%>Copyright</th><td>(c) 2009 Marcus Trisdale</td></tr>
+</body></html>

@@ -1,0 +1,462 @@
+<html><head><title>ifsoGUI Multi-Line Textbox reference</title>
+<link rel=stylesheet Type=text/css href='../../../../doc/bmxstyle.css'>
+</head><body>
+<table width=100% cellspacing=0><tr align=center><td class=small>&nbsp;</td>
+<td class=small width=1%><b>ifsogui.mltextbox:</b></td>
+<td class=small width=1%><a href=#types class=small>Types</a></td>
+<td class=small width=1%><a href=#modinfo class=small>Modinfo</a></td>
+<td class=small width=1%><a href='../../../../mod/ifsogui.mod/mltextbox.mod/mltextbox.bmx' class=small>Source</a></td>
+<td class=small>&nbsp;</td></tr></table>
+<h1>ifsoGUI Multi-Line Textbox</h1>
+Multi-Line Textbox Gadget.
+<h2><a name=types></a>Types Summary</h2><table class=doc width=100%>
+<tr><td class=docleft width=1%><a href=#ifsoGUI_MLTextBox>ifsoGUI_MLTextBox</a></td><td class=docright>
+Multiline textbox Type.
+</td></tr>
+</table>
+<h2
+ id=typesdet>Types
+</h2>
+<table class=doc width=100% cellspacing=3 id=ifsoGUI_MLTextBox>
+<tr><td class=doctop colspan=2>Type ifsoGUI_MLTextBox Extends ifsoGUI_Base</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Multiline textbox Type.</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_MLTextBox_methods></a>Methods Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#AddText>AddText</a></td><td class=docright>
+Appends text to the textbox.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CheckCR>CheckCR</a></td><td class=docright>
+Check for a CR.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CheckCursorPos>CheckCursorPos</a></td><td class=docright>
+Check the cursor position is correct.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CheckEmptyLine>CheckEmptyLine</a></td><td class=docright>
+Line is empty.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CheckLines>CheckLines</a></td><td class=docright>
+Checks the lines of the gadget to see if they should be wrapped or clipped.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CheckLineVis>CheckLineVis</a></td><td class=docright>
+Check the visibility of the lines.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CheckLong>CheckLong</a></td><td class=docright>
+Line is long.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CheckLongestLine>CheckLongestLine</a></td><td class=docright>
+Find the longest line.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CheckShortChar>CheckShortChar</a></td><td class=docright>
+Is the line short ending with a character.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CheckShortSpace>CheckShortSpace</a></td><td class=docright>
+Is the line short ending with a space.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CutSelection>CutSelection</a></td><td class=docright>
+Returns the selected text and removes it.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Draw>Draw</a></td><td class=docright>
+Draws the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GainFocus>GainFocus</a></td><td class=docright>
+Called when the gadget becomes the active gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetCurrentLine>GetCurrentLine</a></td><td class=docright>
+Returns the current cursor line.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetCursorBlinkRate>GetCursorBlinkRate</a></td><td class=docright>
+Returns the cursor blink rate in millisecs.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetHScrollbar>GetHScrollbar</a></td><td class=docright>
+Gets whether or not the Horizontal Scrollbar will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetLinePos>GetLinePos</a></td><td class=docright>
+Returns the current cursor position on the line.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetNumLines>GetNumLines</a></td><td class=docright>
+Returns the current number of lines.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetReadOnly>GetReadOnly</a></td><td class=docright>
+Returns whether the textbox is read only or not.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetScrollBarWidth>GetScrollBarWidth</a></td><td class=docright>
+Returns the width of the scrollbars.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetSelectCursorBegin>GetSelectCursorBegin</a></td><td class=docright>
+Returns the location of the selection beginning cursor position.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetSelection>GetSelection</a></td><td class=docright>
+Returns the selected text.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetSelectLineBegin>GetSelectLineBegin</a></td><td class=docright>
+Returns the location of the selection beginning line.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetShowBorder>GetShowBorder</a></td><td class=docright>
+Returns whether or not the border is showing.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTopLine>GetTopLine</a></td><td class=docright>
+Returns the index of the top visible line.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetValue>GetValue</a></td><td class=docright>
+Returns all of the text in the textbox.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetVisibleLines>GetVisibleLines</a></td><td class=docright>
+Returns the number of visible lines.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetVScrollbar>GetVScrollbar</a></td><td class=docright>
+Gets whether or not the Vertical Scrollbar will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetWordWrap>GetWordWrap</a></td><td class=docright>
+Returns whether word wrap is on or off.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseDown>gMouseDown</a></td><td class=docright>
+Called when the mouse button is pressed on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseUp>gMouseUp</a></td><td class=docright>
+Called when the mouse button is released on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#InsertText>InsertText</a></td><td class=docright>
+Inserts text at the cursor position.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#IsMouseOver>IsMouseOver</a></td><td class=docright>
+Returns whether or not the mouse is over the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#KeyPress>KeyPress</a></td><td class=docright>
+Called when a key is pressed on the active gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LoadSkin>LoadSkin</a></td><td class=docright>
+Loads a skin for one instance of a gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LostFocus>LostFocus</a></td><td class=docright>
+Called when the gadget is no longer the Active Gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MouseStatus>MouseStatus</a></td><td class=docright>
+Called to determine the mouse status from the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Refresh>Refresh</a></td><td class=docright>
+Refreshes the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveText>RemoveText</a></td><td class=docright>
+Removes the selected text.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetCurrentLine>SetCurrentLine</a></td><td class=docright>
+Sets the current cursor line.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetCursorBlinkRate>SetCursorBlinkRate</a></td><td class=docright>
+Sets the cursor blink rate in Millisecs.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetFilter>SetFilter</a></td><td class=docright>
+Sets a keypress filter.  This custom function should return True or False based on whether the key pressed should be allowed.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetHScrollbar>SetHScrollbar</a></td><td class=docright>
+Sets whether or not the Horizontal Scrollbar will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetLinePos>SetLinePos</a></td><td class=docright>
+Sets the cursor line position.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetReadOnly>SetReadOnly</a></td><td class=docright>
+Sets the gadget read only.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetScrollBarWidth>SetScrollBarWidth</a></td><td class=docright>
+Sets the width of the scrollbars.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetSelectColor>SetSelectColor</a></td><td class=docright>
+Sets the selection color.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetSelectCursorBegin>SetSelectCursorBegin</a></td><td class=docright>
+Sets The Selection begining.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetSelectLineBegin>SetSelectLineBegin</a></td><td class=docright>
+Sets The Selection begining.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetShowBorder>SetShowBorder</a></td><td class=docright>
+Sets whether or not the border will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetValue>SetValue</a></td><td class=docright>
+Sets the text in the textbox.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetVScrollbar>SetVScrollbar</a></td><td class=docright>
+Sets whether or not the Vertical Scrollbar will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetWordWrap>SetWordWrap</a></td><td class=docright>
+Sets word wrap on or off.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SlaveEvent>SlaveEvent</a></td><td class=docright>
+Called from a slave gadget.
+</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_MLTextBox_functions></a>Functions Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#Create>Create</a></td><td class=docright>
+Create and returns a multiline textbox gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LoadTheme>LoadTheme</a></td><td class=docright>
+Called to load the graphics when a new theme is loaded.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SystemEvent>SystemEvent</a></td><td class=docright>
+GUI system event occured.
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=AddText>
+<tr><td class=doctop colspan=2>Method AddText(strText:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Appends text to the textbox.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CheckCR>
+<tr><td class=doctop colspan=2>Method CheckCR:Int(iLine:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Check for a CR.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CheckCursorPos>
+<tr><td class=doctop colspan=2>Method CheckCursorPos(WasPrevLength:Int, WasCurLength:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Check the cursor position is correct.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CheckEmptyLine>
+<tr><td class=doctop colspan=2>Method CheckEmptyLine:Int(LineToCheck:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Line is empty.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CheckLines>
+<tr><td class=doctop colspan=2>Method CheckLines(CheckLine:Int = -1)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Checks the lines of the gadget to see if they should be wrapped or clipped.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CheckLineVis>
+<tr><td class=doctop colspan=2>Method CheckLineVis()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Check the visibility of the lines.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CheckLong>
+<tr><td class=doctop colspan=2>Method CheckLong:Int(LineToCheck:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Line is long.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CheckLongestLine>
+<tr><td class=doctop colspan=2>Method CheckLongestLine()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Find the longest line.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CheckShortChar>
+<tr><td class=doctop colspan=2>Method CheckShortChar:Int(LineToCheck:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Is the line short ending with a character.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CheckShortSpace>
+<tr><td class=doctop colspan=2>Method CheckShortSpace:Int(LineToCheck:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Is the line short ending with a space.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=CutSelection>
+<tr><td class=doctop colspan=2>Method CutSelection:String()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the selected text and removes it.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Draw>
+<tr><td class=doctop colspan=2>Method Draw(parX:Int, parY:Int, parW:Int, parH:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GainFocus>
+<tr><td class=doctop colspan=2>Method GainFocus(LostFocus:ifsoGUI_Base)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the gadget becomes the active gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetCurrentLine>
+<tr><td class=doctop colspan=2>Method GetCurrentLine:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the current cursor line.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetCursorBlinkRate>
+<tr><td class=doctop colspan=2>Method GetCursorBlinkRate:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the cursor blink rate in millisecs.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetHScrollbar>
+<tr><td class=doctop colspan=2>Method GetHScrollbar:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gets whether or not the Horizontal Scrollbar will show.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetLinePos>
+<tr><td class=doctop colspan=2>Method GetLinePos:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the current cursor position on the line.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetNumLines>
+<tr><td class=doctop colspan=2>Method GetNumLines:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the current number of lines.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetReadOnly>
+<tr><td class=doctop colspan=2>Method GetReadOnly:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether the textbox is read only or not.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetScrollBarWidth>
+<tr><td class=doctop colspan=2>Method GetScrollBarWidth:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the width of the scrollbars.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetSelectCursorBegin>
+<tr><td class=doctop colspan=2>Method GetSelectCursorBegin:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the location of the selection beginning cursor position.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetSelection>
+<tr><td class=doctop colspan=2>Method GetSelection:String()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the selected text.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetSelectLineBegin>
+<tr><td class=doctop colspan=2>Method GetSelectLineBegin:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the location of the selection beginning line.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetShowBorder>
+<tr><td class=doctop colspan=2>Method GetShowBorder:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the border is showing.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTopLine>
+<tr><td class=doctop colspan=2>Method GetTopLine:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the index of the top visible line.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetValue>
+<tr><td class=doctop colspan=2>Method GetValue:String()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns all of the text in the textbox.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetVisibleLines>
+<tr><td class=doctop colspan=2>Method GetVisibleLines:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the number of visible lines.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetVScrollbar>
+<tr><td class=doctop colspan=2>Method GetVScrollbar:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Gets whether or not the Vertical Scrollbar will show.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetWordWrap>
+<tr><td class=doctop colspan=2>Method GetWordWrap:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether word wrap is on or off.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseDown>
+<tr><td class=doctop colspan=2>Method gMouseDown(iButton:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is pressed on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseUp>
+<tr><td class=doctop colspan=2>Method gMouseUp(iButton:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is released on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=InsertText>
+<tr><td class=doctop colspan=2>Method InsertText(strText:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Inserts text at the cursor position.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=IsMouseOver>
+<tr><td class=doctop colspan=2>Method IsMouseOver:Int(parX:Int, parY:Int, parW:Int, parH:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the mouse is over the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=KeyPress>
+<tr><td class=doctop colspan=2>Method KeyPress(key:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when a key is pressed on the active gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LoadSkin>
+<tr><td class=doctop colspan=2>Method LoadSkin(strSkin:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Loads a skin for one instance of a gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LostFocus>
+<tr><td class=doctop colspan=2>Method LostFocus(GainedFocus:ifsoGUI_Base)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the gadget is no longer the Active Gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=MouseStatus>
+<tr><td class=doctop colspan=2>Method MouseStatus:Int(iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called to determine the mouse status from the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Called to the active gadget only.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Refresh>
+<tr><td class=doctop colspan=2>Method Refresh()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Refreshes the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Recalculates any geometry/font changes, etc.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveText>
+<tr><td class=doctop colspan=2>Method RemoveText()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes the selected text.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetCurrentLine>
+<tr><td class=doctop colspan=2>Method SetCurrentLine(intCurrentLine:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the current cursor line.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetCursorBlinkRate>
+<tr><td class=doctop colspan=2>Method SetCursorBlinkRate(iBlinkRate:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the cursor blink rate in Millisecs.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetFilter>
+<tr><td class=doctop colspan=2>Method SetFilter(funcFilter:Int(key:Int, gadget:ifsoGUI_Base))</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets a keypress filter.  This custom function should return True or False based on whether the key pressed should be allowed.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetHScrollbar>
+<tr><td class=doctop colspan=2>Method SetHScrollbar(iHScrollbar:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the Horizontal Scrollbar will show.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>ifsoGUI_SCROLLBAR_ON, ifsoGUI_SCROLLBAR_OFF, ifsoGUI_SCROLLBAR_AUTO.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetLinePos>
+<tr><td class=doctop colspan=2>Method SetLinePos(intLinePos:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the cursor line position.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetReadOnly>
+<tr><td class=doctop colspan=2>Method SetReadOnly(bReadOnly:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the gadget read only.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetScrollBarWidth>
+<tr><td class=doctop colspan=2>Method SetScrollBarWidth(iWidth:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the width of the scrollbars.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetSelectColor>
+<tr><td class=doctop colspan=2>Method SetSelectColor(iRed:Int, iGreen:Int, iBlue:Int) 'Set color of selected item</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the selection color.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetSelectCursorBegin>
+<tr><td class=doctop colspan=2>Method SetSelectCursorBegin(iBegin:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets The Selection begining.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetSelectLineBegin>
+<tr><td class=doctop colspan=2>Method SetSelectLineBegin(iBegin:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets The Selection begining.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetShowBorder>
+<tr><td class=doctop colspan=2>Method SetShowBorder(bShowBorder:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the border will show.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetValue>
+<tr><td class=doctop colspan=2>Method SetValue(strValue:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the text in the textbox.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetVScrollbar>
+<tr><td class=doctop colspan=2>Method SetVScrollbar(iVScrollbar:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the Vertical Scrollbar will show.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>ifsoGUI_SCROLLBAR_ON, ifsoGUI_SCROLLBAR_OFF, ifsoGUI_SCROLLBAR_AUTO.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetWordWrap>
+<tr><td class=doctop colspan=2>Method SetWordWrap(intWordWrap:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets word wrap on or off.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SlaveEvent>
+<tr><td class=doctop colspan=2>Method SlaveEvent(gadget:ifsoGUI_Base, id:Int, data:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called from a slave gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Slave gadgets do not generate GUI events.  They send events to their Master.
+The Master then uses it or can send a GUI event.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Create>
+<tr><td class=doctop colspan=2>Function Create:ifsoGUI_MLTextBox(iX:Int, iY:Int, iW:Int, iH:Int, strName:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Create and returns a multiline textbox gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LoadTheme>
+<tr><td class=doctop colspan=2>Function LoadTheme()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called to load the graphics when a new theme is loaded.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>A GadgetSystemEvent is then sent out to all gadgets.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SystemEvent>
+<tr><td class=doctop colspan=2>Function SystemEvent(id:Int, data:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>GUI system event occured.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<br>
+<h2 id=modinfo>Module Information</h2>
+<table width=100%>
+<tr><th width=1%>Version</th><td>1.00</td></tr>
+<tr><th width=1%>Author</th><td>Marcus Trisdale</td></tr>
+<tr><th width=1%>Copyright</th><td>(c) 2009 Marcus Trisdale</td></tr>
+</body></html>

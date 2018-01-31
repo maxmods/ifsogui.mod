@@ -1,0 +1,376 @@
+<html><head><title>ifsoGUI Tabber reference</title>
+<link rel=stylesheet Type=text/css href='../../../../doc/bmxstyle.css'>
+</head><body>
+<table width=100% cellspacing=0><tr align=center><td class=small>&nbsp;</td>
+<td class=small width=1%><b>ifsogui.tabber:</b></td>
+<td class=small width=1%><a href=#types class=small>Types</a></td>
+<td class=small width=1%><a href=#modinfo class=small>Modinfo</a></td>
+<td class=small width=1%><a href='../../../../mod/ifsogui.mod/tabber.mod/tabber.bmx' class=small>Source</a></td>
+<td class=small>&nbsp;</td></tr></table>
+<h1>ifsoGUI Tabber</h1>
+Tabber Gadget.
+<h2><a name=types></a>Types Summary</h2><table class=doc width=100%>
+<tr><td class=docleft width=1%><a href=#ifsoGUI_Tabber>ifsoGUI_Tabber</a></td><td class=docright>
+Tabber Type.
+</td></tr>
+</table>
+<h2
+ id=typesdet>Types
+</h2>
+<table class=doc width=100% cellspacing=3 id=ifsoGUI_Tabber>
+<tr><td class=doctop colspan=2>Type ifsoGUI_Tabber Extends ifsoGUI_Base</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Tabber Type.</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_Tabber_methods></a>Methods Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#AddTab>AddTab</a></td><td class=docright>
+Adds a tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#AddTabChild>AddTabChild</a></td><td class=docright>
+Adds a child to a tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Draw>Draw</a></td><td class=docright>
+Draws the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GainFocus>GainFocus</a></td><td class=docright>
+Called when the gadget becomes the active gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetAbsoluteXY>GetAbsoluteXY</a></td><td class=docright>
+Returns the absolute X and Y screen position of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetChild>GetChild</a></td><td class=docright>
+Returns the gadget with the name from the child list.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetCurrentTab>GetCurrentTab</a></td><td class=docright>
+Returns the current tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetEdgeOffset>GetEdgeOffset</a></td><td class=docright>
+Returns the distance from the edge of the gadget to the first/last tabs.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetFirstTab>GetFirstTab</a></td><td class=docright>
+Returns the first visible tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetNumTabs>GetNumTabs</a></td><td class=docright>
+Returns the number of tabs.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetShowBorder>GetShowBorder</a></td><td class=docright>
+Returns whether or not the border is showing.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTabAutoHeight>GetTabAutoHeight</a></td><td class=docright>
+Returns whether tab auto height is on or off.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTabAutoWidth>GetTabAutoWidth</a></td><td class=docright>
+Returns whether tab auto width is on or off.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTabEnabled>GetTabEnabled</a></td><td class=docright>
+Returns whether the tab is enabled or not.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTabHeight>GetTabHeight</a></td><td class=docright>
+Returns the height of the tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTabOverlap>GetTabOverlap</a></td><td class=docright>
+Returns the amount the tabs will overlap.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTabText>GetTabText</a></td><td class=docright>
+Returns the text on the tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTabTip>GetTabTip</a></td><td class=docright>
+Returns the tip of the tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetTabWidth>GetTabWidth</a></td><td class=docright>
+Returns the width of the tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseDown>gMouseDown</a></td><td class=docright>
+Called when the mouse button is pressed on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#gMouseUp>gMouseUp</a></td><td class=docright>
+Called when the mouse button is released on the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#IsMouseOver>IsMouseOver</a></td><td class=docright>
+Returns whether or not the mouse is over the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#KeyPress>KeyPress</a></td><td class=docright>
+Called when a key is pressed on the active gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LoadSkin>LoadSkin</a></td><td class=docright>
+Loads a skin for one insance of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LostFocus>LostFocus</a></td><td class=docright>
+Called when the gadget is no longer the Active Gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MouseStatus>MouseStatus</a></td><td class=docright>
+Called to determine the mouse status from the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Refresh>Refresh</a></td><td class=docright>
+Refreshes the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveTab>RemoveTab</a></td><td class=docright>
+Removes a tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RemoveTabChild>RemoveTabChild</a></td><td class=docright>
+Removes a child from a tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetCurrentTab>SetCurrentTab</a></td><td class=docright>
+Sets the current tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetEdgeOffset>SetEdgeOffset</a></td><td class=docright>
+Sets the distance from the edge of the gadget to the first/last tabs.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetFirstTab>SetFirstTab</a></td><td class=docright>
+Sets the first visible tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetFont>SetFont</a></td><td class=docright>
+Sets the font of the gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetShowBorder>SetShowBorder</a></td><td class=docright>
+Sets whether or not the border will show.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTabAutoHeight>SetTabAutoHeight</a></td><td class=docright>
+Sets Tab Auto Height on or off.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTabAutoWidth>SetTabAutoWidth</a></td><td class=docright>
+Sets Tab Auto Width on or off.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTabEnabled>SetTabEnabled</a></td><td class=docright>
+Sets the tab enabled/disabled.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTabHeight>SetTabHeight</a></td><td class=docright>
+Sets the height of the tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTabOverlap>SetTabOverlap</a></td><td class=docright>
+Sets the amount th etabs will overlap.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTabText>SetTabText</a></td><td class=docright>
+Sets the text on the tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTabTip>SetTabTip</a></td><td class=docright>
+Sets the tip of the tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetTabWidth>SetTabWidth</a></td><td class=docright>
+Sets the width of the tab.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SlaveEvent>SlaveEvent</a></td><td class=docright>
+Called from a slave gadget.
+</td></tr>
+</table>
+<table class=doc width=90% align=center><tr ><th class=doctop colspan=2 align=left><a name=ifsoGUI_Tabber_functions></a>Functions Summary</th></tr>
+<tr><td class=docleft width=1%><a href=#Create>Create</a></td><td class=docright>
+Create and returns a tabber gadget.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LoadTheme>LoadTheme</a></td><td class=docright>
+Called to load the graphics when a new theme is loaded.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SystemEvent>SystemEvent</a></td><td class=docright>
+GUI system event occured.
+</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=AddTab>
+<tr><td class=doctop colspan=2>Method AddTab(strText:String, strTip:String = "", intWidth:Int = 0, intIndex:Int = -1)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Adds a tab.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=AddTabChild>
+<tr><td class=doctop colspan=2>Method AddTabChild(gadget:ifsoGUI_Base, intTab:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Adds a child to a tab.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Draw>
+<tr><td class=doctop colspan=2>Method Draw(parX:Int, parY:Int, parW:Int, parH:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Draws the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GainFocus>
+<tr><td class=doctop colspan=2>Method GainFocus(LostFocus:ifsoGUI_Base)  'Gadget Got focus</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the gadget becomes the active gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetAbsoluteXY>
+<tr><td class=doctop colspan=2>Method GetAbsoluteXY(iX:Int Var, iY:Int Var, caller:ifsoGUI_Base = Null)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the absolute X and Y screen position of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetChild>
+<tr><td class=doctop colspan=2>Method GetChild:ifsoGUI_Base(name:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the gadget with the name from the child list.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetCurrentTab>
+<tr><td class=doctop colspan=2>Method GetCurrentTab:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the current tab.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetEdgeOffset>
+<tr><td class=doctop colspan=2>Method GetEdgeOffset:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the distance from the edge of the gadget to the first/last tabs.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetFirstTab>
+<tr><td class=doctop colspan=2>Method GetFirstTab:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the first visible tab.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetNumTabs>
+<tr><td class=doctop colspan=2>Method GetNumTabs:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the number of tabs.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetShowBorder>
+<tr><td class=doctop colspan=2>Method GetShowBorder:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the border is showing.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTabAutoHeight>
+<tr><td class=doctop colspan=2>Method GetTabAutoHeight:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether tab auto height is on or off.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTabAutoWidth>
+<tr><td class=doctop colspan=2>Method GetTabAutoWidth:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether tab auto width is on or off.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTabEnabled>
+<tr><td class=doctop colspan=2>Method GetTabEnabled:Int(intTab:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether the tab is enabled or not.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTabHeight>
+<tr><td class=doctop colspan=2>Method GetTabHeight:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the height of the tab.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTabOverlap>
+<tr><td class=doctop colspan=2>Method GetTabOverlap:Int()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the amount the tabs will overlap.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTabText>
+<tr><td class=doctop colspan=2>Method GetTabText:String(intTab:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the text on the tab.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTabTip>
+<tr><td class=doctop colspan=2>Method GetTabTip:String(intTab:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the tip of the tab.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=GetTabWidth>
+<tr><td class=doctop colspan=2>Method GetTabWidth:Int(intTab:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the width of the tab.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseDown>
+<tr><td class=doctop colspan=2>Method gMouseDown(iButton:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is pressed on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=gMouseUp>
+<tr><td class=doctop colspan=2>Method gMouseUp(iButton:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the mouse button is released on the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=IsMouseOver>
+<tr><td class=doctop colspan=2>Method IsMouseOver:Int(parX:Int, parY:Int, parW:Int, parH:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns whether or not the mouse is over the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=KeyPress>
+<tr><td class=doctop colspan=2>Method KeyPress(key:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when a key is pressed on the active gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LoadSkin>
+<tr><td class=doctop colspan=2>Method LoadSkin(strSkin:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Loads a skin for one insance of the gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LostFocus>
+<tr><td class=doctop colspan=2>Method LostFocus(GainedFocus:ifsoGUI_Base)	 'Gadget Lost focus</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called when the gadget is no longer the Active Gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=MouseStatus>
+<tr><td class=doctop colspan=2>Method MouseStatus:Int(iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called to determine the mouse status from the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Called to the active gadget only.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Refresh>
+<tr><td class=doctop colspan=2>Method Refresh()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Refreshes the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Recalculates any geometry/font changes, etc.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveTab>
+<tr><td class=doctop colspan=2>Method RemoveTab(intTab:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes a tab.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=RemoveTabChild>
+<tr><td class=doctop colspan=2>Method RemoveTabChild(gadget:ifsoGUI_Base, intTab:Int, bDestroy:Int = True)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Removes a child from a tab.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetCurrentTab>
+<tr><td class=doctop colspan=2>Method SetCurrentTab(intTab:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the current tab.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetEdgeOffset>
+<tr><td class=doctop colspan=2>Method SetEdgeOffset(intEdgeOffset:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the distance from the edge of the gadget to the first/last tabs.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetFirstTab>
+<tr><td class=doctop colspan=2>Method SetFirstTab(intFirstTab:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the first visible tab.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Only useful if more tabs than are visible at a time are in use.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetFont>
+<tr><td class=doctop colspan=2>Method SetFont(Font:TImageFont)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the font of the gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Set to Null to use the default GUI font.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetShowBorder>
+<tr><td class=doctop colspan=2>Method SetShowBorder(bShowBorder:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets whether or not the border will show.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTabAutoHeight>
+<tr><td class=doctop colspan=2>Method SetTabAutoHeight(intTabAutoHeight:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets Tab Auto Height on or off.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTabAutoWidth>
+<tr><td class=doctop colspan=2>Method SetTabAutoWidth(intAutoWidth:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets Tab Auto Width on or off.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTabEnabled>
+<tr><td class=doctop colspan=2>Method SetTabEnabled(intTab:Int, intEnabled:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the tab enabled/disabled.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTabHeight>
+<tr><td class=doctop colspan=2>Method SetTabHeight(intHeight:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the height of the tab.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTabOverlap>
+<tr><td class=doctop colspan=2>Method SetTabOverlap(intTabOverlap:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the amount th etabs will overlap.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTabText>
+<tr><td class=doctop colspan=2>Method SetTabText(intTab:Int, strText:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the text on the tab.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTabTip>
+<tr><td class=doctop colspan=2>Method SetTabTip(intTab:Int, strTip:String)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the tip of the tab.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SetTabWidth>
+<tr><td class=doctop colspan=2>Method SetTabWidth(intTab:Int, intWidth:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Sets the width of the tab.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SlaveEvent>
+<tr><td class=doctop colspan=2>Method SlaveEvent(gadget:ifsoGUI_Base, id:Int, data:Int, iMouseX:Int, iMouseY:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called from a slave gadget.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Slave gadgets do not generate GUI events.  They send events to their Master.
+The Master then uses it or can send a GUI event.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=Create>
+<tr><td class=doctop colspan=2>Function Create:ifsoGUI_Tabber(iX:Int, iY:Int, iW:Int, iH:Int, strName:String, intNumTabs:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Create and returns a tabber gadget.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=LoadTheme>
+<tr><td class=doctop colspan=2>Function LoadTheme()</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Called to load the graphics when a new theme is loaded.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>A GadgetSystemEvent is then sent out to all gadgets.
+Internal function should not be called by the user.</td></tr>
+</table>
+<table class=doc width=100% cellspacing=3 id=SystemEvent>
+<tr><td class=doctop colspan=2>Function SystemEvent(id:Int, data:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>GUI system event occured.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Internal function should not be called by the user.</td></tr>
+</table>
+<br>
+<h2 id=modinfo>Module Information</h2>
+<table width=100%>
+<tr><th width=1%>Version</th><td>1.00</td></tr>
+<tr><th width=1%>Author</th><td>Marcus Trisdale</td></tr>
+<tr><th width=1%>Copyright</th><td>(c) 2009 Marcus Trisdale</td></tr>
+</body></html>

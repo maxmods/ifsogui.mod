@@ -4,7 +4,7 @@ Rem
 	bbdoc: ifsoGUI
 	about: BlitzMax graphic gui library.
 EndRem
-Module ifsogui.gui
+Module ifsogui.GUI
 
 ModuleInfo "Version: 1.00"
 ModuleInfo "Author: Marcus Trisdale"
@@ -27,13 +27,16 @@ Import brl.D3D9Max2D
 
 Import pub.zlib
 Import brl.filesystem
+?bmxng
+Import koriolis.zipstream
+?Not bmxng
 Import "zipstream/zip.c"
 Import "zipstream/unzip.c"
 Import "zipstream/ioapi.c"
 Import "zipstream/bmxsupport.c"
-
 Include "zipstream/bufferedstream.bmx"
 Include "zipstream/zipstream.bmx"
+?
 Include "events.bmx"
 Include "basegadget.bmx"
 
@@ -301,7 +304,7 @@ Type GUI Final
 		While l
 			ifsoGUI_Base(l.Value()).Draw(0, 0, iWidth, iHeight)
 			l = l.PrevLink()
-		WEnd
+		Wend
 	End Function
 	Rem
 	bbdoc: Draws the mouse pointer.
@@ -407,7 +410,7 @@ Type GUI Final
 				While g
 					If g.CanActive() Exit
 					g = Modal.NextGadget(g, bForward)
-				WEnd
+				Wend
 			End If
 		Else
 			Local bFlag:Int = False
@@ -474,7 +477,7 @@ Type GUI Final
 				Local t:TLink = Gadgets.LastLink()
 				While t
 					If Not ifsoGUI_Base(t.Value()).Master Return ifsoGUI_Base(t.Value())
-				WEnd
+				Wend
 				Return Null
 			End If
 		End If
@@ -1288,7 +1291,7 @@ End Rem
 Rem
 	bbdoc: Draws text restricted to the area of the viewport.
 End Rem
-	Function DrawTextArea(text:String, x:Float, y:Float, gadget:ifsoGUI_Base = Null)
+	Function DrawTextArea(Text:String, x:Float, y:Float, gadget:ifsoGUI_Base = Null)
 		If vpW <= 0 Or vpH <= 0 Return
 		If y > vpY + vpH Return
 		'Check if using CustomFonts
@@ -1299,28 +1302,28 @@ End Rem
 				Local tmpX:Float = x
 				Repeat
 					If tmpX < vpX
-						tmpX:+CustTextWidth(Chr(text[0]), gadget)
-						If text.Length <= 1 Return
-						text = text[1..]
+						tmpX:+CustTextWidth(Chr(Text[0]), gadget)
+						If Text.Length <= 1 Return
+						Text = Text[1..]
 					Else
 						x = tmpX
 						Exit
 					End If
 				Forever
 				'Check for too long
-				For Local i:Int = text.Length - 1 To 0 Step - 1
-					If CustTextWidth(text, gadget) + x < vpX + vpW Exit 'Will the text fit
-					text = text[..text.length - 1] 'if not, remove a character
+				For Local i:Int = Text.Length - 1 To 0 Step - 1
+					If CustTextWidth(Text, gadget) + x < vpX + vpW Exit 'Will the text fit
+					Text = Text[..Text.length - 1] 'if not, remove a character
 				Next
-				If text.Length < 1 Return 'no charactres left, return.
+				If Text.Length < 1 Return 'no charactres left, return.
 			End If
-			CustDrawText(text, x, y, gadget) 'Call the users DrawText function
+			CustDrawText(Text, x, y, gadget) 'Call the users DrawText function
 			Return
 		End If
 		Local font:TImageFont = GetImageFont()
 		Local tx:Float, ty:Float
-		For Local i:Int = 0 Until text.length
-			Local n:Int = font.CharToGlyph(text[i])
+		For Local i:Int = 0 Until Text.length
+			Local n:Int = font.CharToGlyph(Text[i])
 			If n < 0 Continue
 			Local glyph:TImageGlyph = font.LoadGlyph(n)
 			Local image:TImage=glyph._image

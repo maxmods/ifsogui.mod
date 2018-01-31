@@ -344,7 +344,11 @@ Type ifsoGUI_FileSelect Extends ifsoGUI_Window
 	Method Populate()
 		lblDir.SetLabel(Dir)
 		lstFiles.RemoveAll()
+		?bmxng
+		Local d:Byte Ptr = ReadDir(Dir)
+		?Not bmxng
 		Local d:Int = ReadDir(Dir)
+		?
 		Local f:String
 		Repeat
 			f = NextFile(d)
