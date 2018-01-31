@@ -4,7 +4,7 @@ Rem
 	bbdoc: ifsoGUI
 	about: BlitzMax graphic gui library.
 EndRem
-Module ifsogui.gui
+Module ifsogui.GUI
 
 ModuleInfo "Version: 1.00"
 ModuleInfo "Author: Marcus Trisdale"
@@ -27,15 +27,16 @@ Import brl.D3D9Max2D
 
 Import pub.zlib
 Import brl.filesystem
-
+?bmxng
 Import koriolis.zipstream
-'Import "zipstream/zip.c"
-'Import "zipstream/unzip.c"
-'Import "zipstream/ioapi.c"
-'Import "zipstream/bmxsupport.c"
-'Include "zipstream/bufferedstream.bmx"
-'Include "zipstream/zipstream.bmx"
-
+?Not bmxng
+Import "zipstream/zip.c"
+Import "zipstream/unzip.c"
+Import "zipstream/ioapi.c"
+Import "zipstream/bmxsupport.c"
+Include "zipstream/bufferedstream.bmx"
+Include "zipstream/zipstream.bmx"
+?
 Include "events.bmx"
 Include "basegadget.bmx"
 
