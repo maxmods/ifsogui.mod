@@ -29,7 +29,7 @@ Type ifsoGUI_TextBox Extends ifsoGUI_Base
 	Field ShowStart:Int = 0, ShowEnd:Int 'Start and end of characters visible in the control
 	Field CursorWidth:Int = 1 'Width of the cursor
 	Field CursorHeight:Int 'Height of the Cursor
-	Field _ReadOnly:Int = False
+	Field IsReadOnly:Int = False
 	Field ShowBorder:Int = True
 	Field BorderTop:Int, BorderBottom:Int, BorderLeft:Int, BorderRight:Int 'Border dimensions
 	Field BlinkRate:Int = 500 'Millisecs the cursor will be on or off.
@@ -123,7 +123,7 @@ Type ifsoGUI_TextBox Extends ifsoGUI_Base
 		Local offset:Int = (h - (BorderTop + BorderBottom + ifsoGUI_VP.GetTextHeight(Self))) / 2
 		If ShowEnd > ShowStart ifsoGUI_VP.DrawTextArea(Value[ShowStart..], rX + BorderLeft + 1, rY + borderTop + offset, Self)
 		'Draw the Cursor
-		If HasFocus And (Not _ReadOnly)
+		If HasFocus And (Not IsReadOnly)
 		 If BlinkRate = 0
 				Local oldwidth:Int = GetLineWidth()
 				SetLineWidth(CursorWidth)
@@ -226,7 +226,7 @@ Type ifsoGUI_TextBox Extends ifsoGUI_Base
 	about: Internal function should not be called by the user.
 	End Rem
 	Method KeyPress(key:Int)
-		If _ReadOnly Return
+		If IsReadOnly Return
 		LastBlink = MilliSecs()
 		If KeyDown(KEY_LCONTROL) Or KeyDown(KEY_RCONTROL)
 			If key = 3
@@ -269,7 +269,7 @@ Type ifsoGUI_TextBox Extends ifsoGUI_Base
 			CursorPos = Value.Length
 			If (Not (KeyDown(KEY_LSHIFT) Or KeyDown(KEY_RSHIFT))) SelectBegin = CursorPos
 		Else
-			If Not _ReadOnly
+			If Not IsReadOnly
 				If Filter
 					If Not Filter(key, Self) Return
 				End If
@@ -306,7 +306,7 @@ Type ifsoGUI_TextBox Extends ifsoGUI_Base
 			If iMouseX > tw + iX + BorderLeft + 1 + cw CursorPos:+1
 			If CursorPos > Value.Length CursorPos = Value.Length
 		End If
-		If Enabled And Visible And Not _ReadOnly
+		If Enabled And Visible And Not IsReadOnly
 			If bPressed Return ifsoGUI_MOUSE_IBAR
 			If GUI.gMouseOverGadget = Self Return ifsoGUI_MOUSE_IBAR
 		End If
@@ -592,13 +592,13 @@ Type ifsoGUI_TextBox Extends ifsoGUI_Base
 	bbdoc: Sets the gadget read only.
 	End Rem
 	Method SetReadOnly(bReadOnly:Int)
-		_ReadOnly = bReadOnly
+		IsReadOnly = bReadOnly
 	End Method
 	Rem
 	bbdoc: Returns whether the textbox is read only or not.
 	End Rem
 	Method GetReadOnly:Int()
-		Return _ReadOnly
+		Return IsReadOnly
 	End Method
 	'ADDED by Zeke
 	Rem
