@@ -1029,7 +1029,7 @@ Type ifsoGUI_MCListBox Extends ifsoGUI_Base
 				col.MinHeight = col.Gadget.h
 			Default
 				col.CType = ifsoGUI_COLUMNTYPE_LABEL
-				col.ReadOnly = True
+				col.IsReadOnly = True
 		End Select
 		col.DefaultValue = strDefault
 		col.w = iWidth
@@ -1077,7 +1077,7 @@ Type ifsoGUI_MCListBox Extends ifsoGUI_Base
 			row.Tip = ""
 			row.Selected = False
 			row.Value = Columns[i].DefaultValue
-			row.ReadOnly = Columns[i].ReadOnly
+			row.IsReadOnly = Columns[i].IsReadOnly
 			Columns[i].Rows[iIndex] = row
 		Next
 		NumRows:+1
@@ -1270,7 +1270,7 @@ Type ifsoGUI_MCListBox Extends ifsoGUI_Base
 	Method SetCellReadOnly(iColumn:Int, iRow:Int, bReadOnly:Int)
 		If iColumn >= Columns.Length Return
 		If iRow >= NumRows Return
-		Columns[iColumn].Rows[iRow].ReadOnly = bReadOnly
+		Columns[iColumn].Rows[iRow].IsReadOnly = bReadOnly
 	End Method
 	Rem
 	bbdoc: Returns the ReadOnly property of the cell.
@@ -1278,7 +1278,7 @@ Type ifsoGUI_MCListBox Extends ifsoGUI_Base
 	Method GetCellReadOnly:Int(iColumn:Int, iRow:Int)
 		If iColumn >= Columns.Length Return Null
 		If iRow >= NumRows Return Null
-		Return Columns[iColumn].Rows[iRow].ReadOnly
+		Return Columns[iColumn].Rows[iRow].IsReadOnly
 	End Method
 	Rem
 	bbdoc: Sets the Data of the cell.
@@ -1317,9 +1317,9 @@ Type ifsoGUI_MCListBox Extends ifsoGUI_Base
 	End Rem
 	Method SetColumnReadOnly(iColumn:Int, bReadOnly:Int)
 		If iColumn >= Columns.Length Return
-		Columns[iColumn].ReadOnly = bReadOnly
+		Columns[iColumn].IsReadOnly = bReadOnly
 		For Local i:Int = 0 To NumRows - 1
-			Columns[iColumn].Rows[i].ReadOnly = bReadOnly
+			Columns[iColumn].Rows[i].IsReadOnly = bReadOnly
 		Next
 		RefreshGadgets(iColumn, True)
 	End Method
@@ -1328,7 +1328,7 @@ Type ifsoGUI_MCListBox Extends ifsoGUI_Base
 	End Rem
 	Method GetColumnReadOnly:Int(iColumn:Int)
 		If iColumn >= Columns.Length Return Null
-		Return Columns[iColumn].ReadOnly
+		Return Columns[iColumn].IsReadOnly
 	End Method
 	Rem
 	bbdoc: Sets the Readonly property of all cells in the row.
@@ -1336,7 +1336,7 @@ Type ifsoGUI_MCListBox Extends ifsoGUI_Base
 	Method SetRowReadOnly(iRow:Int, bReadOnly:Int)
 		If iRow >= NumRows Return
 		For Local i:Int = 0 To Columns.Length - 1
-			Columns[i].Rows[iRow].ReadOnly = bReadOnly
+			Columns[i].Rows[iRow].IsReadOnly = bReadOnly
 		Next
 	End Method
 	Rem
@@ -1389,7 +1389,7 @@ Type ifsoGUI_MCListBox Extends ifsoGUI_Base
 	Method SetCellValueInt(iColumn:Int, iRow:Int, iValue:Int)
 		If iColumn >= Columns.Length Return
 		If iRow >= NumRows Return
-		If Columns[iColumn].Rows[iRow].ReadOnly Return
+		If Columns[iColumn].Rows[iRow].IsReadOnly Return
 		Columns[iColumn].Rows[iRow].Value = String(iValue)
 		If Columns[iColumn].bShowGadget RefreshGadgets(iColumn, False)
 	End Method
@@ -2283,7 +2283,7 @@ Type ifsoGUI_MCLColumn Extends ifsoGUI_Button
 	Field Dragging:Int 'Is the mouse dragging the edge.
 	Field DragX:Int 'The X offset of the mouse when dragging.
 	Field OrgX:Int 'Remember the Origin in case the Origin Changes so we can change the DragX
-	Field ReadOnly:Int = False 'Are newly added rows set ReadOnly for this column.
+	Field IsReadOnly:Int = False 'Are newly added rows set ReadOnly for this column.
 	Field bShowGadget:Int = False 'Does this column show its gadget all the time.
 	Field MinHeight:Int ' Each column has a minimum height based on the type of gadget.
 	Field ShowComboData:Int 'What info from a combo box to display
@@ -2405,7 +2405,7 @@ Type ifsoGUI_MCLColumn Extends ifsoGUI_Button
 	 bbdoc: Prepares the rows gadget for viewing.
 	End Rem
 	Method ActivateCell:Int(iRow:Int)
-		If bShowGadget Or ReadOnly Or CType = ifsoGUI_COLUMNTYPE_LABEL Or CType = ifsoGUI_COLUMNTYPE_PROGRESSBAR Return False
+		If bShowGadget Or IsReadOnly Or CType = ifsoGUI_COLUMNTYPE_LABEL Or CType = ifsoGUI_COLUMNTYPE_PROGRESSBAR Return False
 		Local TopItem:Int = ifsoGUI_MCListBox(Master).TopItem
 		Local ItemHeight:Int = ifsoGUI_MCListBox(Master).ItemHeight
 		Local iY:Int = ItemHeight * (iRow - TopItem)
@@ -2672,7 +2672,7 @@ Type ifsoGUI_MCLColumn Extends ifsoGUI_Button
 			Local iY:Int, ItemHeight:Int = ifsoGUI_MCListBox(Master).ItemHeight
 			If ifsoGUI_MCListBox(Master).ShowColumnHeader iY = ifsoGUI_MCListBox(Master).ColHeadHeight
 			For Local j:Int = 0 To GadgetList.Length - 1
-				If j + TopItem < NumRows GadgetList[j].SetEnabled(Not Rows[j + TopItem].ReadOnly)
+				If j + TopItem < NumRows GadgetList[j].SetEnabled(Not Rows[j + TopItem].IsReadOnly)
 				Select CType
 					Case ifsoGUI_COLUMNTYPE_CHECKBOX
 						Select CellAlign
@@ -3120,7 +3120,7 @@ Type ifsoGUI_MCLCell
 	Field Value:String 'Value in the gadget
 	Field Selected:Int 'Is this row selected
 	Field Tip:String 'Tip for this cell
-	Field ReadOnly:Int = False 'Can this cell be edited
+	Field IsReadOnly:Int = False 'Can this cell be edited
 	Field Data:Int 'User data for this cell
 	'Field Gadget:ifsoGUI_Base 'Gadget for each cell if ShowGadgets is on
 End Type
